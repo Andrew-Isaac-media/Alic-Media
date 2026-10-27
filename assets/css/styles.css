@@ -80,16 +80,18 @@ section.block{padding:100px var(--pad)}
 .r1{height:clamp(300px,33vw,440px)} .r2{height:clamp(240px,26vw,340px)}
 
 /* ---------- CLIENT MARQUEE ---------- */
-.clients{display:flex;align-items:center;gap:40px;padding:56px 0 56px var(--pad);border-top:1px solid var(--line)}
+.clients{display:flex;align-items:center;gap:40px;padding:48px 0 48px var(--pad);border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper)}
 .clients h2{flex:none;font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
 .marquee{flex:1;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-.track{display:flex;width:max-content;animation:marquee 32s linear infinite}
+.track{display:flex;width:max-content;animation:marquee 50s linear infinite}
 .marquee:hover .track{animation-play-state:paused}
-.set{display:flex;align-items:center;gap:80px;padding-right:80px;list-style:none}
-.brand{display:flex;align-items:center;gap:10px;font-size:22px;font-weight:600;color:#8c836e;white-space:nowrap}
-.brand i{width:22px;height:22px;background:#c7bca5;display:inline-block}
-.b2 i{border-radius:50%} .b3 i{border-radius:0 100% 0 100%} .b4 i{transform:rotate(45deg) scale(.8)} .b5 i{border-radius:6px} .b6 i{border-radius:50% 50% 0 0}
-.b2{font-family:var(--serif);font-style:italic;font-weight:400} .b4{letter-spacing:.14em;font-size:17px;text-transform:uppercase} .b6{font-weight:800}
+.set{display:flex;align-items:flex-start;gap:72px;padding-right:72px;list-style:none}
+.brand{display:flex;flex-direction:column;align-items:center;gap:12px;white-space:nowrap}
+.brand .logo-box{height:52px;display:flex;align-items:center}
+.brand img{width:auto;filter:grayscale(1);opacity:.7;transition:filter .3s,opacity .3s}
+.brand:hover img{filter:none;opacity:1}
+.brand .logo-text{font-weight:800;font-size:22px;letter-spacing:.2em;color:#5e5a50}
+.brand .name{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
 @keyframes marquee{to{transform:translateX(-50%)}}
 
 /* ---------- WORK PAGE ---------- */
