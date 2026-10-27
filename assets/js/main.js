@@ -37,3 +37,18 @@
       .finally(function () { btn.disabled = false; });
   });
 })();
+
+// Background video: make sure it starts on its own (some browsers need a nudge)
+(function () {
+  var v = document.querySelector('video.bg-video');
+  if (!v) return;
+  v.muted = true; v.defaultMuted = true; v.setAttribute('muted', '');
+  function tryPlay() { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+  tryPlay();
+  v.addEventListener('canplay', tryPlay, { once: true });
+  document.addEventListener('visibilitychange', function () { if (!document.hidden) tryPlay(); });
+  // If the browser blocked autoplay (e.g. iPhone Low Power Mode), start on the first tap or scroll
+  ['touchstart', 'click', 'scroll', 'keydown'].forEach(function (ev) {
+    window.addEventListener(ev, function () { if (v.paused) tryPlay(); }, { once: true, passive: true });
+  });
+})();
