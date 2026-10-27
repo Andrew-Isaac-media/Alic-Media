@@ -101,6 +101,14 @@ section.block{padding:100px var(--pad)}
 .tags li{font-size:12px;font-weight:600;letter-spacing:.06em;padding:6px 12px;border:1px solid var(--line);border-radius:999px;color:#4a5340;background:var(--paper)}
 .case:nth-child(even){margin-top:80px}
 
+
+/* ---------- PROJECT COVERS ---------- */
+.cover{display:block}
+.cover::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(15,18,12,.78) 0%,rgba(15,18,12,.25) 45%,transparent 70%);pointer-events:none}
+.cover-text{position:absolute;left:clamp(18px,2.2vw,32px);right:clamp(18px,2.2vw,32px);bottom:clamp(16px,2vw,28px);z-index:1;color:#fff;display:flex;flex-direction:column;gap:8px}
+.cover-name{margin:0;font-weight:600;font-size:clamp(24px,2.6vw,38px);letter-spacing:-.03em;line-height:1}
+.cover-desc{font-size:clamp(14px,1.1vw,16px);line-height:1.45;color:rgba(255,255,255,.85);max-width:40ch}
+
 /* ---------- PROCESS (pitch-deck slides) ---------- */
 .deck{counter-reset:slide}
 .slide{min-height:100vh;min-height:100svh;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:120px var(--pad) 80px;position:relative;border-top:1px solid var(--line)}
