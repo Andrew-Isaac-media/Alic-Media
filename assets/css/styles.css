@@ -166,6 +166,8 @@ section.block{padding:100px var(--pad)}
 .form-status.err{color:var(--clay)}
 .hp{position:absolute!important;left:-9999px;width:1px;height:1px;opacity:0}
 .contact-info .eyebrow{margin-bottom:14px}
+.contact-main .eyebrow{margin-bottom:28px}
+.contact-info{padding-top:46px}
 .contact-info p{margin-bottom:40px;font-size:18px}
 .socials{list-style:none;display:flex;flex-direction:column;gap:10px;font-size:18px;font-weight:500}
 .socials a:hover{color:var(--clay)}
@@ -208,3 +210,4 @@ section.block{padding:100px var(--pad)}
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 }
+.paper .field input,.paper .field textarea{background:#fff}
