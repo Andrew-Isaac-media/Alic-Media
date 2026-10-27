@@ -1,7 +1,7 @@
 Put the home page background video here:
 
-- hero.mp4  (H.264, 1920×1080, ~10–20 s loop, no audio, ideally under 5 MB)
-- hero.webm (optional, smaller)
-- hero-poster.webp (first frame of the video; shows while it loads)
+- hero.mp4  (H.264, 1280×720, no audio) — currently a 9 s loop: Versace → The North Face → Sun Cruiser, 3 s each
+- hero.webm (VP9 version, smaller; browsers that support it use this first)
+- hero-poster.webp (first frame; shows while the video loads)
 
-Then uncomment the <video> tag in /index.html.
+To change the loop, replace both hero.mp4 and hero.webm (keep the same names).
