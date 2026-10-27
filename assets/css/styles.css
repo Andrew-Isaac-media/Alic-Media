@@ -84,11 +84,10 @@ section.block{padding:100px var(--pad)}
 .clients h2{flex:none;font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
 .marquee{flex:1;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
 .track{display:flex;width:max-content;animation:marquee 50s linear infinite}
-.set{display:flex;align-items:center;gap:72px;padding-right:72px;list-style:none}
+.set{display:flex;align-items:center;gap:96px;padding-right:96px;list-style:none}
 .brand{display:flex;align-items:center;height:52px;white-space:nowrap}
-.brand img{width:auto;filter:grayscale(1);opacity:.7;transition:filter .3s,opacity .3s}
-.brand:hover img{filter:none;opacity:1}
-.brand .logo-text{font-weight:800;font-size:22px;letter-spacing:.2em;color:#5e5a50}
+.brand img{width:auto}
+.brand .logo-text{font-weight:800;font-size:22px;letter-spacing:.2em;color:#111}
 @keyframes marquee{to{transform:translateX(-50%)}}
 
 /* ---------- WORK PAGE ---------- */
