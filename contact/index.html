@@ -74,15 +74,17 @@
 <section class="block paper contact" aria-labelledby="msg-h">
   <div class="contact-main">
   <h2 class="eyebrow" id="msg-h">Or send us a message</h2>
-  <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" data-ajax>
+  <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" data-ajax>
     <div class="field-row">
       <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
       <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
     </div>
     <div class="field"><label for="company">Company or brand <span class="opt">(optional)</span></label><input id="company" name="company" type="text" autocomplete="organization"></div>
     <div class="field"><label for="message">Tell us about your project</label><textarea id="message" name="message" rows="7" required></textarea></div>
-    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
-    <input type="hidden" name="_subject" value="New inquiry from the Alic Media website">
+    <input type="hidden" name="access_key" value="ad47980b-d134-4869-8821-9b1915a35871">
+    <input type="hidden" name="subject" value="New inquiry from the Alic Media website">
+    <input type="hidden" name="from_name" value="Alic Media website">
+    <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
     <button class="btn clay" type="submit">Send message</button>
     <p class="form-status" role="status" aria-live="polite"></p>
   </form>
