@@ -146,6 +146,28 @@ section.block{padding:100px var(--pad)}
 .values .n{font-size:13px;font-weight:600;color:var(--sage)}
 .values h3{margin-top:40px;font-size:clamp(24px,2.4vw,32px);font-weight:600;letter-spacing:-.03em}
 
+/* ---------- CONTACT placeholder */
+/* ---------- CONTACT ---------- */
+.contact{display:grid;grid-template-columns:1.6fr 1fr;gap:clamp(32px,6vw,96px);align-items:start}
+.contact-form{display:flex;flex-direction:column;gap:22px}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.field{display:flex;flex-direction:column;gap:8px}
+.field label{font-size:13px;font-weight:600;letter-spacing:.06em;color:#3c4532}
+.field .opt{font-weight:400;color:var(--muted)}
+.field input,.field textarea{font:inherit;font-size:16px;color:var(--forest);background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:14px 16px;transition:border-color .2s,box-shadow .2s}
+.field textarea{resize:vertical;min-height:170px}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--sage);box-shadow:0 0 0 4px rgba(95,115,68,.15)}
+.contact-form .btn{align-self:flex-start;border:0;cursor:pointer}
+.contact-form .btn[disabled]{opacity:.6;cursor:wait}
+.form-status{font-weight:500;min-height:1.5em}
+.form-status.ok{color:var(--sage)}
+.form-status.err{color:var(--clay)}
+.hp{position:absolute!important;left:-9999px;width:1px;height:1px;opacity:0}
+.contact-info .eyebrow{margin-bottom:14px}
+.contact-info p{margin-bottom:40px;font-size:18px}
+.socials{list-style:none;display:flex;flex-direction:column;gap:10px;font-size:18px;font-weight:500}
+.socials a:hover{color:var(--clay)}
+
 /* ---------- FOOTER ---------- */
 .site-footer{background:var(--forest);color:var(--cream);padding:90px var(--pad) 36px}
 .site-footer .big{font-weight:500;font-size:clamp(36px,6vw,80px);letter-spacing:-.04em;line-height:1}
@@ -170,7 +192,7 @@ section.block{padding:100px var(--pad)}
   .clients{flex-direction:column;align-items:flex-start;gap:24px;padding:44px 0 44px var(--pad)}
   .marquee{width:100%}
   .scrim{background:rgba(20,24,16,.5)}
-  .case-list,.owners,.values{grid-template-columns:1fr}
+  .case-list,.owners,.values,.contact,.field-row{grid-template-columns:1fr}
   .case:nth-child(even){margin-top:0}
   .slide{grid-template-columns:1fr;gap:16px;align-content:center}
   section.block{padding:72px var(--pad)}
