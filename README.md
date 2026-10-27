@@ -1,6 +1,6 @@
-# Willow Creative
+# Alic Media
 
-Website for Willow Creative. Plain HTML/CSS, no build step — deploys straight to Netlify.
+Website for Alic Media. Plain HTML/CSS, no build step — deploys straight to Netlify.
 
 ## Pages
 - `/` — Home (slogan + background video, services, selected work, client carousel)
@@ -15,6 +15,6 @@ Search the project for `TODO` to find everything that still needs real content:
 - Brand names → `BRANDS` text in each page + images `assets/img/work-brand-1…6.webp`
 - Founder photos → assets/img/andrew-iwanicki.webp, assets/img/isaac-jessup.webp (800×1000)
 - Bios and roles (about/index.html)
-- Domain (`willowcreative.co`) and email in all pages, `sitemap.xml`, `robots.txt`
+- Domain (`alicmedia.com`) in all pages, `sitemap.xml`, `robots.txt`
 
 Keep image filenames, or update the `src` + `width`/`height` attributes if you change them.
