@@ -26,14 +26,15 @@
     .feature-top { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; margin-bottom: 20px; }
     .feature-no { font-size: 12px; font-weight: 800; letter-spacing: .16em; }
     .feature-type { font-size: 11px; text-transform: uppercase; letter-spacing: .16em; opacity: .62; text-align: right; }
-    .feature-image { position: relative; display: block; overflow: hidden; background: #242722; aspect-ratio: 16 / 8.6; }
-    .feature-image img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .65s ease; }
-    .feature-image:hover img { transform: scale(1.035); }
+    .feature-top, .feature-image, .feature-info { max-width: 720px; margin-left: auto; margin-right: auto; }
+    .feature-image { position: relative; display: block; overflow: hidden; background: #242722; aspect-ratio: 1 / 1; border-radius: 14px; }
+    .feature-image video { display: block; width: 100%; height: 100%; object-fit: cover; pointer-events: none; transition: transform .65s ease; }
+    .feature-image:hover video { transform: scale(1.02); }
     .feature-image:focus-visible { outline: 3px solid currentColor; outline-offset: 5px; }
     .feature-image .view-label { position: absolute; bottom: 20px; right: 22px; background: #f4ede1; color: #1f241f; font-size: 11px; text-transform: uppercase; font-weight: 800; letter-spacing: .12em; padding: 13px 17px; border-radius: 2px; }
-    .feature-info { display: grid; grid-template-columns: minmax(0, 1fr) minmax(250px, .55fr); gap: 28px; align-items: start; margin-top: 25px; }
+    .feature-info { display: grid; grid-template-columns: minmax(0, .8fr) minmax(250px, 1fr); gap: 28px; align-items: start; margin-top: 25px; }
     .feature-info h2 { font-size: clamp(34px, 4.7vw, 62px); line-height: 1.08; letter-spacing: -.055em; margin: 0; font-weight: 600; }
-    .feature-info p { max-width: 390px; margin: 6px 0 0; font-size: 15px; line-height: 1.7; opacity: .73; }
+    .feature-info p { max-width: 420px; margin: 6px 0 0; font-size: 15px; line-height: 1.7; opacity: .73; }
     .work-cta { background: #202821; color: #f4ede1; padding: clamp(65px, 9vw, 110px) clamp(22px, 5vw, 85px); text-align: center; }
     .work-cta .eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: .2em; opacity: .7; }
     .work-cta h2 { max-width: 840px; margin: 20px auto 28px; font-size: clamp(38px, 6vw, 77px); letter-spacing: -.06em; line-height: 1.1; }
@@ -42,12 +43,12 @@
     @media (max-width: 700px) {
       .work-intro { padding-top: 105px; padding-bottom: 40px; }
       .work-intro .intro-bottom { align-items: start; flex-direction: column; gap: 14px; }
-      .feature-image { aspect-ratio: 4 / 4.3; }
+      .feature-image { aspect-ratio: 1 / 1; }
       .feature-info { grid-template-columns: 1fr; gap: 4px; }
       .feature-info p { margin-top: 0; }
       .feature-image .view-label { bottom: 12px; right: 12px; padding: 10px 12px; }
     }
-    @media (prefers-reduced-motion: reduce) { .feature-image img { transition: none; } }
+    @media (prefers-reduced-motion: reduce) { .feature-image video { transition: none; } }
   </style>
 </head>
 <body>
@@ -69,18 +70,18 @@
   <section class="featured-work" aria-label="Selected commercial projects">
     <article class="feature" id="the-north-face">
       <div class="feature-top"><span class="feature-no">01 / The North Face</span><span class="feature-type">Outdoor · Film &amp; content</span></div>
-      <a class="feature-image" href="../contact/?project=the-north-face" aria-label="Discuss a project like The North Face"><img src="../assets/img/work-the-north-face.webp" alt="Snowy alpine forest from The North Face project" width="1200" height="900" fetchpriority="high"><span class="view-label">Start a similar project ↗</span></a>
-      <div class="feature-info"><h2>The North Face</h2><p>Atmospheric outdoor storytelling inspired by winter landscapes, movement, and exploration.</p></div>
+      <a class="feature-image" href="../contact/?project=the-north-face" aria-label="Discuss a project like The North Face"><video src="../assets/video/work/the-north-face.mp4" poster="../assets/video/work/the-north-face.webp" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="metadata" width="720" height="720" aria-label="The North Face campaign video"></video><span class="view-label">Start a similar project ↗</span></a>
+      <div class="feature-info"><h2>The North Face</h2><p>A North Face campaign centered around exploring the wild, staying warm, and living in the moment. Videos and photos displaying North Face attire in the environment it was designed for, inspiring adventurers anonymous to consider their apparel.</p></div>
     </article>
     <article class="feature" id="sun-cruiser">
       <div class="feature-top"><span class="feature-no">02 / Sun Cruiser</span><span class="feature-type">Lifestyle · Film &amp; photography</span></div>
-      <a class="feature-image" href="../contact/?project=sun-cruiser" aria-label="Discuss a project like Sun Cruiser"><img src="../assets/img/work-sun-cruiser.webp" alt="Golden-hour desert landscape from Sun Cruiser project" width="1200" height="900" loading="lazy"><span class="view-label">Start a similar project ↗</span></a>
-      <div class="feature-info"><h2>Sun Cruiser</h2><p>Warm, sun-drenched lifestyle visuals shaped around open roads, desert color, and the feeling of summer.</p></div>
+      <a class="feature-image" href="../contact/?project=sun-cruiser" aria-label="Discuss a project like Sun Cruiser"><video src="../assets/video/work/sun-cruiser.mp4" poster="../assets/video/work/sun-cruiser.webp" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="metadata" width="720" height="720" aria-label="Sun Cruiser campaign video"></video><span class="view-label">Start a similar project ↗</span></a>
+      <div class="feature-info"><h2>Sun Cruiser</h2><p>Sun Cruiser trusted us to promote their product through a campaign centered around Sun Cruiser&rsquo;s main tagline &mdash; <em>Let the good times cruise</em>, because ultimately, what beats an ice cold Sun Cruiser on a hot day? Nothing.</p></div>
     </article>
     <article class="feature" id="versace">
       <div class="feature-top"><span class="feature-no">03 / Versace</span><span class="feature-type">Fashion · Film &amp; photography</span></div>
-      <a class="feature-image" href="../contact/?project=versace" aria-label="Discuss a project like Versace"><img src="../assets/img/work-versace.webp" alt="Black-and-white visual from Versace fragrance project" width="1200" height="900" loading="lazy"><span class="view-label">Start a similar project ↗</span></a>
-      <div class="feature-info"><h2>Versace</h2><p>A cinematic fragrance concept with black-and-white road-trip imagery and a refined editorial approach.</p></div>
+      <a class="feature-image" href="../contact/?project=versace" aria-label="Discuss a project like Versace"><video src="../assets/video/work/versace.mp4" poster="../assets/video/work/versace.webp" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="metadata" width="720" height="720" aria-label="Versace fragrance campaign video"></video><span class="view-label">Start a similar project ↗</span></a>
+      <div class="feature-info"><h2>Versace</h2><p>Versace needed a mix of class and adventure for their new cologne campaign. They looked no further than Alic Media Agency. A mix of travel and fragrance, this campaign emphasizes Versace&rsquo;s versatility.</p></div>
     </article>
   </section>
   <section class="work-cta" aria-labelledby="work-cta-title"><p class="eyebrow">Your next campaign starts here</p><h2 id="work-cta-title">Have a story worth <em>telling?</em></h2><a href="../contact/">Start a project ↗</a></section>

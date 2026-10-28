@@ -44,15 +44,18 @@
 
 // Background video: make sure it starts on its own (some browsers need a nudge)
 (function () {
-  var v = document.querySelector('video.bg-video');
-  if (!v) return;
-  v.muted = true; v.defaultMuted = true; v.setAttribute('muted', '');
-  function tryPlay() { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
-  tryPlay();
-  v.addEventListener('canplay', tryPlay, { once: true });
-  document.addEventListener('visibilitychange', function () { if (!document.hidden) tryPlay(); });
+  var vids = document.querySelectorAll('video[autoplay]');
+  if (!vids.length) return;
+  function tryPlay(v) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+  function playAll() { vids.forEach(function (v) { if (v.paused) tryPlay(v); }); }
+  vids.forEach(function (v) {
+    v.muted = true; v.defaultMuted = true; v.setAttribute('muted', '');
+    tryPlay(v);
+    v.addEventListener('canplay', function () { tryPlay(v); }, { once: true });
+  });
+  document.addEventListener('visibilitychange', function () { if (!document.hidden) playAll(); });
   // If the browser blocked autoplay (e.g. iPhone Low Power Mode), start on the first tap or scroll
   ['touchstart', 'click', 'scroll', 'keydown'].forEach(function (ev) {
-    window.addEventListener(ev, function () { if (v.paused) tryPlay(); }, { once: true, passive: true });
+    window.addEventListener(ev, playAll, { once: true, passive: true });
   });
 })();
