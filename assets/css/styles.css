@@ -143,16 +143,17 @@ section.block{padding:100px var(--pad)}
 .timeline span.on{background:var(--clay)}
 
 /* ---------- ABOUT ---------- */
-.owners{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,64px)}
-.owner .photo{width:clamp(140px,16vw,200px);border-radius:20px;overflow:hidden;aspect-ratio:1/1;background:#d8ccb4;margin-bottom:24px}
-.owner .photo img{width:100%;height:100%;object-fit:cover;object-position:50% 25%}
+.owners{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,64px);max-width:980px;margin:0 auto}
+.owner{text-align:center;display:flex;flex-direction:column;align-items:center}
+.owner .photo{width:clamp(220px,26vw,320px);border-radius:20px;overflow:hidden;aspect-ratio:4/5;background:#d8ccb4;margin-bottom:28px}
+.owner .photo img{width:100%;height:100%;object-fit:cover}
 .story{text-align:center;padding-top:40px}
 .story h2{font-size:clamp(36px,5vw,64px);font-weight:600;letter-spacing:-.04em;line-height:1;margin-bottom:28px}
 .story p{max-width:62ch;margin:0 auto 18px;color:#4a5340;font-size:17px;line-height:1.7}
 .owner h2{font-size:clamp(32px,4vw,52px);font-weight:600;letter-spacing:-.035em;line-height:1}
 .owner .role{margin-top:10px;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--clay)}
-.owner p{margin-top:18px;color:#4a5340;max-width:44ch}
-.owner .facts{margin-top:22px;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.owner p{margin-top:18px;color:#4a5340;max-width:40ch}
+.owner .facts{margin-top:22px;list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
 .owner .facts li{font-size:13px;padding:6px 12px;border-radius:999px;background:var(--paper);border:1px solid var(--line)}
 .values{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;list-style:none}
 .values li{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:36px 28px}
