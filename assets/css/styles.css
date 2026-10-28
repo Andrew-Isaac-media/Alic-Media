@@ -24,13 +24,7 @@ section.block{padding:100px var(--pad)}
 
 /* ---------- NAV ---------- */
 .site-header{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:18px var(--pad);background:rgba(244,237,225,.85);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
-.logo{display:inline-flex;align-items:baseline;font-weight:700;font-size:21px;letter-spacing:.01em;color:var(--forest)}
-.logo .m{font-weight:400;color:var(--muted);margin-left:.3em;display:inline-flex;align-items:baseline}
-.logo .mtn{height:.78em;width:auto;overflow:visible;transform:translateY(.03em)}
-.logo .mtn-a{margin-right:.03em}
-.logo .mtn-m{margin-right:.02em}
-.logo .snow{fill:var(--clay)}
-.logo .ridge{fill:none;stroke:var(--cream);stroke-width:1.6;stroke-linejoin:round}
+.logo{font-weight:600;font-size:15px;letter-spacing:.24em;text-transform:uppercase;color:var(--forest);white-space:nowrap}
 .nav-links{display:flex;gap:34px;font-size:14px;font-weight:500;color:#424b38;list-style:none}
 .nav-links a{padding:6px 0;border-bottom:1.5px solid transparent}
 .nav-links a:hover,.nav-links a[aria-current="page"]{border-color:var(--clay);color:var(--forest)}
