@@ -294,3 +294,9 @@ video[autoplay]::-webkit-media-controls,video[autoplay]::-webkit-media-controls-
 .hero.hero-plain .scroll-cue span{background:linear-gradient(var(--muted),transparent)}
 /* About: Meet the team */
 .team-title{justify-content:center;margin-bottom:36px}
+
+/* Header video: show the still image until the video is actually playing, so no play button can ever appear */
+.hero-video{background:#26301f url(../video/hero-poster.webp) center/cover no-repeat}
+.hero-video video{opacity:0;transition:opacity .4s}
+.hero-video.is-playing video{opacity:1}
+.hero-video.hv-home{background-image:url(../video/home-poster.webp)}

@@ -91,3 +91,13 @@
     setTimeout(sync, 1200);
   });
 })();
+
+// Header video: reveal it only once it is really playing
+(function () {
+  document.querySelectorAll('.hero-video video').forEach(function (v) {
+    var box = v.parentElement;
+    function on() { box.classList.add('is-playing'); }
+    v.addEventListener('playing', on);
+    if (!v.paused && v.readyState > 2) on();
+  });
+})();

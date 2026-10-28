@@ -54,7 +54,7 @@
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header class="site-header">
+<header class="site-header overlay">
   <a class="logo" href="./" aria-label="Alic Media Agency home">Alic Media Agency</a>
   <nav aria-label="Main">
     <button class="menu-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu"><span></span><span></span><span></span></button>
@@ -63,7 +63,13 @@
   <a class="btn dark nav-cta" href="./contact/">Get in Touch</a>
 </header>
 <main id="main">
-<section class="hero hero-plain" aria-labelledby="slogan">
+<section class="hero" aria-labelledby="slogan">
+  <div class="hero-video hv-home" aria-hidden="true">
+    <video class="bg-video" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="auto" poster="./assets/video/home-poster.webp">
+      <source src="./assets/video/home.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="scrim" aria-hidden="true"></div>
   <p class="eyebrow">Alic Media Agency</p>
   <h1 id="slogan">Bring your brand to life.</h1>
   <div class="scroll-cue" aria-hidden="true"><span></span>Scroll</div>
