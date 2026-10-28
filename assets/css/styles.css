@@ -46,6 +46,7 @@ section.block{padding:100px var(--pad)}
 .hero{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:120px var(--pad) 80px;position:relative;overflow:hidden}
 .hero-video{position:absolute;inset:0;background:#26301f url(../video/hero-poster.webp) center/cover no-repeat}
 .hero-video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-video img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%}
 .hero-video video{pointer-events:none}
 .hero-video video::-webkit-media-controls,.hero-video video::-webkit-media-controls-start-playback-button,.hero-video video::-webkit-media-controls-overlay-play-button{display:none!important;-webkit-appearance:none}
 .scrim{position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,24,16,.62) 0%,rgba(20,24,16,.38) 55%,rgba(20,24,16,.18) 100%),linear-gradient(0deg,rgba(20,24,16,.35),transparent 40%)}
@@ -206,6 +207,7 @@ section.block{padding:100px var(--pad)}
   .clients{flex-direction:column;align-items:flex-start;gap:24px;padding:44px 0 44px var(--pad)}
   .marquee{width:100%}
   .scrim{background:rgba(20,24,16,.5)}
+  .hero-video img{object-position:66% 45%}
   .case-list,.owners,.values,.contact,.field-row{grid-template-columns:1fr}
   .case:nth-child(even){margin-top:0}
   .slide{grid-template-columns:1fr;gap:16px;align-content:center}
