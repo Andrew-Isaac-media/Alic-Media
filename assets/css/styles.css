@@ -285,3 +285,12 @@ video[autoplay]::-webkit-media-controls,video[autoplay]::-webkit-media-controls-
   .nav-open .site-header.overlay .logo,.nav-open .site-header.overlay .nav-links a{color:var(--forest)}
   .nav-open .site-header.overlay .menu-toggle{color:var(--forest);filter:none}
 }
+
+/* Home hero without video */
+.hero.hero-plain{background:var(--cream);min-height:88vh;min-height:88svh}
+.hero.hero-plain h1{color:var(--forest)}
+.hero.hero-plain .eyebrow{color:var(--muted)}
+.hero.hero-plain .scroll-cue{color:var(--muted)}
+.hero.hero-plain .scroll-cue span{background:linear-gradient(var(--muted),transparent)}
+/* About: Meet the team */
+.team-title{justify-content:center;margin-bottom:36px}
