@@ -259,9 +259,9 @@ section.block.pillars{padding-top:56px}
 .step-box::after{display:none}
 .step-box h3,.step-box .num{text-shadow:0 1px 10px rgba(0,0,0,.35)}
 .s1{background-image:url(../img/process/discover.webp)}
-.s2{background-image:url(../img/process/strategy.webp)}
+.s2{background-image:url(../img/process/strategy.webp?v=2)}
 .s3{background-image:url(../img/process/create.webp)}
-.s4{background-image:url(../img/process/deliver.webp)}
+.s4{background-image:url(../img/process/deliver.webp?v=2)}
 .s5{background-image:url(../img/process/grow.webp)}
 @media (max-width:860px){
   .step-boxes{grid-template-columns:1fr 1fr}
