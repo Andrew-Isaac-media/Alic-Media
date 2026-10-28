@@ -54,8 +54,14 @@
     v.addEventListener('canplay', function () { tryPlay(v); }, { once: true });
   });
   document.addEventListener('visibilitychange', function () { if (!document.hidden) playAll(); });
+  // Keep trying as each video scrolls into view, and resume if the browser pauses it
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) { entries.forEach(function (e) { if (e.isIntersecting && e.target.paused) tryPlay(e.target); }); });
+    vids.forEach(function (v) { io.observe(v); });
+  }
+  vids.forEach(function (v) { v.addEventListener('pause', function () { if (!document.hidden) setTimeout(function () { tryPlay(v); }, 200); }); });
   // If the browser blocked autoplay (e.g. iPhone Low Power Mode), start on the first tap or scroll
   ['touchstart', 'click', 'scroll', 'keydown'].forEach(function (ev) {
-    window.addEventListener(ev, playAll, { once: true, passive: true });
+    window.addEventListener(ev, playAll, { passive: true });
   });
 })();

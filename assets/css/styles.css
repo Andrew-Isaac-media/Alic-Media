@@ -266,3 +266,6 @@ section.block{padding:100px var(--pad)}
   .step-boxes li:last-child{grid-column:1 / -1}
   .step-box{min-height:150px}
 }
+
+/* Background/thumbnail videos: never show the browser's own play button or controls */
+video[autoplay]::-webkit-media-controls,video[autoplay]::-webkit-media-controls-panel,video[autoplay]::-webkit-media-controls-overlay-play-button,video[autoplay]::-webkit-media-controls-start-playback-button{display:none!important;-webkit-appearance:none;opacity:0!important}
