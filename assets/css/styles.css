@@ -44,7 +44,7 @@ section.block{padding:100px var(--pad)}
 
 /* ---------- HOME HERO ---------- */
 .hero{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:120px var(--pad) 80px;position:relative;overflow:hidden}
-.hero-video{position:absolute;inset:0;background:#26301f url(../video/hero-poster.webp) center/cover no-repeat}
+.hero-video{position:absolute;inset:0;background:#26301f}
 .hero-video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .hero-video img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%}
 .hero-video video{pointer-events:none}
