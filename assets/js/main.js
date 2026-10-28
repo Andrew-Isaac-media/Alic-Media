@@ -65,3 +65,14 @@
     window.addEventListener(ev, playAll, { passive: true });
   });
 })();
+
+// Home page: make the transparent menu solid once you scroll past the video
+(function () {
+  var h = document.querySelector('.site-header.overlay');
+  var hero = document.querySelector('.hero');
+  if (!h || !hero) return;
+  function upd() { h.classList.toggle('solid', window.scrollY > hero.offsetHeight - h.offsetHeight); }
+  upd();
+  window.addEventListener('scroll', upd, { passive: true });
+  window.addEventListener('resize', upd);
+})();

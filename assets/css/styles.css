@@ -270,3 +270,17 @@ section.block{padding:100px var(--pad)}
 
 /* Background/thumbnail videos: never show the browser's own play button or controls */
 video[autoplay]::-webkit-media-controls,video[autoplay]::-webkit-media-controls-panel,video[autoplay]::-webkit-media-controls-overlay-play-button,video[autoplay]::-webkit-media-controls-start-playback-button{display:none!important;-webkit-appearance:none;opacity:0!important}
+
+/* Home page: transparent menu over the hero video, turns solid once you scroll past it */
+.site-header{transition:background .3s,box-shadow .3s}
+.site-header.overlay:not(.solid){background:transparent;-webkit-backdrop-filter:none;backdrop-filter:none;text-shadow:0 1px 10px rgba(0,0,0,.35)}
+.site-header.overlay:not(.solid) .logo,.site-header.overlay:not(.solid) .nav-links a{color:#fff}
+.site-header.overlay:not(.solid) .nav-links a[aria-current="page"],.site-header.overlay:not(.solid) .nav-links a:hover{border-color:#fff}
+.site-header.overlay:not(.solid) .nav-cta{background:#fff;color:var(--forest);text-shadow:none}
+.site-header.overlay:not(.solid) .menu-toggle{color:#fff;filter:drop-shadow(0 1px 6px rgba(0,0,0,.4))}
+.hero .scrim::after{content:"";position:absolute;left:0;right:0;top:0;height:160px;background:linear-gradient(180deg,rgba(15,18,12,.45),transparent)}
+@media (max-width:860px){
+  .nav-open .site-header.overlay{background:var(--cream);text-shadow:none}
+  .nav-open .site-header.overlay .logo,.nav-open .site-header.overlay .nav-links a{color:var(--forest)}
+  .nav-open .site-header.overlay .menu-toggle{color:var(--forest);filter:none}
+}
