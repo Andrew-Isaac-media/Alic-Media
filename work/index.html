@@ -28,10 +28,13 @@
     .feature-type { font-size: 11px; text-transform: uppercase; letter-spacing: .16em; opacity: .62; text-align: right; }
     .feature-top, .feature-image, .feature-info { max-width: 720px; margin-left: auto; margin-right: auto; }
     .feature-image { position: relative; display: block; overflow: hidden; background: #242722; aspect-ratio: 1 / 1; border-radius: 14px; }
-    .feature-image video { display: block; width: 100%; height: 100%; object-fit: cover; pointer-events: none; transition: transform .65s ease; }
+    .feature-image video { display: block; width: 100%; height: 100%; object-fit: cover; cursor: pointer; transition: transform .65s ease; }
+    .feature-image .play-btn { position: absolute; top: 50%; left: 50%; width: 78px; height: 78px; margin: -39px 0 0 -39px; border: 0; border-radius: 50%; background: rgba(244,237,225,.92); cursor: pointer; display: none; box-shadow: 0 6px 24px rgba(0,0,0,.25); }
+    .feature-image .play-btn span { display: block; width: 0; height: 0; margin-left: 31px; border-style: solid; border-width: 13px 0 13px 21px; border-color: transparent transparent transparent #1f241f; }
+    .feature-image.is-paused .play-btn { display: block; }
     .feature-image:hover video { transform: scale(1.02); }
-    .feature-image:focus-visible { outline: 3px solid currentColor; outline-offset: 5px; }
-    .feature-image .view-label { position: absolute; bottom: 20px; right: 22px; background: #f4ede1; color: #1f241f; font-size: 11px; text-transform: uppercase; font-weight: 800; letter-spacing: .12em; padding: 13px 17px; border-radius: 2px; }
+    .feature-image .view-label:focus-visible, .feature-image .play-btn:focus-visible { outline: 3px solid #f4ede1; outline-offset: 3px; }
+    .feature-image .view-label { text-decoration: none; position: absolute; bottom: 20px; right: 22px; background: #f4ede1; color: #1f241f; font-size: 11px; text-transform: uppercase; font-weight: 800; letter-spacing: .12em; padding: 13px 17px; border-radius: 2px; }
     .feature-info { display: grid; grid-template-columns: minmax(0, .8fr) minmax(250px, 1fr); gap: 28px; align-items: start; margin-top: 25px; }
     .feature-info h2 { font-size: clamp(34px, 4.7vw, 62px); line-height: 1.08; letter-spacing: -.055em; margin: 0; font-weight: 600; }
     .feature-info p { max-width: 420px; margin: 6px 0 0; font-size: 15px; line-height: 1.7; opacity: .73; }
@@ -70,17 +73,17 @@
   <section class="featured-work" aria-label="Selected commercial projects">
     <article class="feature" id="the-north-face">
       <div class="feature-top"><span class="feature-no">01 / The North Face</span><span class="feature-type">Outdoor · Film &amp; content</span></div>
-      <a class="feature-image" href="../contact/?project=the-north-face" aria-label="Discuss a project like The North Face"><video src="../assets/video/work/the-north-face.mp4" poster="../assets/video/work/the-north-face.webp" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="auto" width="720" height="720" aria-label="The North Face campaign video"></video><span class="view-label">Start a similar project ↗</span></a>
+      <div class="feature-image"><video src="../assets/video/work/the-north-face.mp4" poster="../assets/video/work/the-north-face.webp" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="auto" width="720" height="720" aria-label="The North Face campaign video"></video><button type="button" class="play-btn" aria-label="Play video"><span aria-hidden="true"></span></button><a class="view-label" href="../contact/?project=the-north-face" aria-label="Discuss a project like The North Face">Start a similar project ↗</a></div>
       <div class="feature-info"><h2>The North Face</h2><p>A North Face campaign centered around exploring the wild, staying warm, and living in the moment. Videos and photos displaying North Face attire in the environment it was designed for, inspiring adventurers anonymous to consider their apparel.</p></div>
     </article>
     <article class="feature" id="sun-cruiser">
       <div class="feature-top"><span class="feature-no">02 / Sun Cruiser</span><span class="feature-type">Lifestyle · Film &amp; photography</span></div>
-      <a class="feature-image" href="../contact/?project=sun-cruiser" aria-label="Discuss a project like Sun Cruiser"><video src="../assets/video/work/sun-cruiser.mp4" poster="../assets/video/work/sun-cruiser.webp" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="auto" width="720" height="720" aria-label="Sun Cruiser campaign video"></video><span class="view-label">Start a similar project ↗</span></a>
+      <div class="feature-image"><video src="../assets/video/work/sun-cruiser.mp4" poster="../assets/video/work/sun-cruiser.webp" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="auto" width="720" height="720" aria-label="Sun Cruiser campaign video"></video><button type="button" class="play-btn" aria-label="Play video"><span aria-hidden="true"></span></button><a class="view-label" href="../contact/?project=sun-cruiser" aria-label="Discuss a project like Sun Cruiser">Start a similar project ↗</a></div>
       <div class="feature-info"><h2>Sun Cruiser</h2><p>Sun Cruiser trusted us to promote their product through a campaign centered around Sun Cruiser&rsquo;s main tagline &mdash; <em>Let the good times cruise</em>, because ultimately, what beats an ice cold Sun Cruiser on a hot day? Nothing.</p></div>
     </article>
     <article class="feature" id="versace">
       <div class="feature-top"><span class="feature-no">03 / Versace</span><span class="feature-type">Fashion · Film &amp; photography</span></div>
-      <a class="feature-image" href="../contact/?project=versace" aria-label="Discuss a project like Versace"><video src="../assets/video/work/versace.mp4" poster="../assets/video/work/versace.webp" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="auto" width="720" height="720" aria-label="Versace fragrance campaign video"></video><span class="view-label">Start a similar project ↗</span></a>
+      <div class="feature-image"><video src="../assets/video/work/versace.mp4" poster="../assets/video/work/versace.webp" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="auto" width="720" height="720" aria-label="Versace fragrance campaign video"></video><button type="button" class="play-btn" aria-label="Play video"><span aria-hidden="true"></span></button><a class="view-label" href="../contact/?project=versace" aria-label="Discuss a project like Versace">Start a similar project ↗</a></div>
       <div class="feature-info"><h2>Versace</h2><p>Versace needed a mix of class and adventure for their new cologne campaign. They looked no further than Alic Media Agency. A mix of travel and fragrance, this campaign emphasizes Versace&rsquo;s versatility.</p></div>
     </article>
   </section>

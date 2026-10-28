@@ -46,7 +46,7 @@
 (function () {
   var vids = document.querySelectorAll('video[autoplay]');
   if (!vids.length) return;
-  function tryPlay(v) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+  function tryPlay(v) { var b = v.closest('.feature-image'); if (b && b.dataset.userPaused === '1') return; var p = v.play(); if (p && p.catch) p.catch(function () {}); }
   function playAll() { vids.forEach(function (v) { if (v.paused) tryPlay(v); }); }
   vids.forEach(function (v) {
     v.muted = true; v.defaultMuted = true; v.setAttribute('muted', '');
@@ -75,4 +75,19 @@
   upd();
   window.addEventListener('scroll', upd, { passive: true });
   window.addEventListener('resize', upd);
+})();
+
+// Our Work videos: tap/click the video to pause or play; show a play button whenever one is paused
+(function () {
+  document.querySelectorAll('.feature-image').forEach(function (box) {
+    var v = box.querySelector('video');
+    var btn = box.querySelector('.play-btn');
+    if (!v) return;
+    function sync() { box.classList.toggle('is-paused', v.paused); }
+    function play() { v.muted = true; var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+    v.addEventListener('play', sync); v.addEventListener('playing', sync); v.addEventListener('pause', sync);
+    v.addEventListener('click', function () { if (v.paused) { box.dataset.userPaused = ''; play(); } else { box.dataset.userPaused = '1'; v.pause(); } });
+    if (btn) btn.addEventListener('click', function (e) { e.stopPropagation(); box.dataset.userPaused = ''; play(); });
+    setTimeout(sync, 1200);
+  });
 })();
