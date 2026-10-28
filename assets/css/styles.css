@@ -147,7 +147,8 @@ section.block{padding:100px var(--pad)}
 .owner{text-align:center;display:flex;flex-direction:column;align-items:center}
 .owner .photo{width:clamp(220px,26vw,320px);border-radius:20px;overflow:hidden;aspect-ratio:4/5;background:#d8ccb4;margin-bottom:22px}
 .owner .photo img{width:100%;height:100%;object-fit:cover}
-.story{padding-top:0;margin-top:-70px}
+section.block.story{padding-top:0;margin-top:-30px;padding-bottom:56px}
+section.block.pillars{padding-top:56px}
 .story-inner{max-width:none}
 .story h2{font-family:'Jost',var(--sans);font-size:clamp(32px,3.6vw,48px);font-weight:400;letter-spacing:-.01em;line-height:1.1;margin-bottom:20px}
 .story p{max-width:none;margin:0;color:#4a5340;font-size:clamp(20px,2.2vw,30px);line-height:1.45;letter-spacing:-.01em}
