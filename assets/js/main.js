@@ -25,14 +25,18 @@
     btn.disabled = true;
     fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
       .then(function (r) {
-        if (!r.ok) throw new Error();
+        return r.json().catch(function () { return {}; }).then(function (d) {
+          if (!r.ok || d.success === false) throw new Error(d.message || ('HTTP ' + r.status));
+        });
+      })
+      .then(function () {
         form.reset();
         status.className = 'form-status ok';
         status.textContent = 'Thanks! Your message is on its way — we’ll be in touch soon.';
       })
-      .catch(function () {
+      .catch(function (err) {
         status.className = 'form-status err';
-        status.textContent = 'Something went wrong. Please email us directly instead.';
+        status.textContent = 'Something went wrong' + (err && err.message ? ' (' + err.message + ')' : '') + '. Please email us directly instead.';
       })
       .finally(function () { btn.disabled = false; });
   });
