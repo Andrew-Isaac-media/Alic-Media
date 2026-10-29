@@ -26,6 +26,72 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400&family=Manrope:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,400&display=swap">
 <link rel="stylesheet" href="../assets/css/styles.css?v=1028b">
 <script src="../assets/js/main.js?v=1028b" defer></script>
+<style>
+  /* Page-specific enhancement for Our Process */
+  .page-hero.process-hero{position:relative;overflow:hidden;padding-bottom:96px}
+  .page-hero.process-hero::before,
+  .page-hero.process-hero::after{
+    content:"";position:absolute;border-radius:999px;pointer-events:none;opacity:.7;
+  }
+  .page-hero.process-hero::before{width:340px;height:340px;right:-100px;top:70px;background:radial-gradient(circle, rgba(169,87,46,.16), rgba(169,87,46,0));}
+  .page-hero.process-hero::after{width:420px;height:420px;left:-150px;bottom:-180px;background:radial-gradient(circle, rgba(95,115,68,.14), rgba(95,115,68,0));}
+  .hero-sketch{margin-top:42px;max-width:860px;border:1px solid var(--line);border-radius:28px;padding:24px 26px;background:linear-gradient(180deg,rgba(250,246,239,.85),rgba(244,237,225,.4));box-shadow:0 18px 40px rgba(38,48,31,.06)}
+  .hero-sketch svg{width:100%;height:auto;display:block}
+  .hero-sketch text{font-family:var(--sans)}
+
+  .deck{display:grid;gap:28px;padding:0 var(--pad) 72px;max-width:1400px;margin:0 auto}
+  .slide{min-height:auto;display:block;padding:34px;border:1px solid var(--line);border-radius:30px;background:rgba(250,246,239,.72);box-shadow:0 18px 36px rgba(38,48,31,.06)}
+  .slide.dark{background:var(--forest);border-color:rgba(244,237,225,.12)}
+  .slide .slide-count{position:static;display:inline-flex;margin-bottom:18px;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.45);color:var(--forest)}
+  .slide.dark .slide-count{background:rgba(244,237,225,.08);color:#d9d0bc}
+  .step-layout{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(240px, .8fr);gap:28px;align-items:center}
+  .step-copy{display:grid;grid-template-columns:minmax(96px,180px) 1fr;gap:22px;align-items:start}
+  .slide .big-num{display:flex;align-items:flex-start;justify-content:flex-start;font-size:clamp(90px,12vw,180px);line-height:.82;margin-top:10px}
+  .step-copy .eyebrow{margin-bottom:14px}
+  .step-copy h2{margin:0}
+  .slide .sub{margin-top:18px}
+  .deliver{background:rgba(255,255,255,.34);border:1px solid rgba(38,48,31,.08);border-radius:20px;padding:8px 16px;margin-top:24px}
+  .slide.dark .deliver{background:rgba(244,237,225,.04);border-color:rgba(244,237,225,.1)}
+  .deliver li:last-child{border-bottom:none}
+  .timeline{margin-top:22px}
+
+  .step-art{position:relative;display:grid;place-items:center;min-height:260px;border-radius:28px;border:1px solid rgba(38,48,31,.1);background:
+      linear-gradient(180deg, rgba(255,255,255,.56), rgba(255,255,255,.2)),
+      radial-gradient(circle at top right, rgba(169,87,46,.12), transparent 45%),
+      radial-gradient(circle at bottom left, rgba(95,115,68,.14), transparent 45%);
+    overflow:hidden;
+  }
+  .slide.dark .step-art{border-color:rgba(244,237,225,.12);background:
+      linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01)),
+      radial-gradient(circle at top right, rgba(217,162,125,.18), transparent 45%),
+      radial-gradient(circle at bottom left, rgba(163,174,140,.15), transparent 45%);
+  }
+  .step-art::before{content:"";position:absolute;inset:18px;border:1px dashed rgba(38,48,31,.14);border-radius:22px}
+  .slide.dark .step-art::before{border-color:rgba(244,237,225,.16)}
+  .step-art svg{width:min(100%,300px);height:auto;display:block;position:relative;z-index:1}
+  .art-stroke{fill:none;stroke:#35422c;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  .art-fill{fill:rgba(95,115,68,.12);stroke:#35422c;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  .slide.dark .art-stroke{stroke:#f4ede1}
+  .slide.dark .art-fill{fill:rgba(244,237,225,.08);stroke:#f4ede1}
+  .art-accent{stroke:var(--clay)}
+  .slide.dark .art-accent{stroke:#d9a27d}
+  .art-dot{fill:var(--clay)}
+  .slide.dark .art-dot{fill:#d9a27d}
+  .art-label{font-size:13px;letter-spacing:.12em;text-transform:uppercase;fill:#5f7344;font-weight:700}
+  .slide.dark .art-label{fill:#a3ae8c}
+
+  @media (max-width: 980px){
+    .step-layout{grid-template-columns:1fr}
+    .step-copy{grid-template-columns:1fr;gap:12px}
+    .slide .big-num{font-size:clamp(76px,20vw,120px)}
+    .step-art{min-height:220px}
+  }
+  @media (max-width: 860px){
+    .deck{padding:0 var(--pad) 56px}
+    .slide{padding:24px}
+    .hero-sketch{padding:18px}
+  }
+</style>
 <script type="application/ld+json">{
  "@context": "https://schema.org",
  "@type": "BreadcrumbList",
@@ -56,61 +122,178 @@
   <a class="btn dark nav-cta" href="../contact/">Get in Touch</a>
 </header>
 <main id="main">
-<section class="page-hero">
+<section class="page-hero process-hero">
   <p class="eyebrow line">Our process</p>
   <h1>From first call to <em class="accent">final cut.</em></h1>
   <p class="lede">Five steps. No guesswork.</p>
+
+  <div class="hero-sketch" aria-hidden="true">
+    <svg viewBox="0 0 980 210" role="img">
+      <path d="M30 110H170" class="art-stroke"></path>
+      <circle cx="170" cy="110" r="7" class="art-dot"></circle>
+      <path d="M177 110H335" class="art-stroke"></path>
+      <circle cx="335" cy="110" r="7" class="art-dot"></circle>
+      <path d="M342 110H500" class="art-stroke"></path>
+      <circle cx="500" cy="110" r="7" class="art-dot"></circle>
+      <path d="M507 110H665" class="art-stroke"></path>
+      <circle cx="665" cy="110" r="7" class="art-dot"></circle>
+      <path d="M672 110H830" class="art-stroke"></path>
+      <circle cx="830" cy="110" r="7" class="art-dot"></circle>
+      <path d="M837 110H950" class="art-stroke"></path>
+
+      <circle cx="170" cy="78" r="24" class="art-fill"></circle>
+      <path d="M159 78h22M170 67v22" class="art-accent art-stroke"></path>
+      <text x="170" y="155" text-anchor="middle" class="art-label">Discover</text>
+
+      <rect x="306" y="57" width="58" height="42" rx="10" class="art-fill"></rect>
+      <path d="M315 84l11-12 10 7 15-13" class="art-accent art-stroke"></path>
+      <text x="335" y="155" text-anchor="middle" class="art-label">Strategy</text>
+
+      <rect x="476" y="60" width="48" height="34" rx="8" class="art-fill"></rect>
+      <path d="M490 60v-10c0-6 4-10 10-10s10 4 10 10v10" class="art-stroke"></path>
+      <circle cx="500" cy="77" r="5" class="art-dot"></circle>
+      <text x="500" y="155" text-anchor="middle" class="art-label">Create</text>
+
+      <rect x="638" y="67" width="54" height="34" rx="10" class="art-fill"></rect>
+      <path d="M647 84l12 0M647 92h22" class="art-stroke"></path>
+      <path d="M680 73l15 11-15 11" class="art-accent art-stroke"></path>
+      <text x="665" y="155" text-anchor="middle" class="art-label">Deliver</text>
+
+      <path d="M814 94c0-17 13-30 29-30s29 13 29 30-13 30-29 30c-8 0-15-3-20-8" class="art-fill"></path>
+      <path d="M817 116l11-11 10 7 18-25" class="art-accent art-stroke"></path>
+      <text x="830" y="155" text-anchor="middle" class="art-label">Grow</text>
+    </svg>
+  </div>
 </section>
 <div class="deck">
-<!-- TODO: refine step names, descriptions and deliverables -->
-<section class="slide " aria-labelledby="step-1">
+<section class="slide" aria-labelledby="step-1">
   <span class="slide-count">01 / 05</span>
-  <div class="big-num" aria-hidden="true">01</div>
-  <div>
-    <p class="eyebrow">Step 01</p>
-    <h2 id="step-1">Discover</h2>
-    <ul class="deliver"><li>Intro call</li><li>Brand image</li><li>Goals</li></ul>
-    <div class="timeline" aria-hidden="true"><span class="on"></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span></div>
+  <div class="step-layout">
+    <div class="step-copy">
+      <div class="big-num" aria-hidden="true">01</div>
+      <div>
+        <p class="eyebrow">Step 01</p>
+        <h2 id="step-1">Discover</h2>
+        <ul class="deliver"><li>Intro call</li><li>Brand image</li><li>Goals</li></ul>
+        <div class="timeline" aria-hidden="true"><span class="on"></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span></div>
+      </div>
+    </div>
+    <div class="step-art" aria-hidden="true">
+      <svg viewBox="0 0 260 220">
+        <circle cx="115" cy="92" r="42" class="art-fill"></circle>
+        <path d="M145 124l33 33" class="art-stroke art-accent"></path>
+        <circle cx="185" cy="165" r="13" class="art-fill"></circle>
+        <path d="M93 92h44M115 70v44" class="art-stroke art-accent"></path>
+        <rect x="47" y="38" width="42" height="24" rx="6" class="art-fill"></rect>
+        <path d="M55 50h26" class="art-stroke"></path>
+        <path d="M34 160c18-12 36-18 56-18 17 0 33 4 49 12" class="art-stroke"></path>
+        <circle cx="56" cy="154" r="3.5" class="art-dot"></circle>
+        <circle cx="138" cy="148" r="3.5" class="art-dot"></circle>
+        <path d="M170 66c11 6 20 14 28 25" class="art-stroke"></path>
+      </svg>
+    </div>
   </div>
 </section>
 <section class="slide dark" aria-labelledby="step-2">
   <span class="slide-count">02 / 05</span>
-  <div class="big-num" aria-hidden="true">02</div>
-  <div>
-    <p class="eyebrow">Step 02</p>
-    <h2 id="step-2">Strategy</h2>
-    <ul class="deliver"><li>Creating a plan</li><li>Structuring content &amp; media</li><li>Timeline and scheduling</li></ul>
-    <div class="timeline" aria-hidden="true"><span class="on"></span><span class="on"></span><span class=""></span><span class=""></span><span class=""></span></div>
+  <div class="step-layout">
+    <div class="step-copy">
+      <div class="big-num" aria-hidden="true">02</div>
+      <div>
+        <p class="eyebrow">Step 02</p>
+        <h2 id="step-2">Strategy</h2>
+        <ul class="deliver"><li>Creating a plan</li><li>Structuring content &amp; media</li><li>Timeline and scheduling</li></ul>
+        <div class="timeline" aria-hidden="true"><span class="on"></span><span class="on"></span><span class=""></span><span class=""></span><span class=""></span></div>
+      </div>
+    </div>
+    <div class="step-art" aria-hidden="true">
+      <svg viewBox="0 0 260 220">
+        <rect x="42" y="46" width="176" height="128" rx="18" class="art-fill"></rect>
+        <path d="M64 72h132M64 102h82M64 132h54" class="art-stroke"></path>
+        <path d="M136 140l23-22 18 12 25-34" class="art-stroke art-accent"></path>
+        <circle cx="159" cy="118" r="4" class="art-dot"></circle>
+        <circle cx="177" cy="130" r="4" class="art-dot"></circle>
+        <circle cx="202" cy="96" r="4" class="art-dot"></circle>
+        <path d="M63 32l12 12M87 32L75 44" class="art-stroke"></path>
+        <path d="M191 182l15-10 15 10" class="art-stroke"></path>
+      </svg>
+    </div>
   </div>
 </section>
-<section class="slide " aria-labelledby="step-3">
+<section class="slide" aria-labelledby="step-3">
   <span class="slide-count">03 / 05</span>
-  <div class="big-num" aria-hidden="true">03</div>
-  <div>
-    <p class="eyebrow">Step 03</p>
-    <h2 id="step-3">Create</h2>
-    <ul class="deliver"><li>Filming content</li><li>Video production &amp; editing</li><li>Content for every platform</li></ul>
-    <div class="timeline" aria-hidden="true"><span class="on"></span><span class="on"></span><span class="on"></span><span class=""></span><span class=""></span></div>
+  <div class="step-layout">
+    <div class="step-copy">
+      <div class="big-num" aria-hidden="true">03</div>
+      <div>
+        <p class="eyebrow">Step 03</p>
+        <h2 id="step-3">Create</h2>
+        <ul class="deliver"><li>Filming content</li><li>Video production &amp; editing</li><li>Content for every platform</li></ul>
+        <div class="timeline" aria-hidden="true"><span class="on"></span><span class="on"></span><span class="on"></span><span class=""></span><span class=""></span></div>
+      </div>
+    </div>
+    <div class="step-art" aria-hidden="true">
+      <svg viewBox="0 0 260 220">
+        <rect x="44" y="68" width="122" height="84" rx="18" class="art-fill"></rect>
+        <rect x="65" y="89" width="80" height="42" rx="10" class="art-stroke"></rect>
+        <circle cx="105" cy="110" r="13" class="art-stroke art-accent"></circle>
+        <path d="M166 88l38-20v84l-38-20" class="art-fill"></path>
+        <path d="M76 52l14 16h30l14-16" class="art-stroke"></path>
+        <path d="M57 170c15 6 28 9 43 9 22 0 42-7 59-21" class="art-stroke"></path>
+        <circle cx="200" cy="46" r="8" class="art-dot"></circle>
+      </svg>
+    </div>
   </div>
 </section>
 <section class="slide dark" aria-labelledby="step-4">
   <span class="slide-count">04 / 05</span>
-  <div class="big-num" aria-hidden="true">04</div>
-  <div>
-    <p class="eyebrow">Step 04</p>
-    <h2 id="step-4">Deliver</h2>
-    <ul class="deliver"><li>Client revisions</li><li>Formatting for each platform</li><li>Efficient content delivery</li></ul>
-    <div class="timeline" aria-hidden="true"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class=""></span></div>
+  <div class="step-layout">
+    <div class="step-copy">
+      <div class="big-num" aria-hidden="true">04</div>
+      <div>
+        <p class="eyebrow">Step 04</p>
+        <h2 id="step-4">Deliver</h2>
+        <ul class="deliver"><li>Client revisions</li><li>Formatting for each platform</li><li>Efficient content delivery</li></ul>
+        <div class="timeline" aria-hidden="true"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class=""></span></div>
+      </div>
+    </div>
+    <div class="step-art" aria-hidden="true">
+      <svg viewBox="0 0 260 220">
+        <rect x="52" y="66" width="156" height="100" rx="16" class="art-fill"></rect>
+        <path d="M78 94h55M78 112h90M78 130h70" class="art-stroke"></path>
+        <path d="M166 115h26" class="art-stroke art-accent"></path>
+        <path d="M181 100l16 15-16 15" class="art-stroke art-accent"></path>
+        <path d="M58 66l70 52 80-52" class="art-stroke"></path>
+        <circle cx="72" cy="180" r="5" class="art-dot"></circle>
+        <path d="M82 180h48" class="art-stroke"></path>
+      </svg>
+    </div>
   </div>
 </section>
-<section class="slide " aria-labelledby="step-5">
+<section class="slide" aria-labelledby="step-5">
   <span class="slide-count">05 / 05</span>
-  <div class="big-num" aria-hidden="true">05</div>
-  <div>
-    <p class="eyebrow">Step 05</p>
-    <h2 id="step-5">Grow</h2>
-    <ul class="deliver"><li>Analyze insights</li><li>Ongoing media creation and collaboration</li><li>Celebrate your wins</li></ul>
-    <div class="timeline" aria-hidden="true"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></div>
+  <div class="step-layout">
+    <div class="step-copy">
+      <div class="big-num" aria-hidden="true">05</div>
+      <div>
+        <p class="eyebrow">Step 05</p>
+        <h2 id="step-5">Grow</h2>
+        <ul class="deliver"><li>Analyze insights</li><li>Ongoing media creation and collaboration</li><li>Celebrate your wins</li></ul>
+        <div class="timeline" aria-hidden="true"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></div>
+      </div>
+    </div>
+    <div class="step-art" aria-hidden="true">
+      <svg viewBox="0 0 260 220">
+        <path d="M68 169h128" class="art-stroke"></path>
+        <path d="M82 169v-32M116 169v-54M150 169v-76" class="art-stroke"></path>
+        <rect x="77" y="134" width="10" height="35" rx="5" class="art-fill"></rect>
+        <rect x="111" y="112" width="10" height="57" rx="5" class="art-fill"></rect>
+        <rect x="145" y="90" width="10" height="79" rx="5" class="art-fill"></rect>
+        <path d="M165 158l27-32 16 11" class="art-stroke art-accent"></path>
+        <path d="M198 120h22v22" class="art-stroke art-accent"></path>
+        <path d="M202 76c0-19-15-34-34-34-10 0-19 4-25 11-6-7-15-11-25-11-19 0-34 15-34 34 0 27 24 43 59 69 35-26 59-42 59-69z" class="art-fill"></path>
+      </svg>
+    </div>
   </div>
 </section>
 </div>
