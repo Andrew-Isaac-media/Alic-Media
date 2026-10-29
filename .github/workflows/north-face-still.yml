@@ -1,0 +1,44 @@
+name: Make high-quality North Face still thumbnail
+on:
+  push:
+    paths:
+      - '.github/workflows/north-face-still.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Extract original-resolution still from campaign film
+        run: |
+          set -euo pipefail
+          source="assets/video/work/the-north-face.mp4"
+          output="assets/img/work/the-north-face-still-hq.webp"
+          ffprobe -v error -show_entries stream=width,height -of csv=p=0 "$source"
+          ffmpeg -hide_banner -loglevel error -y -ss 3 -i "$source" -frames:v 1 -q:v 2 -compression_level 6 "$output"
+          test -s "$output"
+      - name: Save new still and switch Selected Work card
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          file=Path("work/index.html")
+          html=file.read_text()
+          import re
+          pattern=r'<video class="tnf-work-preview"[\s\S]*?</video>'
+          still='<img src="../assets/img/work/the-north-face-still-hq.webp" alt="Still from The North Face winter campaign" loading="lazy" decoding="async">'
+          html,count=re.subn(pattern,still,html)
+          if count != 1:
+              raise SystemExit("Expected a single North Face moving preview, got "+str(count))
+          file.write_text(html)
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/img/work/the-north-face-still-hq.webp work/index.html
+          git commit -m "Use a high-quality still from original North Face film"
+          git push
