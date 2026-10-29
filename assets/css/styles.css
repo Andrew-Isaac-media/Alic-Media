@@ -340,3 +340,6 @@ video[autoplay]::-webkit-media-controls,video[autoplay]::-webkit-media-controls-
 .proj-gallery .g-video video{display:block;width:100%;aspect-ratio:1/1;height:auto;object-fit:cover;background:#111}
 @media (max-width:760px){.proj-body.top{padding-top:120px}}
 .proj-body p+p{margin-top:18px}
+.proj-hero .proj-video{margin:20px auto 0}
+@media (max-width:760px){.proj-hero .proj-video{margin:0 auto}}
+.proj-hero{overflow:visible}
