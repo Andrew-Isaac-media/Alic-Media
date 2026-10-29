@@ -90,6 +90,62 @@
   .founders-section .owner .photo{margin-bottom:12px}
   .founders-story{margin-top:38px}
 }
+
+/* About page: bespoke editorial pillar cards */
+section.block.pillars{padding-top:clamp(78px,9vw,128px);padding-bottom:clamp(88px,10vw,144px);background:var(--paper)}
+.pillars-inner{max-width:1160px;margin:0 auto}
+.pillars .eyebrow{margin-bottom:28px}
+.pillars .values{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.3vw,28px);margin:0;padding:0}
+.pillars .values .pillar-card{
+  position:relative;display:flex;flex-direction:column;justify-content:space-between;
+  min-width:0;min-height:clamp(320px,33vw,420px);overflow:hidden;
+  padding:clamp(24px,3vw,38px);border:1px solid #d9d3c6;border-radius:20px;
+  background:#ece7da;color:var(--forest);
+  box-shadow:0 10px 25px rgba(38,48,31,.025);
+  transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease;
+}
+.pillars .values .pillar-card::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(circle at 50% 46%,rgba(255,255,255,.34),transparent 59%);
+}
+.pillars .values .pillar-card::after{
+  content:"";position:absolute;right:22px;bottom:22px;height:14px;width:14px;
+  border-right:1px solid currentColor;border-bottom:1px solid currentColor;opacity:.2;
+}
+.pillars .values .pillar-card:nth-child(3){background:#e4e9dc;border-color:#d2d9c9}
+.pillars .values .pillar-card-dark{background:var(--forest);color:var(--cream);border-color:var(--forest)}
+.pillars .values .pillar-card-dark::before{background:radial-gradient(circle at 50% 46%,rgba(244,237,225,.085),transparent 61%)}
+.pillars .pillar-top{display:flex;align-items:center;gap:16px;position:relative;z-index:1}
+.pillars .values .pillar-card .n{font-size:12px;letter-spacing:.22em;color:inherit;opacity:.72}
+.pillars .pillar-rule{height:1px;flex:1;background:currentColor;opacity:.17}
+.pillars .pillar-art{position:relative;display:grid;place-items:center;min-height:190px;flex:1;z-index:1;transform:translateY(5px);transition:transform .4s ease}
+.pillars .pillar-art svg{width:min(100%,240px);height:auto;display:block}
+.pillars .pillar-dot{fill:var(--clay);stroke:none}
+.pillars .pillar-accent{stroke:var(--clay)}
+.pillars .pillar-card-dark .pillar-dot{fill:#d9a27d}
+.pillars .pillar-card-dark .pillar-accent{stroke:#d9a27d}
+.pillars .values .pillar-card h3{
+  font-size:clamp(34px,3.7vw,52px);font-weight:500;line-height:1;letter-spacing:-.045em;
+  margin:0;position:relative;z-index:1
+}
+@media(hover:hover){
+  .pillars .values .pillar-card:hover{transform:translateY(-7px);border-color:var(--sage);box-shadow:0 20px 45px rgba(38,48,31,.12)}
+  .pillars .values .pillar-card:hover .pillar-art{transform:translateY(-3px) scale(1.04)}
+}
+@media(max-width:900px){
+  .pillars .values{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pillars .values .pillar-card:nth-child(3){grid-column:1/-1;min-height:320px}
+}
+@media(max-width:640px){
+  .pillars .values{grid-template-columns:1fr}
+  .pillars .values .pillar-card{min-height:320px}
+  .pillars .values .pillar-card:nth-child(3){grid-column:auto;min-height:320px}
+  .pillars .pillar-art{min-height:188px}
+}
+@media(prefers-reduced-motion:reduce){
+  .pillars .values .pillar-card,.pillars .pillar-art{transition:none}
+}
+
 </style>
 </head>
 <body>
@@ -134,8 +190,55 @@
   </div>
 </section>
 <section class="block paper pillars" aria-labelledby="believe">
-  <h2 class="eyebrow" id="believe">Our Pillars</h2>
-  <ul class="values"><li><span class="n">01</span><h3>Craft</h3></li><li><span class="n">02</span><h3>Honesty</h3></li><li><span class="n">03</span><h3>Growth</h3></li></ul>
+  <div class="pillars-inner">
+    <h2 class="eyebrow" id="believe">Our Pillars</h2>
+    <ul class="values">
+      <li class="pillar-card">
+        <div class="pillar-top"><span class="n">01</span><span class="pillar-rule" aria-hidden="true"></span></div>
+        <div class="pillar-art" aria-hidden="true">
+          <svg viewBox="0 0 240 190" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="36" y="26" width="168" height="138" rx="4" opacity=".45"/>
+            <path d="M55 54v-13h18 M167 41h18v16 M185 133v15h-18 M73 148H55v-16" stroke-width="2.4"/>
+            <circle cx="120" cy="95" r="42"/>
+            <circle cx="120" cy="95" r="25" opacity=".38"/>
+            <circle class="pillar-dot" cx="120" cy="95" r="6"/>
+            <path class="pillar-accent" d="M131 53l-18 18 M159 88l-20 9 M101 116l-13 21" stroke-width="2.5"/>
+            <path d="M84 20h14 M142 170h14" opacity=".38"/>
+          </svg>
+        </div>
+        <h3>Craft</h3>
+      </li>
+      <li class="pillar-card pillar-card-dark">
+        <div class="pillar-top"><span class="n">02</span><span class="pillar-rule" aria-hidden="true"></span></div>
+        <div class="pillar-art" aria-hidden="true">
+          <svg viewBox="0 0 240 190" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M28 95c25-37 56-55 92-55s67 18 92 55c-25 37-56 55-92 55S53 132 28 95Z"/>
+            <circle cx="120" cy="95" r="35"/>
+            <circle cx="120" cy="95" r="16"/>
+            <circle class="pillar-dot" cx="120" cy="95" r="5"/>
+            <path class="pillar-accent" d="M88 62l-12-12 M162 128l12 12" stroke-width="2.5"/>
+            <path d="M120 15v12 M120 163v12 M18 95h-10 M232 95h-10" opacity=".35"/>
+          </svg>
+        </div>
+        <h3>Honesty</h3>
+      </li>
+      <li class="pillar-card">
+        <div class="pillar-top"><span class="n">03</span><span class="pillar-rule" aria-hidden="true"></span></div>
+        <div class="pillar-art" aria-hidden="true">
+          <svg viewBox="0 0 240 190" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M35 155H211 M44 35v120" opacity=".36"/>
+            <path d="M62 139l41-31 37 8 54-62" stroke-width="3"/>
+            <path class="pillar-accent" d="M174 54h20v20" stroke-width="3"/>
+            <circle class="pillar-dot" cx="62" cy="139" r="5"/>
+            <circle class="pillar-dot" cx="103" cy="108" r="5"/>
+            <circle class="pillar-dot" cx="140" cy="116" r="5"/>
+            <path d="M69 64h28 M69 78h13 M162 143h26" opacity=".4"/>
+          </svg>
+        </div>
+        <h3>Growth</h3>
+      </li>
+    </ul>
+  </div>
 </section>
 </main>
 <footer class="site-footer" id="contact">
