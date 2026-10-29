@@ -64,6 +64,33 @@
   ]
  }
 }</script>
+
+<style>
+/* About page: founder portraits and story as one cohesive section */
+.founders-section{padding-top:clamp(76px,8vw,120px)!important;padding-bottom:clamp(72px,8vw,112px)!important}
+.founders-section .founders-shell{max-width:1160px;margin:0 auto}
+.founders-section .team-title{justify-content:flex-start;margin-bottom:32px}
+.founders-section .owners{max-width:none;gap:clamp(18px,3vw,42px);align-items:start}
+.founders-section .owner{align-items:stretch;text-align:left}
+.founders-section .owner .photo{width:100%;max-width:none;aspect-ratio:4/5;margin-bottom:18px;border-radius:18px;background:#d8ccb4}
+.founders-section .owner .photo img{width:100%;height:100%;object-fit:cover;object-position:center center}
+.founders-section .owner h2{font-size:clamp(24px,2.4vw,34px);line-height:1.2;font-weight:400}
+.founders-story{display:grid;grid-template-columns:minmax(160px,.65fr) minmax(0,1.65fr);gap:clamp(28px,6vw,100px);align-items:start;border-top:1px solid var(--line);margin-top:clamp(40px,6vw,76px);padding-top:clamp(32px,4vw,58px)}
+.founders-story h2{font-family:'Jost',var(--sans);font-size:clamp(32px,3.6vw,48px);font-weight:400;line-height:1.1;letter-spacing:-.01em}
+.founders-story p{max-width:62ch;margin:0;color:#4a5340;font-size:clamp(19px,2vw,26px);line-height:1.5;letter-spacing:-.01em}
+@media(max-width:860px) and (min-width:600px){
+  .founders-section .owners{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:700px){
+  .founders-story{grid-template-columns:1fr;gap:16px}
+}
+@media(max-width:599px){
+  .founders-section .owners{grid-template-columns:1fr;gap:34px}
+  .founders-section .team-title{margin-bottom:24px}
+  .founders-section .owner .photo{margin-bottom:12px}
+  .founders-story{margin-top:38px}
+}
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -87,8 +114,9 @@
   <h1 id="about-title">Behind Alic Media</h1>
   <div class="scroll-cue" aria-hidden="true"><span></span>Scroll</div>
 </section>
-<section class="block team" aria-labelledby="team">
-  <h2 class="eyebrow team-title" id="team">Meet the team</h2>
+<section class="block team founders-section" aria-labelledby="team">
+  <div class="founders-shell">
+  <h2 class="eyebrow team-title" id="team">Meet the Founders</h2>
   <div class="owners">
   <article class="owner">
     <div class="photo"><img src="../assets/img/andrew-iwanicki-v2.webp" alt="Andrew Iwanicki, co-founder of Alic Media" width="800" height="1000" fetchpriority="high"></div>
@@ -99,11 +127,12 @@
     <h2>Isaac Jessup</h2>
   </article>
   </div>
-</section>
-<section class="block story" aria-labelledby="story"><div class="story-inner">
+  <div class="founders-story" aria-labelledby="story">
   <h2 id="story">Our Story</h2>
   <p>Alic Media started with two guys who simply love creating. We have been creating together for as long as we can remember and have a deep passion for helping brands grow. We have now worked with over 15 brands and seen over 30 countries.</p>
-</div></section>
+  </div>
+  </div>
+</section>
 <section class="block paper pillars" aria-labelledby="believe">
   <h2 class="eyebrow" id="believe">Our Pillars</h2>
   <ul class="values"><li><span class="n">01</span><h3>Craft</h3></li><li><span class="n">02</span><h3>Honesty</h3></li><li><span class="n">03</span><h3>Growth</h3></li></ul>
