@@ -331,3 +331,12 @@ video[autoplay]::-webkit-media-controls,video[autoplay]::-webkit-media-controls-
   .proj-gallery{columns:2 140px;column-gap:10px}
   .proj-gallery figure{margin-bottom:10px}
 }
+/* Project title in brand lettering; gallery-first layout */
+.proj-body h1.proj-title{font-size:clamp(46px,6.4vw,92px);line-height:1;letter-spacing:-.01em;margin-bottom:26px;white-space:normal}
+.proj-body h1.proj-title.bt-tnf{letter-spacing:-.02em}
+.proj-body h1.proj-title.bt-vs{letter-spacing:.08em}
+.proj-body.top{padding-top:150px}
+.proj-gallery .g-video{background:#111}
+.proj-gallery .g-video video{display:block;width:100%;aspect-ratio:1/1;height:auto;object-fit:cover;background:#111}
+@media (max-width:760px){.proj-body.top{padding-top:120px}}
+.proj-body p+p{margin-top:18px}
