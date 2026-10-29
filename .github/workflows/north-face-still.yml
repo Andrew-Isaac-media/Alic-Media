@@ -25,7 +25,7 @@ jobs:
           source="assets/video/work/the-north-face.mp4"
           output="assets/img/work/the-north-face-still-hq.webp"
           ffprobe -v error -show_entries stream=width,height -of csv=p=0 "$source"
-          ffmpeg -hide_banner -loglevel error -y -ss 3 -i "$source" -frames:v 1 -q:v 2 -compression_level 6 "$output"
+          ffmpeg -hide_banner -loglevel error -y -i "$source" -frames:v 1 -q:v 2 -compression_level 6 "$output"
           test -s "$output"
       - name: Save new still and switch Selected Work card
         run: |
@@ -37,6 +37,8 @@ jobs:
           pattern=r'<video class="tnf-work-preview"[\s\S]*?</video>'
           still='<img src="../assets/img/work/the-north-face-still-hq.webp" alt="Still from The North Face winter campaign" loading="lazy" decoding="async">'
           html,count=re.subn(pattern,still,html)
+          if count == 0 and still in html:
+              count = 1
           if count != 1:
               raise SystemExit("Expected a single North Face moving preview, got "+str(count))
           file.write_text(html)
