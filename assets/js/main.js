@@ -98,6 +98,7 @@
     var box = v.parentElement;
     function on() { box.classList.add('is-playing'); }
     v.addEventListener('playing', on);
+    v.addEventListener('timeupdate', function () { if (v.currentTime > 0) on(); });
     if (!v.paused && v.readyState > 2) on();
   });
 })();
