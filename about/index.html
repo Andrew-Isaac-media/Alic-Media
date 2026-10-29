@@ -146,6 +146,22 @@ section.block.pillars{padding-top:clamp(78px,9vw,128px);padding-bottom:clamp(88p
   .pillars .values .pillar-card,.pillars .pillar-art{transition:none}
 }
 
+
+/* Photo-first pillar design, with illustration fallback until photos are uploaded */
+.pillars .values .pillar-card .pillar-photo {
+  position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;z-index:0;visibility:hidden;
+}
+.pillars .values .pillar-card.has-photo {color:#fff;border-color:rgba(255,255,255,.16)}
+.pillars .values .pillar-card.has-photo .pillar-photo {visibility:visible}
+.pillars .values .pillar-card.has-photo::before {
+  background:linear-gradient(180deg,rgba(8,14,18,.28),rgba(8,14,18,.07) 30%,rgba(8,14,18,.75));
+  z-index:1;
+}
+.pillars .values .pillar-card.has-photo .pillar-top,
+.pillars .values .pillar-card.has-photo h3,
+.pillars .values .pillar-card.has-photo::after {z-index:2}
+.pillars .values .pillar-card.has-photo .pillar-art {visibility:hidden}
+
 </style>
 </head>
 <body>
@@ -194,6 +210,9 @@ section.block.pillars{padding-top:clamp(78px,9vw,128px);padding-bottom:clamp(88p
     <h2 class="eyebrow" id="believe">Our Pillars</h2>
     <ul class="values">
       <li class="pillar-card">
+        <img class="pillar-photo" src="../assets/img/pillars/growth.webp" alt="" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-photo')" onerror="this.remove()">
+        <img class="pillar-photo" src="../assets/img/pillars/honesty.webp" alt="" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-photo')" onerror="this.remove()">
+        <img class="pillar-photo" src="../assets/img/pillars/craft.webp" alt="" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-photo')" onerror="this.remove()">
         <div class="pillar-top"><span class="n">01</span><span class="pillar-rule" aria-hidden="true"></span></div>
         <div class="pillar-art" aria-hidden="true">
           <svg viewBox="0 0 240 190" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
