@@ -343,3 +343,7 @@ video[autoplay]::-webkit-media-controls,video[autoplay]::-webkit-media-controls-
 .proj-hero .proj-video{margin:20px auto 0}
 @media (max-width:760px){.proj-hero .proj-video{margin:0 auto}}
 .proj-hero{overflow:visible}
+/* Project page: description left, video right */
+.proj-body.proj-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,4vw,64px);align-items:center;max-width:1320px}
+.proj-split .proj-video{width:100%;margin:0}
+@media (max-width:860px){.proj-body.proj-split{grid-template-columns:1fr}}
