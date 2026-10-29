@@ -25,7 +25,7 @@ jobs:
           source="assets/video/work/the-north-face.mp4"
           output="assets/img/work/the-north-face-still-hq.webp"
           ffprobe -v error -show_entries stream=width,height -of csv=p=0 "$source"
-          ffmpeg -hide_banner -loglevel error -y -i "$source" -frames:v 1 -q:v 2 -compression_level 6 "$output"
+          ffmpeg -hide_banner -loglevel error -y -i "$source" -vf "scale=1440:1440:flags=lanczos,unsharp=3:3:0.35" -frames:v 1 -c:v libwebp -quality 96 -compression_level 6 "$output"
           test -s "$output"
       - name: Save new still and switch Selected Work card
         run: |
