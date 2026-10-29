@@ -300,3 +300,34 @@ video[autoplay]::-webkit-media-controls,video[autoplay]::-webkit-media-controls-
 .hero-video video{opacity:0;transition:opacity .4s}
 .hero-video.is-playing video{opacity:1}
 .hero-video.hv-home{background-image:url(../video/home-poster.webp)}
+
+/* ---------- Project (case study) pages ---------- */
+.proj-hero{position:relative;padding:130px var(--pad) 40px;overflow:hidden}
+.brand-type{position:absolute;left:var(--pad);top:118px;z-index:0;margin:0;line-height:.84;pointer-events:none;user-select:none;white-space:nowrap}
+.brand-type span{display:block}
+.proj-video{position:relative;z-index:1;width:min(600px,46vw);aspect-ratio:1/1;margin:clamp(70px,9vw,140px) 0 0 clamp(120px,24vw,420px);border-radius:16px;overflow:hidden;box-shadow:0 30px 70px rgba(20,24,16,.28);background:#202821 center/cover no-repeat}
+.proj-video video{display:block;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .4s;pointer-events:none}
+.proj-video.is-playing video{opacity:1}
+.proj-video video::-webkit-media-controls,.proj-video video::-webkit-media-controls-start-playback-button,.proj-video video::-webkit-media-controls-overlay-play-button{display:none!important;-webkit-appearance:none}
+.proj-body{padding:40px var(--pad) 40px;max-width:1100px}
+.proj-body h1{font-size:clamp(34px,4.6vw,60px);font-weight:600;letter-spacing:-.04em;line-height:1.05;margin-bottom:22px}
+.proj-body p{font-size:clamp(18px,1.7vw,22px);line-height:1.6;color:#4a5340;max-width:68ch}
+.proj-gallery{padding:40px var(--pad) 20px;columns:3 300px;column-gap:16px}
+.proj-gallery figure{break-inside:avoid;margin:0 0 16px;border-radius:12px;overflow:hidden;background:#e8dfcf}
+.proj-gallery img{display:block;width:100%;height:auto}
+.proj-nav{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:50px var(--pad) 100px;border-top:1px solid var(--line);margin:40px var(--pad) 0;padding-left:0;padding-right:0}
+.proj-nav a{font-weight:600;font-size:clamp(18px,2vw,24px);letter-spacing:-.02em}
+.proj-nav a:hover{color:var(--clay)}
+.proj-nav small{display:block;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+/* brand lettering */
+.bt-tnf{font-family:"Archivo",var(--sans);font-weight:800;text-transform:uppercase;letter-spacing:-.02em;color:#111;font-size:clamp(84px,15.5vw,250px)}
+.bt-sc{font-family:"Rubik",var(--sans);font-weight:900;text-transform:uppercase;letter-spacing:-.01em;color:#16b2c6;font-size:clamp(84px,17vw,280px);text-shadow:.035em .035em 0 #ffc629,.07em .07em 0 #f28a1e}
+.bt-vs{font-family:"Cinzel",Georgia,serif;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#a8873f;font-size:clamp(64px,13.5vw,230px);top:150px}
+@media (max-width:760px){
+  .proj-hero{padding-top:110px}
+  .brand-type{position:relative;left:0;top:0}
+  .bt-vs{top:0}
+  .proj-video{width:100%;margin:-.35em 0 0 0;margin-top:-42px}
+  .proj-gallery{columns:2 140px;column-gap:10px}
+  .proj-gallery figure{margin-bottom:10px}
+}

@@ -94,7 +94,7 @@
 
 // Header video: reveal it only once it is really playing
 (function () {
-  document.querySelectorAll('.hero-video video').forEach(function (v) {
+  document.querySelectorAll('.hero-video video, .proj-video video').forEach(function (v) {
     var box = v.parentElement;
     function on() { box.classList.add('is-playing'); }
     v.addEventListener('playing', on);

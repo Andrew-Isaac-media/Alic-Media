@@ -52,6 +52,12 @@
       .feature-image .view-label { bottom: 12px; right: 12px; padding: 10px 12px; }
     }
     @media (prefers-reduced-motion: reduce) { .feature-image video { transition: none; } }
+    .feature-image img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .65s ease; }
+    .feature-image:hover img { transform: scale(1.03); }
+    .feature-name { max-width: 720px; margin: 22px auto 0; font-size: clamp(34px, 4.7vw, 62px); line-height: 1.08; letter-spacing: -.055em; font-weight: 600; }
+    .feature-name a { display: inline-flex; align-items: baseline; gap: 16px; }
+    .feature-name a:hover { color: var(--clay); }
+    .feature-name .feature-no { font-size: 13px; letter-spacing: .16em; font-weight: 800; color: var(--muted); }
   </style>
 </head>
 <body>
@@ -71,20 +77,17 @@
     <div class="intro-bottom"><p>Commercial films and campaigns built to capture attention, tell a story, and make a lasting impression.</p><span class="index">Three selected projects — 2026</span></div>
   </section>
   <section class="featured-work" aria-label="Selected commercial projects">
-    <article class="feature" id="the-north-face">
-      <div class="feature-top"><span class="feature-no">01 / The North Face</span><span class="feature-type">Outdoor · Film &amp; content</span></div>
-      <div class="feature-image"><video src="../assets/video/work/the-north-face.mp4" poster="../assets/video/work/the-north-face.webp" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="auto" width="720" height="720" aria-label="The North Face campaign video"></video><button type="button" class="play-btn" aria-label="Play video"><span aria-hidden="true"></span></button><a class="view-label" href="../contact/?project=the-north-face" aria-label="Discuss a project like The North Face">Start a similar project ↗</a></div>
-      <div class="feature-info"><h2>The North Face</h2><p>A North Face campaign centered around exploring the wild, staying warm, and living in the moment. Videos and photos displaying North Face attire in the environment it was designed for, inspiring adventurers anonymous to consider their apparel.</p></div>
-    </article>
     <article class="feature" id="sun-cruiser">
-      <div class="feature-top"><span class="feature-no">02 / Sun Cruiser</span><span class="feature-type">Lifestyle · Film &amp; photography</span></div>
-      <div class="feature-image"><video src="../assets/video/work/sun-cruiser.mp4" poster="../assets/video/work/sun-cruiser.webp" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="auto" width="720" height="720" aria-label="Sun Cruiser campaign video"></video><button type="button" class="play-btn" aria-label="Play video"><span aria-hidden="true"></span></button><a class="view-label" href="../contact/?project=sun-cruiser" aria-label="Discuss a project like Sun Cruiser">Start a similar project ↗</a></div>
-      <div class="feature-info"><h2>Sun Cruiser</h2><p>Sun Cruiser trusted us to promote their product through a campaign centered around Sun Cruiser&rsquo;s main tagline &mdash; <em>Let the good times cruise</em>, because ultimately, what beats an ice cold Sun Cruiser on a hot day? Nothing.</p></div>
+      <a class="feature-image" href="sun-cruiser/" aria-label="View the Sun Cruiser project"><img src="../assets/img/work/sun-cruiser-thumb.webp" alt="Still from the Sun Cruiser campaign film" width="720" height="720" loading="eager"><span class="view-label">View project &rarr;</span></a>
+      <h2 class="feature-name"><a href="sun-cruiser/"><span class="feature-no">01</span>Sun Cruiser</a></h2>
+    </article>
+    <article class="feature" id="the-north-face">
+      <a class="feature-image" href="the-north-face/" aria-label="View the The North Face project"><img src="../assets/img/work/the-north-face-thumb.webp" alt="Still from the The North Face campaign film" width="720" height="720" loading="lazy"><span class="view-label">View project &rarr;</span></a>
+      <h2 class="feature-name"><a href="the-north-face/"><span class="feature-no">02</span>The North Face</a></h2>
     </article>
     <article class="feature" id="versace">
-      <div class="feature-top"><span class="feature-no">03 / Versace</span><span class="feature-type">Fashion · Film &amp; photography</span></div>
-      <div class="feature-image"><video src="../assets/video/work/versace.mp4" poster="../assets/video/work/versace.webp" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="auto" width="720" height="720" aria-label="Versace fragrance campaign video"></video><button type="button" class="play-btn" aria-label="Play video"><span aria-hidden="true"></span></button><a class="view-label" href="../contact/?project=versace" aria-label="Discuss a project like Versace">Start a similar project ↗</a></div>
-      <div class="feature-info"><h2>Versace</h2><p>Versace needed a mix of class and adventure for their new cologne campaign. They looked no further than Alic Media Agency. A mix of travel and fragrance, this campaign emphasizes Versace&rsquo;s versatility.</p></div>
+      <a class="feature-image" href="versace/" aria-label="View the Versace project"><img src="../assets/img/work/versace-thumb.webp" alt="Still from the Versace campaign film" width="720" height="720" loading="lazy"><span class="view-label">View project &rarr;</span></a>
+      <h2 class="feature-name"><a href="versace/"><span class="feature-no">03</span>Versace</a></h2>
     </article>
   </section>
   <section class="work-cta" aria-labelledby="work-cta-title"><p class="eyebrow">Your next campaign starts here</p><h2 id="work-cta-title">Have a story worth <em>telling?</em></h2><a href="../contact/">Start a project ↗</a></section>
