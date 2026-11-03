@@ -102,3 +102,25 @@
     if (!v.paused && v.readyState > 2) on();
   });
 })();
+
+// Project page videos: sound on/off button (videos start muted so they can autoplay)
+(function () {
+  document.querySelectorAll('.proj-video').forEach(function (box) {
+    var v = box.querySelector('video'), btn = box.querySelector('.sound-btn');
+    if (!v || !btn) return;
+    function sync() {
+      var on = !v.muted;
+      btn.setAttribute('aria-pressed', on);
+      btn.setAttribute('aria-label', on ? 'Turn sound off' : 'Turn sound on');
+      btn.querySelector('span').textContent = on ? 'Sound off' : 'Sound on';
+    }
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      v.muted = !v.muted;
+      if (!v.muted && v.paused) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+      sync();
+    });
+    v.addEventListener('volumechange', sync);
+    sync();
+  });
+})();

@@ -349,3 +349,12 @@ video[autoplay]::-webkit-media-controls,video[autoplay]::-webkit-media-controls-
 @media (max-width:860px){.proj-body.proj-split{grid-template-columns:1fr}}
 /* Never show the browser's own play button on background videos */
 .hero-video video::-webkit-media-controls,.hero-video video::-webkit-media-controls-panel,.hero-video video::-webkit-media-controls-overlay-play-button,.hero-video video::-webkit-media-controls-start-playback-button,.proj-video video::-webkit-media-controls-start-playback-button{display:none!important;-webkit-appearance:none!important;opacity:0!important}
+/* Project videos: sound toggle */
+.proj-video{position:relative}
+.sound-btn{position:absolute;right:14px;bottom:14px;z-index:2;display:inline-flex;align-items:center;gap:8px;padding:9px 14px 9px 11px;border:0;border-radius:999px;background:rgba(20,24,16,.72);color:#f4ede1;font:600 13px/1 var(--sans);cursor:pointer;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);transition:background .2s}
+.sound-btn:hover{background:rgba(20,24,16,.9)}
+.sound-btn:focus-visible{outline:3px solid #f4ede1;outline-offset:2px}
+.sound-btn svg{width:18px;height:18px}
+.sound-btn .on{display:none}
+.sound-btn[aria-pressed="true"] .on{display:inline}
+.sound-btn[aria-pressed="true"] .off{display:none}
