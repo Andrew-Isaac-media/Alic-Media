@@ -414,3 +414,31 @@ video[autoplay]::-webkit-media-controls,video[autoplay]::-webkit-media-controls-
  .home-page .nav-open .site-header.overlay .logo,
  .home-page .nav-open .site-header.overlay .nav-links a{color:#171717}
 }
+
+
+/* Forest-green homepage palette: opening hero, client marquee, and manifesto */
+.home-page .hero,.home-page .hero .hero-video.hv-home{background:var(--forest)}
+.home-page .hero .hero-video.hv-home::before{filter:none;background:#111 url(../video/home-poster.webp) center/cover no-repeat;mix-blend-mode:screen}
+.home-page .hero .hero-video.hv-home video{filter:none;mix-blend-mode:screen}
+.home-page .hero h1,.home-page .hero .sub-hook{color:var(--cream)}
+.home-page .hero .hero-cta{background:var(--cream);color:var(--forest);border-color:var(--cream)}
+.home-page .hero .hero-cta:hover{background:#fff}
+.home-page .hero .scroll-cue{color:var(--cream)}
+.home-page .hero .scroll-cue span{background:linear-gradient(var(--cream),transparent)}
+.home-page .site-header.overlay:not(.solid) .logo,
+.home-page .site-header.overlay:not(.solid) .nav-links a{color:var(--cream)}
+.home-page .site-header.overlay:not(.solid) .nav-links a[aria-current="page"],
+.home-page .site-header.overlay:not(.solid) .nav-links a:hover{border-color:var(--cream)}
+.home-page .site-header.overlay:not(.solid) .nav-cta{background:var(--cream);color:var(--forest)}
+.home-page .site-header.overlay:not(.solid) .menu-toggle{color:var(--cream)}
+.home-page .clients{background:var(--forest);border-color:rgba(244,237,225,.2)}
+.home-page .clients h2,.home-page .clients .logo-text{color:var(--cream)}
+.home-page .clients .brand img{filter:grayscale(1) brightness(0) invert(1);opacity:.9}
+.home-page .brand-statement{background:var(--forest);color:var(--cream)}
+.home-page .brand-statement .brand-statement-close{color:var(--cream)}
+@media(max-width:860px){
+ .home-page .nav-open .site-header.overlay{background:var(--cream)}
+ .home-page .nav-open .site-header.overlay .logo,
+ .home-page .nav-open .site-header.overlay .nav-links a{color:var(--forest)}
+ .home-page .nav-open .site-header.overlay .menu-toggle{color:var(--forest)}
+}
