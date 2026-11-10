@@ -390,55 +390,65 @@ video[autoplay]::-webkit-media-controls,video[autoplay]::-webkit-media-controls-
 @media(max-width:600px){.home-page .brand-statement{padding:90px 22px}.home-page .brand-statement h2{font-size:clamp(64px,16vw,94px);margin-bottom:42px}.home-page .brand-statement p{font-size:clamp(22px,6vw,30px)}.home-page .brand-statement .brand-statement-close{margin-top:52px}}
 
 
-/* Homepage monochrome art direction: white canvas and black animated linework */
-.home-page .hero{background:#fff}
-.home-page .hero .hero-video.hv-home{background:#fff;background-image:none}
-.home-page .hero .hero-video.hv-home::before{content:"";position:absolute;inset:0;background:#111 url(../video/home-poster.webp) center/cover no-repeat;filter:invert(1);pointer-events:none}
-.home-page .hero .hero-video.hv-home video{filter:invert(1)}
-.home-page .hero .scrim,.home-page .hero .scrim::after{background:none}
-.home-page .hero h1{color:#141414;text-shadow:none}
-.home-page .hero .sub-hook{color:#303030}
-.home-page .hero .hero-cta{background:#171717;color:#fff;border:1px solid #171717;box-shadow:0 10px 28px rgba(0,0,0,.11);transition:transform .2s,background .2s,box-shadow .2s}
-.home-page .hero .hero-cta:hover{background:#333;box-shadow:0 14px 34px rgba(0,0,0,.16)}
-.home-page .hero .scroll-cue{color:#373737}
-.home-page .hero .scroll-cue span{background:linear-gradient(#373737,transparent)}
+
+/* ALIC homepage art direction — one green, crisp white, no competing tones.
+   Keep this palette scoped to the homepage so inner pages are unaffected. */
+.home-page{--home-green:#183B32;--home-white:#FFFFFF;background:var(--home-white)}
+.home-page .hero,
+.home-page .hero .hero-video.hv-home,
+.home-page .clients,
+.home-page .brand-statement{background:var(--home-green);color:var(--home-white)}
+
+/* The animation is white linework on black: screen-blend away the dark pixels
+   to reveal the exact same green underneath without changing its motion. */
+.home-page .hero .hero-video.hv-home{background-image:none}
+.home-page .hero .hero-video.hv-home::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:#000 url(../video/home-poster.webp) center/cover no-repeat;
+  mix-blend-mode:screen
+}
+.home-page .hero .hero-video.hv-home video{filter:none;mix-blend-mode:screen}
+.home-page .hero .scrim,
+.home-page .hero .scrim::after{background:none}
+.home-page .hero h1{color:var(--home-white);text-shadow:none}
+.home-page .hero .sub-hook{color:var(--home-white);opacity:.88}
+.home-page .hero .hero-cta{background:var(--home-white);color:var(--home-green);border:1px solid var(--home-white);box-shadow:none}
+.home-page .hero .hero-cta:hover{background:#e9f0ec;box-shadow:0 8px 30px rgba(0,0,0,.13)}
+.home-page .hero .scroll-cue{color:var(--home-white)}
+.home-page .hero .scroll-cue span{background:linear-gradient(var(--home-white),transparent)}
+
+/* The header reads as part of the green hero, then white when scrolling. */
 .home-page .site-header.overlay:not(.solid){text-shadow:none}
 .home-page .site-header.overlay:not(.solid) .logo,
-.home-page .site-header.overlay:not(.solid) .nav-links a{color:#181818}
+.home-page .site-header.overlay:not(.solid) .nav-links a{color:var(--home-white)}
 .home-page .site-header.overlay:not(.solid) .nav-links a[aria-current="page"],
-.home-page .site-header.overlay:not(.solid) .nav-links a:hover{border-color:#181818}
-.home-page .site-header.overlay:not(.solid) .nav-cta{background:#171717;color:#fff}
-.home-page .site-header.overlay:not(.solid) .menu-toggle{color:#171717;filter:none}
-@media(max-width:860px){
- .home-page .nav-open .site-header.overlay{background:#fff}
- .home-page .nav-open .site-header.overlay .logo,
- .home-page .nav-open .site-header.overlay .nav-links a{color:#171717}
+.home-page .site-header.overlay:not(.solid) .nav-links a:hover{border-color:var(--home-white)}
+.home-page .site-header.overlay:not(.solid) .nav-cta{background:var(--home-white);color:var(--home-green)}
+.home-page .site-header.overlay:not(.solid) .menu-toggle{color:var(--home-white);filter:none}
+.home-page .site-header.solid{background:var(--home-white)}
+.home-page .site-header.solid .logo,
+.home-page .site-header.solid .nav-links a{color:var(--home-green)}
+.home-page .site-header.solid .nav-cta{background:var(--home-green);color:var(--home-white)}
+
+/* A continuous green field through the scrolling logos and statement. */
+.home-page .clients{border-color:rgba(255,255,255,.19)}
+.home-page .clients h2,.home-page .clients .logo-text{color:var(--home-white)}
+.home-page .clients .brand img{filter:grayscale(1) brightness(0) invert(1);opacity:.92}
+.home-page .brand-statement{color:var(--home-white)}
+.home-page .brand-statement .brand-statement-close{color:var(--home-white)}
+.home-page .brand-statement .brand-emphasis{
+ text-decoration-color:var(--home-white);
+ text-decoration-thickness:.055em;
+ text-underline-offset:.17em
 }
+.home-page .brand-statement .brand-statement-close .brand-emphasis{text-decoration-color:var(--home-white)}
 
-
-/* Forest-green homepage palette: opening hero, client marquee, and manifesto */
-.home-page .hero,.home-page .hero .hero-video.hv-home{background:var(--forest)}
-.home-page .hero .hero-video.hv-home::before{filter:none;background:#111 url(../video/home-poster.webp) center/cover no-repeat;mix-blend-mode:screen}
-.home-page .hero .hero-video.hv-home video{filter:none;mix-blend-mode:screen}
-.home-page .hero h1,.home-page .hero .sub-hook{color:var(--cream)}
-.home-page .hero .hero-cta{background:var(--cream);color:var(--forest);border-color:var(--cream)}
-.home-page .hero .hero-cta:hover{background:#fff}
-.home-page .hero .scroll-cue{color:var(--cream)}
-.home-page .hero .scroll-cue span{background:linear-gradient(var(--cream),transparent)}
-.home-page .site-header.overlay:not(.solid) .logo,
-.home-page .site-header.overlay:not(.solid) .nav-links a{color:var(--cream)}
-.home-page .site-header.overlay:not(.solid) .nav-links a[aria-current="page"],
-.home-page .site-header.overlay:not(.solid) .nav-links a:hover{border-color:var(--cream)}
-.home-page .site-header.overlay:not(.solid) .nav-cta{background:var(--cream);color:var(--forest)}
-.home-page .site-header.overlay:not(.solid) .menu-toggle{color:var(--cream)}
-.home-page .clients{background:var(--forest);border-color:rgba(244,237,225,.2)}
-.home-page .clients h2,.home-page .clients .logo-text{color:var(--cream)}
-.home-page .clients .brand img{filter:grayscale(1) brightness(0) invert(1);opacity:.9}
-.home-page .brand-statement{background:var(--forest);color:var(--cream)}
-.home-page .brand-statement .brand-statement-close{color:var(--cream)}
+/* White breathing room for the remaining homepage sections. */
+.home-page section.block,
+.home-page section.block.paper{background:var(--home-white)}
 @media(max-width:860px){
- .home-page .nav-open .site-header.overlay{background:var(--cream)}
+ .home-page .nav-open .site-header.overlay{background:var(--home-white)}
  .home-page .nav-open .site-header.overlay .logo,
- .home-page .nav-open .site-header.overlay .nav-links a{color:var(--forest)}
- .home-page .nav-open .site-header.overlay .menu-toggle{color:var(--forest)}
+ .home-page .nav-open .site-header.overlay .nav-links a,
+ .home-page .nav-open .site-header.overlay .menu-toggle{color:var(--home-green)}
 }
