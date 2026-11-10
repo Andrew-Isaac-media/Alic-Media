@@ -388,3 +388,29 @@ video[autoplay]::-webkit-media-controls,video[autoplay]::-webkit-media-controls-
 .home-page .brand-statement .brand-emphasis{text-decoration-line:underline;text-decoration-color:#e7aa87;text-decoration-thickness:.065em;text-underline-offset:.16em;text-decoration-skip-ink:none}
 .home-page .brand-statement .brand-statement-close .brand-emphasis{text-decoration-color:#e7aa87}
 @media(max-width:600px){.home-page .brand-statement{padding:90px 22px}.home-page .brand-statement h2{font-size:clamp(64px,16vw,94px);margin-bottom:42px}.home-page .brand-statement p{font-size:clamp(22px,6vw,30px)}.home-page .brand-statement .brand-statement-close{margin-top:52px}}
+
+
+/* Homepage monochrome art direction: white canvas and black animated linework */
+.home-page .hero{background:#fff}
+.home-page .hero .hero-video.hv-home{background:#fff;background-image:none}
+.home-page .hero .hero-video.hv-home::before{content:"";position:absolute;inset:0;background:#111 url(../video/home-poster.webp) center/cover no-repeat;filter:invert(1);pointer-events:none}
+.home-page .hero .hero-video.hv-home video{filter:invert(1)}
+.home-page .hero .scrim,.home-page .hero .scrim::after{background:none}
+.home-page .hero h1{color:#141414;text-shadow:none}
+.home-page .hero .sub-hook{color:#303030}
+.home-page .hero .hero-cta{background:#171717;color:#fff;border:1px solid #171717;box-shadow:0 10px 28px rgba(0,0,0,.11);transition:transform .2s,background .2s,box-shadow .2s}
+.home-page .hero .hero-cta:hover{background:#333;box-shadow:0 14px 34px rgba(0,0,0,.16)}
+.home-page .hero .scroll-cue{color:#373737}
+.home-page .hero .scroll-cue span{background:linear-gradient(#373737,transparent)}
+.home-page .site-header.overlay:not(.solid){text-shadow:none}
+.home-page .site-header.overlay:not(.solid) .logo,
+.home-page .site-header.overlay:not(.solid) .nav-links a{color:#181818}
+.home-page .site-header.overlay:not(.solid) .nav-links a[aria-current="page"],
+.home-page .site-header.overlay:not(.solid) .nav-links a:hover{border-color:#181818}
+.home-page .site-header.overlay:not(.solid) .nav-cta{background:#171717;color:#fff}
+.home-page .site-header.overlay:not(.solid) .menu-toggle{color:#171717;filter:none}
+@media(max-width:860px){
+ .home-page .nav-open .site-header.overlay{background:#fff}
+ .home-page .nav-open .site-header.overlay .logo,
+ .home-page .nav-open .site-header.overlay .nav-links a{color:#171717}
+}
