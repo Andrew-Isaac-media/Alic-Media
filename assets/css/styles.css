@@ -431,7 +431,7 @@ video[autoplay]::-webkit-media-controls,video[autoplay]::-webkit-media-controls-
 /* No colored bands between the hero, logos and statement. */
 .home-page .clients{border-top:0;border-bottom:0}
 .home-page .clients h2,.home-page .clients .logo-text{color:var(--home-green)}
-.home-page .clients .brand img{filter:brightness(0) saturate(100%) invert(19%) sepia(22%) saturate(884%) hue-rotate(111deg) brightness(91%) contrast(91%);opacity:1}
+.home-page .clients .brand img{filter:none;opacity:1}
 .home-page .brand-statement{color:var(--home-green)}
 .home-page .brand-statement .brand-statement-close{color:var(--home-green)}
 .home-page .brand-statement .brand-emphasis,
