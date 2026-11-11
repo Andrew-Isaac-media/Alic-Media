@@ -519,3 +519,32 @@ section.block.svc-page{padding-bottom:64px}
  .case-study-copy{margin-top:38px;gap:19px}
  .case-study-copy p{font-size:16px;line-height:1.78}
 }
+
+
+/* Homepage service offerings: horizontal, editorial four-column layout */
+.home-page .svc-list-horizontal{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));list-style:none;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.home-page .svc-list-horizontal li{border-bottom:0;min-width:0}
+.home-page .svc-list-horizontal li+li{border-left:1px solid var(--line)}
+.home-page .svc-list-horizontal a{height:100%;min-height:235px;display:flex;flex-direction:column;align-items:flex-start;gap:22px;padding:30px clamp(16px,2.4vw,34px);transition:background .25s,color .25s,padding .25s}
+.home-page .svc-list-horizontal li:first-child a{padding-left:0}
+.home-page .svc-list-horizontal a:hover{padding-left:clamp(16px,2.4vw,34px);background:#f5f9f6;color:#183B32}
+.home-page .svc-list-horizontal li:first-child a:hover{padding-left:12px}
+.home-page .svc-list-horizontal .num{width:auto;flex:none;color:#648074;font-size:12px;letter-spacing:.08em}
+.home-page .svc-list-horizontal h3{font-size:clamp(22px,2.25vw,36px);font-weight:600;line-height:1.16;letter-spacing:-.055em;flex:1;max-width:16ch}
+.home-page .svc-list-horizontal .arrow{font-size:25px;line-height:1;align-self:flex-end;color:#183B32}
+@media(max-width:950px){
+ .home-page .svc-list-horizontal{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .home-page .svc-list-horizontal li:nth-child(3){border-left:0;border-top:1px solid var(--line)}
+ .home-page .svc-list-horizontal li:nth-child(4){border-top:1px solid var(--line)}
+ .home-page .svc-list-horizontal li:first-child a{padding-left:20px}
+ .home-page .svc-list-horizontal a{min-height:205px;padding:26px 20px}
+ .home-page .svc-list-horizontal h3{font-size:clamp(25px,3.5vw,36px)}
+}
+@media(max-width:520px){
+ .home-page .svc-list-horizontal{grid-template-columns:1fr}
+ .home-page .svc-list-horizontal li+li,.home-page .svc-list-horizontal li:nth-child(3),.home-page .svc-list-horizontal li:nth-child(4){border-left:0;border-top:1px solid var(--line)}
+ .home-page .svc-list-horizontal a,.home-page .svc-list-horizontal li:first-child a{min-height:0;padding:22px 0;display:grid;grid-template-columns:34px minmax(0,1fr) 24px;align-items:center;gap:8px}
+ .home-page .svc-list-horizontal h3{font-size:clamp(23px,6vw,31px);max-width:none}
+ .home-page .svc-list-horizontal .arrow{align-self:center}
+ .home-page .svc-list-horizontal a:hover,.home-page .svc-list-horizontal li:first-child a:hover{padding-left:8px}
+}
