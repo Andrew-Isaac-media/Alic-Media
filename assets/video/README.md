@@ -9,3 +9,4 @@ To change it, replace hero.mp4 (keep the same name) and the poster image.
 ## Home page animation
 - Current: `home-v2.mp4` (5-second seamless loop, 30 fps) with poster `home-poster-v2.webp`. `home-animation.gif` is the same loop as a GIF.
 - Previous: `home.mp4` with poster `home-poster.webp`. To go back, point `index.html` and `styles.css` at those two files again.
+- Update: the home hero now uses `home-v3.webp` (animated image, 7-second loop, slower drawing) so it starts on load with no play button. `home-v3.mp4` is the same loop as video. The v2 and original videos are still here.
