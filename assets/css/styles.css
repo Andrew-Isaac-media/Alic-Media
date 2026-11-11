@@ -582,3 +582,8 @@ section.block.svc-page{padding-bottom:64px}
 /* About hero shares the homepage's editorial serif headline */
 #about-title{font-family:"Instrument Serif",Georgia,serif;font-size:clamp(62px,9.2vw,142px);font-weight:400;font-style:normal;line-height:.96;letter-spacing:-.025em;max-width:17ch;text-wrap:balance}
 @media(max-width:760px){#about-title{font-size:clamp(53px,11vw,84px);line-height:.98;max-width:15ch}}
+
+
+/* Small subtitle below About page hero headline */
+.about-hero-subtitle{position:relative;z-index:2;margin:clamp(18px,3vw,32px) auto 0;max-width:42ch;color:#fff;font-family:"DM Sans","Manrope",system-ui,sans-serif;font-size:clamp(14px,1.45vw,18px);font-weight:400;letter-spacing:.005em;line-height:1.5;text-align:center}
+@media(max-width:760px){.about-hero-subtitle{font-size:14px;padding:0 12px}}
