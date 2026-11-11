@@ -587,3 +587,10 @@ section.block.svc-page{padding-bottom:64px}
 /* Small subtitle below About page hero headline */
 .about-hero-subtitle{position:relative;z-index:2;margin:clamp(18px,3vw,32px) auto 0;max-width:42ch;color:#fff;font-family:"DM Sans","Manrope",system-ui,sans-serif;font-size:clamp(14px,1.45vw,18px);font-weight:400;letter-spacing:.005em;line-height:1.5;text-align:center}
 @media(max-width:760px){.about-hero-subtitle{font-size:14px;padding:0 12px}}
+
+
+/* Homepage brand-statement refinement */
+.home-page .brand-statement h2{font-size:clamp(62px,8.5vw,120px)}
+.home-page .brand-statement .brand-contact-cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;margin-top:clamp(36px,5vw,60px);padding:13px 24px;border:1px solid #183B32;border-radius:999px;background:#183B32;color:#fff;font-family:"DM Sans",var(--sans);font-size:14px;font-weight:600;letter-spacing:.01em;text-decoration:none;transition:background .2s ease,color .2s ease,transform .2s ease}
+.home-page .brand-statement .brand-contact-cta:hover,.home-page .brand-statement .brand-contact-cta:focus-visible{background:#fff;color:#183B32;transform:translateY(-2px)}
+@media(max-width:600px){.home-page .brand-statement h2{font-size:clamp(54px,13vw,78px)}.home-page .brand-statement .brand-contact-cta{margin-top:34px}}
