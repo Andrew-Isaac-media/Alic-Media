@@ -594,3 +594,8 @@ section.block.svc-page{padding-bottom:64px}
 .home-page .brand-statement .brand-contact-cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;margin-top:clamp(36px,5vw,60px);padding:13px 24px;border:1px solid #183B32;border-radius:999px;background:#183B32;color:#fff;font-family:"DM Sans",var(--sans);font-size:14px;font-weight:600;letter-spacing:.01em;text-decoration:none;transition:background .2s ease,color .2s ease,transform .2s ease}
 .home-page .brand-statement .brand-contact-cta:hover,.home-page .brand-statement .brand-contact-cta:focus-visible{background:#fff;color:#183B32;transform:translateY(-2px)}
 @media(max-width:600px){.home-page .brand-statement h2{font-size:clamp(54px,13vw,78px)}.home-page .brand-statement .brand-contact-cta{margin-top:34px}}
+
+
+/* High-contrast homepage footer contact button */
+.home-page .site-footer .btn.clay{background:#FFFFFF;color:#183B32;border:1px solid #FFFFFF;font-weight:700;box-shadow:0 6px 22px rgba(0,0,0,.12)}
+.home-page .site-footer .btn.clay:hover,.home-page .site-footer .btn.clay:focus-visible{background:#DCE9E1;border-color:#DCE9E1;color:#183B32;transform:translateY(-2px)}
