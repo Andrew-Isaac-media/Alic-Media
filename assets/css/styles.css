@@ -577,3 +577,8 @@ section.block.svc-page{padding-bottom:64px}
  .home-page .svc-list-horizontal .svc-description{grid-column:2;grid-row:2;font-size:14px;line-height:1.55}
  .home-page .svc-list-horizontal .arrow{grid-column:3;grid-row:1;align-self:start;margin-top:0}
 }
+
+
+/* About hero shares the homepage's editorial serif headline */
+#about-title{font-family:"Instrument Serif",Georgia,serif;font-size:clamp(62px,9.2vw,142px);font-weight:400;font-style:normal;line-height:.96;letter-spacing:-.025em;max-width:17ch;text-wrap:balance}
+@media(max-width:760px){#about-title{font-size:clamp(53px,11vw,84px);line-height:.98;max-width:15ch}}
