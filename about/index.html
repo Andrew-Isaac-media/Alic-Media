@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Jost:wght@300;400&family=Manrope:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,400&display=swap">
-<link rel="stylesheet" href="../assets/css/styles.css?v=1111aboutsubtitle">
+<link rel="stylesheet" href="../assets/css/styles.css?v=1111storywide">
 <script src="../assets/js/main.js?v=1028b" defer></script>
 <script type="application/ld+json">{
  "@context": "https://schema.org",
@@ -81,9 +81,10 @@
 .owner-social svg{width:16px;height:16px;flex:none}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
-.founders-story{display:grid;grid-template-columns:minmax(160px,.65fr) minmax(0,1.65fr);gap:clamp(28px,6vw,100px);align-items:start;border-top:1px solid var(--line);margin-top:clamp(40px,6vw,76px);padding-top:clamp(32px,4vw,58px)}
-.founders-story h2{font-family:'Jost',var(--sans);font-size:clamp(32px,3.6vw,48px);font-weight:400;line-height:1.1;letter-spacing:-.01em}
-.founders-story p{max-width:62ch;margin:0;color:#4a5340;font-size:clamp(19px,2vw,26px);line-height:1.5;letter-spacing:-.01em}
+.founders-story{display:block;width:100%;border-top:1px solid var(--line);margin-top:clamp(40px,6vw,76px);padding-top:clamp(32px,4vw,58px)}
+.founders-story .eyebrow{font-size:11px;letter-spacing:.17em;text-transform:uppercase;font-weight:700;color:#527165;margin-bottom:18px}
+.founders-story h2{font-family:'Jost',var(--sans);font-size:clamp(32px,3.6vw,48px);font-weight:400;line-height:1.1;letter-spacing:-.01em;margin-bottom:24px;color:#183B32}
+.founders-story p:not(.eyebrow){width:100%;max-width:none;margin:0;color:#183B32;font-size:clamp(18px,1.8vw,23px);line-height:1.7;letter-spacing:-.01em}
 @media(max-width:860px) and (min-width:600px){
   .founders-section .owners{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
