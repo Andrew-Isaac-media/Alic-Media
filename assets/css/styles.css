@@ -482,14 +482,14 @@ section.block.svc-page{padding-bottom:64px}
  .home-page .founder-results .results-details{flex-direction:column;gap:10px}
 }
 
-/* Two concise founder milestones */
+/* Three founder milestones */
 .home-page .founder-highlights{background:#fff;color:var(--home-green,#183B32);padding:clamp(54px,8vw,100px) var(--pad)}
 .home-page .founder-highlights-inner{max-width:1080px;margin:0 auto}
 .home-page .founder-highlights-caption{font:600 11px/1.5 "DM Sans",sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#49665c;margin:0 0 26px}
-.home-page .founder-highlights-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid rgba(24,59,50,.26);border-bottom:1px solid rgba(24,59,50,.26)}
+.home-page .founder-highlights-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid rgba(24,59,50,.26);border-bottom:1px solid rgba(24,59,50,.26)}
 .home-page .founder-highlight{padding:clamp(28px,4vw,48px) 20px}
 .home-page .founder-highlight:first-child{padding-left:0}
 .home-page .founder-highlight+ .founder-highlight{border-left:1px solid rgba(24,59,50,.2);padding-left:clamp(24px,5vw,64px)}
-.home-page .founder-highlight-number{display:block;font:500 clamp(56px,7.2vw,110px)/1 "DM Sans",sans-serif;letter-spacing:-.075em}
+.home-page .founder-highlight-number{display:block;font:500 clamp(48px,5.8vw,86px)/1 "DM Sans",sans-serif;letter-spacing:-.075em}
 .home-page .founder-highlight-label{display:block;margin-top:14px;font:500 clamp(15px,1.8vw,21px)/1.35 "DM Sans",sans-serif}
-@media(max-width:600px){.home-page .founder-highlights-grid{grid-template-columns:1fr}.home-page .founder-highlight{padding:26px 0}.home-page .founder-highlight+ .founder-highlight{border-left:0;border-top:1px solid rgba(24,59,50,.2);padding-left:0}.home-page .founder-highlight-number{font-size:clamp(64px,16vw,94px)}}
+@media(max-width:760px){.home-page .founder-highlights-grid{grid-template-columns:1fr}.home-page .founder-highlight{padding:26px 0}.home-page .founder-highlight+ .founder-highlight{border-left:0;border-top:1px solid rgba(24,59,50,.2);padding-left:0}.home-page .founder-highlight-number{font-size:clamp(64px,16vw,94px)}}
