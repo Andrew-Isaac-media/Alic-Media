@@ -621,3 +621,14 @@ section.block.svc-page{padding-bottom:64px}
 .faq-a{padding:0 20px 18px;font-size:15px;line-height:1.6;color:#3d4a43;max-width:64ch}
 .faq-a u{text-decoration-thickness:.08em;text-underline-offset:.18em}
 @media(max-width:600px){.faq-item summary{padding:14px 16px}.faq-a{padding:0 16px 16px}}
+
+
+/* Contact form: services checkboxes */
+.services-field{border:0;padding:0;margin:0;min-width:0}
+.services-field legend{font-size:13px;font-weight:600;letter-spacing:.06em;color:#3c4532;padding:0;margin-bottom:10px}
+.check-grid{display:flex;flex-wrap:wrap;gap:10px}
+.check{display:inline-flex;align-items:center;gap:10px;padding:11px 16px;border:1.5px solid var(--line);border-radius:999px;background:var(--paper);font-size:15px;font-weight:500;color:var(--forest);cursor:pointer;transition:border-color .2s,background .2s}
+.check input{width:18px;height:18px;margin:0;accent-color:var(--forest);cursor:pointer}
+.check:has(input:checked){border-color:var(--forest);background:#eef1ea}
+.check:has(input:focus-visible){box-shadow:0 0 0 4px rgba(95,115,68,.2)}
+@media(max-width:600px){.field-row{grid-template-columns:1fr}}

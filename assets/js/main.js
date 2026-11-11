@@ -20,10 +20,23 @@
   var btn = form.querySelector('button[type="submit"]');
   form.addEventListener('submit', function (e) {
     e.preventDefault();
+    var data = new FormData(form);
+    var boxes = form.querySelectorAll('input[name="service"]');
+    if (boxes.length) {
+      var picked = data.getAll('service');
+      if (!picked.length) {
+        status.className = 'form-status err';
+        status.textContent = 'Please choose at least one service.';
+        boxes[0].focus();
+        return;
+      }
+      data.delete('service');
+      data.append('Services', picked.join(', '));
+    }
     status.className = 'form-status';
     status.textContent = 'Sending…';
     btn.disabled = true;
-    fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
+    fetch(form.action, { method: 'POST', body: data, headers: { Accept: 'application/json' } })
       .then(function (r) {
         return r.json().catch(function () { return {}; }).then(function (d) {
           if (!r.ok || d.success === false) throw new Error(d.message || ('HTTP ' + r.status));
