@@ -301,7 +301,7 @@ video[autoplay]::-webkit-media-controls,video[autoplay]::-webkit-media-controls-
 .hero-video{background:#26301f url(../video/hero-poster.webp) center/cover no-repeat}
 .hero-video video{opacity:0}
 .hero-video.is-playing video{opacity:1}
-.hero-video.hv-home{background-image:url(../video/home-poster.webp)}
+.hero-video.hv-home{background-image:url(../video/home-poster-v2.webp)}
 
 /* ---------- Project (case study) pages ---------- */
 .proj-hero{position:relative;padding:130px var(--pad) 40px;overflow:hidden}
@@ -402,7 +402,7 @@ video[autoplay]::-webkit-media-controls,video[autoplay]::-webkit-media-controls-
 .home-page .hero .hero-video.hv-home{background-image:none;background-color:#fff}
 .home-page .hero .hero-video.hv-home::before{
  content:"";position:absolute;inset:0;pointer-events:none;
- background:#111 url(../video/home-poster.webp) center/cover no-repeat;
+ background:#111 url(../video/home-poster-v2.webp) center/cover no-repeat;
  filter:invert(1);mix-blend-mode:multiply
 }
 .home-page .hero .hero-video.hv-home video{filter:invert(1);mix-blend-mode:multiply}
