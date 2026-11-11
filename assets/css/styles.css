@@ -562,3 +562,18 @@ section.block.svc-page{padding-bottom:64px}
 .sun-media-gallery .g-video video{aspect-ratio:1/1;object-fit:contain}
 @media(max-width:720px){.sun-media-gallery{columns:2 150px;column-gap:10px}.sun-media-gallery figure{margin-bottom:10px}}
 @media(max-width:430px){.sun-media-gallery{columns:1}}
+
+
+/* Short service summaries beneath each clickable homepage offering */
+.home-page .svc-list-horizontal h3{flex:none}
+.home-page .svc-list-horizontal a{gap:18px;min-height:320px}
+.home-page .svc-list-horizontal .svc-description{font-size:clamp(14px,1.15vw,16px);font-weight:400;line-height:1.65;color:#567063;letter-spacing:0;margin:0;max-width:32ch}
+.home-page .svc-list-horizontal .arrow{margin-top:auto}
+@media(max-width:950px){.home-page .svc-list-horizontal a{min-height:285px}}
+@media(max-width:520px){
+ .home-page .svc-list-horizontal a,.home-page .svc-list-horizontal li:first-child a{grid-template-columns:34px minmax(0,1fr) 24px;grid-template-rows:auto auto;align-items:start;min-height:0;column-gap:8px;row-gap:8px}
+ .home-page .svc-list-horizontal .num{grid-column:1;grid-row:1}
+ .home-page .svc-list-horizontal h3{grid-column:2;grid-row:1}
+ .home-page .svc-list-horizontal .svc-description{grid-column:2;grid-row:2;font-size:14px;line-height:1.55}
+ .home-page .svc-list-horizontal .arrow{grid-column:3;grid-row:1;align-self:start;margin-top:0}
+}
