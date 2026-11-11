@@ -548,3 +548,17 @@ section.block.svc-page{padding-bottom:64px}
  .home-page .svc-list-horizontal .arrow{align-self:center}
  .home-page .svc-list-horizontal a:hover,.home-page .svc-list-horizontal li:first-child a:hover{padding-left:8px}
 }
+
+
+/* Sun Cruiser: green copy and full visual gallery before the case study text */
+.case-study:has(.sun-media-gallery) .case-study-heading .eyebrow,
+.case-study:has(.sun-media-gallery) .case-study-heading .proj-title,
+.case-study:has(.sun-media-gallery) .case-study-copy p,
+.case-study:has(.sun-media-gallery) .case-study-copy em{color:#183B32}
+.sun-media-gallery{columns:3 260px;column-gap:16px;max-width:1240px;margin:0 auto}
+.sun-media-gallery figure{display:block;break-inside:avoid;margin:0 0 16px;overflow:hidden;border-radius:12px;background:#fff}
+.sun-media-gallery img,.sun-media-gallery video{display:block;width:100%;height:auto;object-fit:contain}
+.sun-media-gallery .g-video{background:#183B32}
+.sun-media-gallery .g-video video{aspect-ratio:1/1;object-fit:contain}
+@media(max-width:720px){.sun-media-gallery{columns:2 150px;column-gap:10px}.sun-media-gallery figure{margin-bottom:10px}}
+@media(max-width:430px){.sun-media-gallery{columns:1}}
