@@ -599,3 +599,25 @@ section.block.svc-page{padding-bottom:64px}
 /* High-contrast homepage footer contact button */
 .site-footer .btn.clay{background:#FFFFFF;color:#183B32;border:1px solid #FFFFFF;font-weight:700;box-shadow:0 6px 22px rgba(0,0,0,.12)}
 .site-footer .btn.clay:hover,.site-footer .btn.clay:focus-visible{background:#DCE9E1;border-color:#DCE9E1;color:#183B32;transform:translateY(-2px)}
+
+/* Home: Get in Touch buttons between sections */
+.section-cta{display:flex;justify-content:center;padding:8px var(--pad) 40px;background:#fff}
+.home-page .section-cta .home-cta{background:var(--home-green);color:#fff}
+.home-page .clients{padding-bottom:32px}
+
+/* Home: FAQ dropdowns */
+.home-page section.block.faq{padding-top:56px;padding-bottom:72px}
+.faq .eyebrow{justify-content:center;margin-bottom:22px}
+.faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
+.faq-item{border:1px solid rgba(24,59,50,.16);border-radius:14px;background:#fff;transition:border-color .2s,background .2s}
+.faq-item[open]{border-color:rgba(24,59,50,.38);background:#fafaf7}
+.faq-item summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 20px;font-size:clamp(15px,1.3vw,17px);font-weight:600;line-height:1.35;color:var(--home-green,#183B32)}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary:focus-visible{outline:2px solid var(--clay);outline-offset:3px;border-radius:12px}
+.faq-icon{position:relative;flex:none;width:14px;height:14px}
+.faq-icon::before,.faq-icon::after{content:"";position:absolute;left:0;top:6px;width:14px;height:2px;border-radius:2px;background:currentColor;transition:transform .25s}
+.faq-icon::after{transform:rotate(90deg)}
+.faq-item[open] .faq-icon::after{transform:rotate(0)}
+.faq-a{padding:0 20px 18px;font-size:15px;line-height:1.6;color:#3d4a43;max-width:64ch}
+.faq-a u{text-decoration-thickness:.08em;text-underline-offset:.18em}
+@media(max-width:600px){.faq-item summary{padding:14px 16px}.faq-a{padding:0 16px 16px}}
