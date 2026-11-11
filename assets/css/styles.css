@@ -597,5 +597,5 @@ section.block.svc-page{padding-bottom:64px}
 
 
 /* High-contrast homepage footer contact button */
-.home-page .site-footer .btn.clay{background:#FFFFFF;color:#183B32;border:1px solid #FFFFFF;font-weight:700;box-shadow:0 6px 22px rgba(0,0,0,.12)}
-.home-page .site-footer .btn.clay:hover,.home-page .site-footer .btn.clay:focus-visible{background:#DCE9E1;border-color:#DCE9E1;color:#183B32;transform:translateY(-2px)}
+.site-footer .btn.clay{background:#FFFFFF;color:#183B32;border:1px solid #FFFFFF;font-weight:700;box-shadow:0 6px 22px rgba(0,0,0,.12)}
+.site-footer .btn.clay:hover,.site-footer .btn.clay:focus-visible{background:#DCE9E1;border-color:#DCE9E1;color:#183B32;transform:translateY(-2px)}
