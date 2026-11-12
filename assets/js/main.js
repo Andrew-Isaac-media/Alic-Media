@@ -398,6 +398,7 @@
     '.brand-statement h2', '.brand-statement p', '.brand-statement .brand-contact-cta',
     '.founder-highlights-caption', '.founder-highlight-number', '.founder-highlight-label',
     'main section.block > h2', 'main section.block .section-head h2',
+    '.home-photo-editorial h2', '.home-photo-editorial-intro p', '.home-photo-view-link', '.home-photo-frame figcaption',
     '.svc-list li h3', '.svc-list li .svc-description',
     '.home-founders-story', '.home-founder figcaption',
     '.step-box h3', '.faq .faq-item summary',
