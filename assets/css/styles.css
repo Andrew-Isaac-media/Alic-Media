@@ -1432,3 +1432,9 @@ section.block.svc-page{padding-bottom:64px}
 .home-page .hero-masonry video.north-face-hero-film::-webkit-media-controls-enclosure,
 .home-page .hero-masonry video.north-face-hero-film::-webkit-media-controls-overlay-enclosure,
 .home-page .hero-masonry video.north-face-hero-film::-webkit-media-controls-play-button{display:none!important;opacity:0!important}
+
+/* Do not show the beginning of the Sun Cruiser film while seeking its ending. */
+.home-page .hero-masonry video.sun-cruiser-hero-ending{opacity:0;pointer-events:none}
+.home-page .hero-masonry video.sun-cruiser-hero-ending.is-ready{opacity:1}
+.home-page .hero-masonry video.sun-cruiser-hero-ending::-webkit-media-controls,
+.home-page .hero-masonry video.sun-cruiser-hero-ending::-webkit-media-controls-overlay-play-button{display:none!important}
