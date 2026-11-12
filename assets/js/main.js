@@ -485,3 +485,18 @@
   box.classList.add('has-logo-wall');
   box.insertBefore(wall, box.firstChild);
 })();
+
+// Countries stat: a small plane takes off and climbs out of the box, looping.
+(function () {
+  var box = document.querySelectorAll('.home-page .founder-highlight')[2];
+  if (!box) return;
+  var sky = document.createElement('div');
+  sky.className = 'fh-sky';
+  sky.setAttribute('aria-hidden', 'true');
+  sky.innerHTML = '<span class="fh-runway"></span><span class="fh-plane"><span class="fh-trail"></span>' +
+    '<svg viewBox="0 0 48 20" fill="currentColor"><path d="M2 11.2C2 9.4 4 8.2 8 8.2h30c4.6 0 8.6 1.3 8.6 2.9S42.6 14 38 14H8c-4 0-6-1.1-6-2.8Z"/>' +
+    '<path d="M3.6 8.6 8.6 1.4h3.8l-0.6 7.2Z"/><path d="M19 11.4h11l-8.2 8h-4.4Z" opacity=".75"/><path d="M2.6 11.2h7.4l-3.6 3H2.8Z" opacity=".75"/>' +
+    '<rect x="36.5" y="9.3" width="3.4" height="1.8" rx=".9" fill="#fff" opacity=".9"/></svg></span>';
+  box.classList.add('has-plane');
+  box.insertBefore(sky, box.firstChild);
+})();
