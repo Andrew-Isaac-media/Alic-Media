@@ -1588,3 +1588,8 @@ section.block.svc-page{padding-bottom:64px}
   .home-page .home-photo-frame figcaption{display:flex}
   .home-page .home-photo-frame figcaption span:last-child{display:block}
 }
+
+/* ALIC homepage Versace photo: subtle product-focused color grade, without changing crop. */
+.home-page .home-photo-frame-three .home-photo-image-link img{
+  filter:brightness(1.045) contrast(1.10) saturate(1.13) sepia(.025);
+}
