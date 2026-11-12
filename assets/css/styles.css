@@ -1513,3 +1513,7 @@ section.block.svc-page{padding-bottom:64px}
 
 /* Service pages: short location line above the bullets */
 .svc-area{max-width:640px;font-size:clamp(17px,1.8vw,21px);line-height:1.6;color:var(--sage,#47665c);margin:0 0 22px}
+
+/* FAQ: big "FAQ" title above the eyebrow; questions and answers read left-aligned */
+.home-page .faq .faq-title{margin:0 0 10px;text-align:center;font:500 clamp(44px,5.6vw,76px)/1 "DM Sans",sans-serif;letter-spacing:-.06em;color:var(--home-green,#183B32)}
+.faq-item summary,.faq-a,.faq-a p{text-align:left}
