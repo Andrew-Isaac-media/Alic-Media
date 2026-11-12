@@ -1473,44 +1473,40 @@ section.block.svc-page{padding-bottom:64px}
   .home-page.home-motion-ready .home-scroll-reveal{opacity:1!important;filter:none!important;transform:none!important;transition:none!important}
 }
 
-/* Likes stat: hearts flutter up inside the box when it scrolls into view */
+/* Likes stat: hearts flutter up once, then settle and stay scattered behind the number */
 .home-page .founder-highlight.has-hearts{position:relative;overflow:hidden;isolation:isolate}
-.home-page .fh-hearts{position:absolute;inset:0;pointer-events:none;z-index:-1}
-.home-page .fh-heart{position:absolute;bottom:-28px;left:var(--x);width:var(--s);height:var(--s);color:var(--c);opacity:0;animation:fhHeartRise var(--d) cubic-bezier(.2,.6,.35,1) var(--delay) forwards}
-.home-page .fh-heart svg{display:block;width:100%;height:100%;animation:fhHeartSway calc(var(--d)/2.4) ease-in-out var(--delay) infinite alternate}
-@keyframes fhHeartRise{0%{opacity:0;transform:translateY(0) scale(.4) rotate(var(--r0))}12%{opacity:var(--o);transform:translateY(-12%) scale(1.08) rotate(var(--r0))}22%{transform:translateY(-22%) scale(1) rotate(var(--r0))}80%{opacity:var(--o)}100%{opacity:0;transform:translateY(calc(var(--h) * -1)) scale(.85) rotate(var(--r1))}}
+.home-page .founder-highlight.has-hearts .founder-highlight-number,.home-page .founder-highlight.has-hearts .founder-highlight-label{position:relative;z-index:1}
+.home-page .fh-hearts{position:absolute;inset:0;pointer-events:none;z-index:0}
+.home-page .fh-heart{position:absolute;bottom:-30px;left:var(--x);width:var(--s);height:var(--s);color:var(--c);opacity:0;animation:fhHeartRise var(--d) cubic-bezier(.2,.65,.3,1) var(--delay) forwards}
+.home-page .fh-heart svg{display:block;width:100%;height:100%;animation:fhHeartSway calc(var(--d)/3) ease-in-out var(--delay) 3 alternate forwards}
+@keyframes fhHeartRise{0%{opacity:0;transform:translateY(0) scale(.4) rotate(var(--r0))}12%{opacity:var(--o);transform:translateY(calc(var(--h) * -.12)) scale(1.1) rotate(var(--r0))}24%{transform:translateY(calc(var(--h) * -.24)) scale(1) rotate(var(--r0))}100%{opacity:var(--rest);transform:translateY(calc(var(--h) * -1)) scale(.95) rotate(var(--r1))}}
 @keyframes fhHeartSway{from{transform:translateX(calc(var(--sw) * -1))}to{transform:translateX(var(--sw))}}
-@media (prefers-reduced-motion:reduce){.home-page .fh-hearts{display:none}}
+@media (prefers-reduced-motion:reduce){.home-page .fh-heart,.home-page .fh-heart svg{animation:none;opacity:var(--rest);transform:translateY(calc(var(--h) * -1)) rotate(var(--r1))}}
 
-/* Brand partners stat: four blurred logo rows drift behind the number; hovering a logo brings it into focus */
+/* Brand partners stat: four blurred logo rows loop seamlessly behind the number; hovering a logo brings it into focus */
 .home-page .founder-highlight.has-logo-wall{position:relative;overflow:hidden;isolation:isolate}
 .home-page .founder-highlight.has-logo-wall .founder-highlight-number,.home-page .founder-highlight.has-logo-wall .founder-highlight-label{position:relative;z-index:1;pointer-events:none}
 .home-page .fh-logo-wall{position:absolute;inset:0;z-index:0;display:flex;flex-direction:column;justify-content:space-evenly;padding:6px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
-.home-page .fh-logo-row{display:flex;width:max-content;align-items:center;animation:fhLogoSlide var(--t,44s) linear infinite}
+.home-page .fh-logo-row{display:flex;width:max-content;align-items:center;will-change:transform;animation:fhLogoSlide var(--t,44s) linear infinite}
 .home-page .fh-logo-row.rev{animation-direction:reverse}
 .home-page .fh-logo-row:hover{animation-play-state:paused}
-.home-page .fh-logo{flex:none;display:flex;align-items:center;height:34px;padding:0 18px;filter:blur(2.2px) grayscale(.2);opacity:.38;transition:filter .35s ease,opacity .35s ease,transform .35s ease}
+.home-page .fh-logo-set{display:flex;flex:none;align-items:center}
+.home-page .fh-logo{flex:none;display:flex;align-items:center;justify-content:center;height:34px;padding:0 18px;filter:blur(2.2px) grayscale(.2);opacity:.38;transition:filter .35s ease,opacity .35s ease,transform .35s ease}
 .home-page .fh-logo:hover{filter:none;opacity:1;transform:scale(1.06)}
-.home-page .fh-logo img{display:block;width:auto}
+.home-page .fh-logo img{display:block;max-width:none}
 .home-page .fh-logo .logo-text{font-weight:800;font-size:14px;letter-spacing:.2em;color:var(--home-green,#183B32)}
-@keyframes fhLogoSlide{to{transform:translateX(-50%)}}
+@keyframes fhLogoSlide{from{transform:translate3d(0,0,0)}to{transform:translate3d(calc(var(--w) * -1px),0,0)}}
 @media (prefers-reduced-motion:reduce){.home-page .fh-logo-row{animation:none}}
 
-/* Countries stat: a little plane taxis, takes off and climbs out of the box on a loop */
-.home-page .founder-highlight.has-plane{position:relative;overflow:hidden;isolation:isolate}
-.home-page .founder-highlight.has-plane .founder-highlight-number,.home-page .founder-highlight.has-plane .founder-highlight-label{position:relative;z-index:1}
+/* Countries stat: blurred planes cruise back and forth on straight lines behind the number */
+.home-page .founder-highlight.has-planes{position:relative;overflow:hidden;isolation:isolate}
+.home-page .founder-highlight.has-planes .founder-highlight-number,.home-page .founder-highlight.has-planes .founder-highlight-label{position:relative;z-index:1}
 .home-page .fh-sky{position:absolute;inset:0;z-index:0;pointer-events:none}
-.home-page .fh-runway{position:absolute;left:0;right:0;bottom:13%;height:0;border-top:1.5px dashed rgba(24,59,50,.18)}
-.home-page .fh-plane{position:absolute;left:-12%;bottom:13%;width:46px;color:var(--home-green,#183B32);opacity:0;transform-origin:60% 70%;animation:fhTakeoff 7s linear infinite}
+.home-page .fh-lane{position:absolute;left:0;width:100%;top:var(--y);height:0;animation:fhFly var(--t) linear var(--delay) infinite}
+.home-page .fh-lane.rev{animation-direction:reverse}
+.home-page .fh-plane{position:absolute;left:calc(var(--s) * -1 - 70px);top:calc(var(--s) * -.21);width:var(--s);color:var(--home-green,#183B32);opacity:var(--o);filter:blur(var(--b))}
+.home-page .fh-lane.rev .fh-plane{transform:scaleX(-1)}
 .home-page .fh-plane svg{display:block;width:100%;height:auto}
-.home-page .fh-trail{position:absolute;right:92%;top:56%;width:90px;height:2px;border-radius:2px;background:linear-gradient(90deg,transparent,rgba(24,59,50,.22));opacity:0;animation:fhTrail 7s linear infinite}
-@keyframes fhTakeoff{
-  0%{left:-12%;bottom:13%;opacity:0;transform:rotate(0deg);animation-timing-function:ease-in}
-  6%{opacity:.85}
-  40%{left:52%;bottom:13%;transform:rotate(0deg);animation-timing-function:ease-in-out}
-  48%{left:64%;bottom:19%;transform:rotate(-14deg);animation-timing-function:ease-in}
-  78%{left:112%;bottom:112%;transform:rotate(-30deg);opacity:.85}
-  80%,100%{left:112%;bottom:112%;opacity:0;transform:rotate(-30deg)}
-}
-@keyframes fhTrail{0%,42%{opacity:0}52%,74%{opacity:1}80%,100%{opacity:0}}
-@media (prefers-reduced-motion:reduce){.home-page .fh-plane,.home-page .fh-trail{animation:none}.home-page .fh-plane{opacity:.6;left:62%;bottom:40%;transform:rotate(-20deg)}}
+.home-page .fh-plane::before{content:"";position:absolute;right:92%;top:52%;width:calc(var(--s) * 1.8);height:2px;border-radius:2px;background:linear-gradient(90deg,transparent,currentColor);opacity:.35}
+@keyframes fhFly{from{transform:translate3d(0,0,0)}to{transform:translate3d(calc(100% + var(--s) + 140px),0,0)}}
+@media (prefers-reduced-motion:reduce){.home-page .fh-lane{animation:none;transform:translateX(55%)}}

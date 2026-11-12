@@ -416,87 +416,104 @@
   });
 })();
 
-// Likes stat: little hearts flutter up inside the "Likes on brand videos" box each time it scrolls into view.
+// Likes stat: hearts flutter up once when the box first scrolls into view, then settle and stay in the background.
 (function () {
   var box = document.querySelector('.home-page .founder-highlight');
   if (!box || !('IntersectionObserver' in window)) return;
-  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   box.classList.add('has-hearts');
   var layer = document.createElement('div');
   layer.className = 'fh-hearts';
   layer.setAttribute('aria-hidden', 'true');
-  box.appendChild(layer);
+  box.insertBefore(layer, box.firstChild);
   var colors = ['#183B32', '#47665c', '#7f9b90', '#b9cbc3'];
   var heart = '<svg viewBox="0 0 24 22" fill="currentColor"><path d="M12 21.3 10.3 19.8C4.2 14.3 0 10.6 0 6.1 0 2.6 2.7 0 6.1 0c1.9 0 3.8.9 5 2.3C13.1.9 15 0 16.9 0 20.3 0 23 2.6 23 6.1c0 4.5-4.2 8.2-10.3 13.7L12 21.3z"/></svg>';
-  var busy = false;
   function burst() {
-    if (busy) return;
-    busy = true;
-    var h = box.offsetHeight + 40, n = window.innerWidth < 760 ? 16 : 24;
+    var bh = box.offsetHeight, n = window.innerWidth < 760 ? 22 : 30;
     for (var i = 0; i < n; i++) {
       var el = document.createElement('span');
       el.className = 'fh-heart';
-      var s = 12 + Math.random() * 18, d = 2.2 + Math.random() * 1.6;
-      el.style.cssText = '--x:' + (Math.random() * 92) + '%;--s:' + s + 'px;--c:' + colors[i % colors.length] +
-        ';--d:' + d + 's;--delay:' + (Math.random() * 1.4) + 's;--h:' + (h * (0.7 + Math.random() * 0.3)) + 'px' +
-        ';--o:' + (0.45 + Math.random() * 0.45) + ';--r0:' + (Math.random() * 30 - 15) + 'deg;--r1:' + (Math.random() * 50 - 25) + 'deg;--sw:' + (4 + Math.random() * 10) + 'px';
+      var s = 12 + Math.random() * 18, d = 2.2 + Math.random() * 1.4;
+      el.style.cssText = '--x:' + (2 + Math.random() * 90) + '%;--s:' + s + 'px;--c:' + colors[i % colors.length] +
+        ';--d:' + d + 's;--delay:' + (Math.random() * 1.3) + 's;--h:' + (30 + Math.random() * (bh - 40)) + 'px' +
+        ';--o:' + (0.5 + Math.random() * 0.4) + ';--rest:' + (0.22 + Math.random() * 0.3) +
+        ';--r0:' + (Math.random() * 30 - 15) + 'deg;--r1:' + (Math.random() * 50 - 25) + 'deg;--sw:' + (3 + Math.random() * 7) + 'px';
       el.innerHTML = heart;
       layer.appendChild(el);
     }
-    setTimeout(function () { layer.innerHTML = ''; busy = false; }, 4400);
   }
-  new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) { if (e.isIntersecting) burst(); });
-  }, { threshold: 0.5 }).observe(box);
+  var io = new IntersectionObserver(function (entries) {
+    if (entries.some(function (e) { return e.isIntersecting; })) { io.disconnect(); burst(); }
+  }, { threshold: 0.5 });
+  io.observe(box);
 })();
 
-// Brand partners stat: four rows of client logos drift behind "20+", blurred until hovered.
+// Brand partners stat: four rows of client logos loop seamlessly behind "20+", blurred until hovered.
 (function () {
-  var boxes = document.querySelectorAll('.home-page .founder-highlight');
-  var box = boxes[1];
+  var box = document.querySelectorAll('.home-page .founder-highlight')[1];
   var src = document.querySelectorAll('.home-page .clients .set:first-child .brand');
   if (!box || !src.length) return;
   var items = Array.prototype.map.call(src, function (li) {
     var img = li.querySelector('img');
     if (img) {
       var h = parseFloat(img.style.height) || parseFloat(img.getAttribute('height')) || 34;
-      return { img: img.getAttribute('src'), alt: img.getAttribute('alt') || '', h: Math.round(h * 0.6) };
+      var ratio = (parseFloat(img.getAttribute('width')) || h) / (parseFloat(img.getAttribute('height')) || h);
+      h = Math.round(h * 0.6);
+      return { img: img.getAttribute('src'), alt: img.getAttribute('alt') || '', h: h, w: Math.round(h * ratio) };
     }
     return { text: li.textContent.trim() };
   });
   var wall = document.createElement('div');
   wall.className = 'fh-logo-wall';
   wall.setAttribute('aria-hidden', 'true');
-  var speeds = [46, 54, 50, 58];
+  var speeds = [46, 54, 50, 58], rows = [];
   for (var r = 0; r < 4; r++) {
-    var row = document.createElement('div');
-    row.className = 'fh-logo-row' + (r % 2 ? ' rev' : '');
-    row.style.setProperty('--t', speeds[r] + 's');
     var start = (r * 4) % items.length, html = '';
     for (var k = 0; k < items.length; k++) {
       var it = items[(start + k) % items.length];
       html += '<span class="fh-logo">' + (it.img
-        ? '<img src="' + it.img + '" alt="" title="' + it.alt + '" style="height:' + it.h + 'px" loading="lazy" decoding="async">'
+        ? '<img src="' + it.img + '" alt="" title="' + it.alt + '" width="' + it.w + '" height="' + it.h + '" style="width:' + it.w + 'px;height:' + it.h + 'px" decoding="async">'
         : '<span class="logo-text">' + it.text + '</span>') + '</span>';
     }
-    row.innerHTML = html + html;
+    var row = document.createElement('div');
+    row.className = 'fh-logo-row' + (r % 2 ? ' rev' : '');
+    row.style.setProperty('--t', speeds[r] + 's');
+    // three identical sets so the strip always overfills the box; it slides exactly one set width, then repeats invisibly
+    row.innerHTML = '<div class="fh-logo-set">' + html + '</div><div class="fh-logo-set">' + html + '</div><div class="fh-logo-set">' + html + '</div>';
     wall.appendChild(row);
+    rows.push(row);
   }
   box.classList.add('has-logo-wall');
   box.insertBefore(wall, box.firstChild);
+  function measure() {
+    rows.forEach(function (row) {
+      var w = row.firstChild.getBoundingClientRect().width;
+      if (w) row.style.setProperty('--w', w.toFixed(2));
+    });
+  }
+  measure();
+  window.addEventListener('load', measure);
+  window.addEventListener('resize', measure);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
 })();
 
-// Countries stat: a small plane takes off and climbs out of the box, looping.
+// Countries stat: soft, blurred planes cruise back and forth on straight lines behind "26".
 (function () {
   var box = document.querySelectorAll('.home-page .founder-highlight')[2];
   if (!box) return;
+  var plane = '<svg viewBox="0 0 48 20" fill="currentColor"><path d="M2 11.2C2 9.4 4 8.2 8 8.2h30c4.6 0 8.6 1.3 8.6 2.9S42.6 14 38 14H8c-4 0-6-1.1-6-2.8Z"/>' +
+    '<path d="M3.6 8.6 8.6 1.4h3.8l-0.6 7.2Z"/><path d="M19 11.4h11l-8.2 8h-4.4Z" opacity=".75"/><path d="M2.6 11.2h7.4l-3.6 3H2.8Z" opacity=".75"/></svg>';
+  // lane: top %, size px, seconds per crossing, blur px, opacity, reverse?, start offset (fraction of the loop)
+  var lanes = [
+    [12, 38, 13, 1.8, .45, 0, .1], [30, 54, 17, 1.1, .55, 1, .55], [48, 34, 11, 2.2, .4, 0, .8],
+    [66, 48, 15, 1.4, .5, 1, .25], [84, 38, 12, 2, .42, 0, .45]
+  ];
   var sky = document.createElement('div');
   sky.className = 'fh-sky';
   sky.setAttribute('aria-hidden', 'true');
-  sky.innerHTML = '<span class="fh-runway"></span><span class="fh-plane"><span class="fh-trail"></span>' +
-    '<svg viewBox="0 0 48 20" fill="currentColor"><path d="M2 11.2C2 9.4 4 8.2 8 8.2h30c4.6 0 8.6 1.3 8.6 2.9S42.6 14 38 14H8c-4 0-6-1.1-6-2.8Z"/>' +
-    '<path d="M3.6 8.6 8.6 1.4h3.8l-0.6 7.2Z"/><path d="M19 11.4h11l-8.2 8h-4.4Z" opacity=".75"/><path d="M2.6 11.2h7.4l-3.6 3H2.8Z" opacity=".75"/>' +
-    '<rect x="36.5" y="9.3" width="3.4" height="1.8" rx=".9" fill="#fff" opacity=".9"/></svg></span>';
-  box.classList.add('has-plane');
+  sky.innerHTML = lanes.map(function (l) {
+    return '<div class="fh-lane' + (l[5] ? ' rev' : '') + '" style="--y:' + l[0] + '%;--s:' + l[1] + 'px;--t:' + l[2] + 's;--delay:' + (-l[2] * l[6]).toFixed(2) + 's">' +
+      '<span class="fh-plane" style="--b:' + l[3] + 'px;--o:' + l[4] + '">' + plane + '</span></div>';
+  }).join('');
+  box.classList.add('has-planes');
   box.insertBefore(sky, box.firstChild);
 })();
