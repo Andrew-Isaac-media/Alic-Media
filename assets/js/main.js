@@ -449,3 +449,39 @@
     entries.forEach(function (e) { if (e.isIntersecting) burst(); });
   }, { threshold: 0.5 }).observe(box);
 })();
+
+// Brand partners stat: four rows of client logos drift behind "20+", blurred until hovered.
+(function () {
+  var boxes = document.querySelectorAll('.home-page .founder-highlight');
+  var box = boxes[1];
+  var src = document.querySelectorAll('.home-page .clients .set:first-child .brand');
+  if (!box || !src.length) return;
+  var items = Array.prototype.map.call(src, function (li) {
+    var img = li.querySelector('img');
+    if (img) {
+      var h = parseFloat(img.style.height) || parseFloat(img.getAttribute('height')) || 34;
+      return { img: img.getAttribute('src'), alt: img.getAttribute('alt') || '', h: Math.round(h * 0.6) };
+    }
+    return { text: li.textContent.trim() };
+  });
+  var wall = document.createElement('div');
+  wall.className = 'fh-logo-wall';
+  wall.setAttribute('aria-hidden', 'true');
+  var speeds = [46, 54, 50, 58];
+  for (var r = 0; r < 4; r++) {
+    var row = document.createElement('div');
+    row.className = 'fh-logo-row' + (r % 2 ? ' rev' : '');
+    row.style.setProperty('--t', speeds[r] + 's');
+    var start = (r * 4) % items.length, html = '';
+    for (var k = 0; k < items.length; k++) {
+      var it = items[(start + k) % items.length];
+      html += '<span class="fh-logo">' + (it.img
+        ? '<img src="' + it.img + '" alt="" title="' + it.alt + '" style="height:' + it.h + 'px" loading="lazy" decoding="async">'
+        : '<span class="logo-text">' + it.text + '</span>') + '</span>';
+    }
+    row.innerHTML = html + html;
+    wall.appendChild(row);
+  }
+  box.classList.add('has-logo-wall');
+  box.insertBefore(wall, box.firstChild);
+})();
