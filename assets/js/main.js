@@ -246,3 +246,58 @@
   }, { threshold: 0.35 });
   io.observe(sec);
 })();
+
+
+// Homepage film gallery: only play the uploaded vertical films while onscreen.
+// Respect reduced-motion settings and avoid downloading all seven films at once.
+(function () {
+  var gallery = document.querySelector('.home-films');
+  if (!gallery) return;
+  var rail = gallery.querySelector('.film-rail');
+  var cards = Array.prototype.slice.call(gallery.querySelectorAll('.film-card'));
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var buttons = gallery.querySelectorAll('.film-arrow');
+  buttons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      var direction = Number(button.getAttribute('data-direction')) || 1;
+      var first = cards[0];
+      var distance = first ? first.getBoundingClientRect().width + 20 : rail.clientWidth * .8;
+      rail.scrollBy({left:direction * distance, behavior:reduceMotion?'auto':'smooth'});
+    });
+  });
+  cards.forEach(function (card) {
+    var video = card.querySelector('video');
+    var frame = card.querySelector('.film-frame');
+    if (!video || !frame) return;
+    video.muted = true;
+    video.defaultMuted = true;
+    video.setAttribute('muted','');
+    video.addEventListener('playing', function () { frame.classList.add('is-playing'); });
+    video.addEventListener('error', function () { frame.classList.remove('is-playing'); });
+    function pause() { if (!video.paused) video.pause(); }
+    function play() {
+      if (reduceMotion || document.hidden) return;
+      var promise = video.play();
+      if (promise && promise.catch) promise.catch(function () {});
+    }
+    card._playFilm = play;
+    card._pauseFilm = pause;
+  });
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting && entry.intersectionRatio >= .35) entry.target._playFilm();
+        else entry.target._pauseFilm();
+      });
+    }, {root:rail,threshold:[0,.35,.65]});
+    cards.forEach(function (card) { observer.observe(card); });
+  }
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) cards.forEach(function (card) { card._pauseFilm(); });
+    else if (!reduceMotion) cards.forEach(function (card) {
+      var rect = card.getBoundingClientRect();
+      var bounds = rail.getBoundingClientRect();
+      if (rect.left < bounds.right && rect.right > bounds.left) card._playFilm();
+    });
+  });
+})();
