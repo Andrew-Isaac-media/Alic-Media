@@ -307,15 +307,26 @@
     img.src = v.dataset.fallback;
     v.replaceWith(img);
   }
+  function blocked(e) { return !(e && e.name === 'AbortError'); }
   vids.forEach(function (v) {
-    v.muted = true;
+    v.muted = true; v.defaultMuted = true; v.setAttribute('muted', '');
     var p = v.play();
-    if (p && p.catch) p.catch(function (e) { if (e && e.name === 'NotAllowedError') swap(v); });
+    if (p && p.catch) p.catch(function (e) { if (blocked(e)) swap(v); });
     v.addEventListener('playing', function () { v.dataset.ok = '1'; }, { once: true });
+    // if the browser stops a clip later and won't restart it, swap it too
+    v.addEventListener('pause', function () {
+      if (document.hidden || v.dataset.swapped) return;
+      setTimeout(function () {
+        if (!v.paused || document.hidden || v.dataset.swapped) return;
+        var q = v.play();
+        if (q && q.catch) q.catch(function (e) { if (blocked(e)) swap(v); });
+      }, 300);
+    });
   });
+  // anything still not playing after 3s (some phones never load or start the video) becomes the animated image
   setTimeout(function () {
-    vids.forEach(function (v) { if (!v.dataset.ok && v.paused && v.readyState >= 2) swap(v); });
-  }, 2500);
+    vids.forEach(function (v) { if (!v.dataset.ok && v.paused) swap(v); });
+  }, 3000);
 })();
 
 // Ensure the North Face tile automatically resumes as a silent looping background film.
