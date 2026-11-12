@@ -1403,3 +1403,8 @@ section.block.svc-page{padding-bottom:64px}
 /* Headline: soft dark glow right behind the letters */
 .home-page .hero.hero-photo h1{text-shadow:0 0 6px rgba(3,9,16,.35),0 0 22px rgba(3,9,16,.6),0 0 48px rgba(3,9,16,.35)}
 .home-page .hero.hero-photo .sub-hook,.home-page .hero.hero-photo .hero-photo-kicker{text-shadow:0 0 4px rgba(3,9,16,.45),0 0 16px rgba(3,9,16,.6)}
+
+/* Brand logo marquee: equal edge-to-edge spacing, including the repeating seam. */
+.home-page .clients .set{gap:44px;padding-right:44px}
+.home-page .clients .brand{padding:0}
+@media(max-width:860px){.home-page .clients .set{gap:32px;padding-right:32px}}
