@@ -317,3 +317,26 @@
     vids.forEach(function (v) { if (!v.dataset.ok && v.paused && v.readyState >= 2) swap(v); });
   }, 2500);
 })();
+
+// Ensure the North Face tile automatically resumes as a silent looping background film.
+(function () {
+  var v = document.querySelector('.hero-masonry video.north-face-hero-film');
+  if (!v) return;
+  v.controls = false;
+  v.removeAttribute('controls');
+  v.muted = true;
+  v.defaultMuted = true;
+  v.loop = true;
+  v.setAttribute('muted', '');
+  v.setAttribute('playsinline', '');
+  function resume() {
+    if (document.hidden || !v.isConnected || !v.paused) return;
+    var p = v.play();
+    if (p && p.catch) p.catch(function () {});
+  }
+  v.addEventListener('loadeddata', resume);
+  v.addEventListener('canplay', resume);
+  document.addEventListener('visibilitychange', resume);
+  window.addEventListener('pageshow', resume);
+  resume();
+})();
