@@ -1369,7 +1369,7 @@ section.block.svc-page{padding-bottom:64px}
 .home-page .hero.hero-photo .hero-masonry{position:absolute;inset:-4px;z-index:-1;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;align-items:start;overflow:hidden;background:#0c141b}
 .hero-masonry .hm-col{display:flex;flex-direction:column;gap:6px}
 .hero-masonry .hm-col:nth-child(2){margin-top:-12vw}
-.hero-masonry .hm-col:nth-child(3){margin-top:-20vw}
+.hero-masonry .hm-col:nth-child(3){margin-top:-9vw}
 .hero-masonry .hm-col:nth-child(4){margin-top:-6vw}
 .hero-masonry .hm-col:nth-child(5){margin-top:-2vw}
 .hero-masonry .hm-tile{position:relative;aspect-ratio:9/16;overflow:hidden;border-radius:4px;background:#1a232a}
