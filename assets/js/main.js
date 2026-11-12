@@ -14,6 +14,26 @@
 
 // Contact form: send in the background and show a message instead of leaving the page
 (function () {
+
+  // After the form is sent, swap the page over to the Calendly booking section
+  function showBooking(book, data) {
+    var widget = book.querySelector('.calendly-inline-widget');
+    if (widget) {
+      var url = widget.getAttribute('data-url');
+      var name = data.get('name'), email = data.get('email');
+      if (name) url += '&name=' + encodeURIComponent(name);
+      if (email) url += '&email=' + encodeURIComponent(email);
+      widget.setAttribute('data-url', url);
+    }
+    document.querySelectorAll('.page-hero, section.contact').forEach(function (el) { el.hidden = true; });
+    book.hidden = false;
+    book.classList.add('revealed');
+    window.scrollTo(0, 0);
+    var s = document.createElement('script');
+    s.src = 'https://assets.calendly.com/assets/external/widget.js';
+    s.async = true;
+    document.body.appendChild(s);
+  }
   var form = document.querySelector('form[data-ajax]');
   if (!form || !window.fetch) return;
   var status = form.querySelector('.form-status');
@@ -43,6 +63,8 @@
         });
       })
       .then(function () {
+        var book = document.getElementById('book');
+        if (book && book.hidden) { showBooking(book, data); form.reset(); return; }
         form.reset();
         status.className = 'form-status ok';
         status.textContent = 'Thanks! Your message is on its way — we’ll be in touch soon.';

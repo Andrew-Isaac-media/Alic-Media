@@ -1185,3 +1185,9 @@ section.block.svc-page{padding-bottom:64px}
     padding-right:28px;
   }
 }
+
+
+/* Contact: booking appears only after the form is submitted */
+.booking[hidden],.page-hero[hidden],section.contact[hidden]{display:none!important}
+.booking.revealed{padding-top:clamp(120px,14vw,170px);padding-bottom:72px;min-height:80vh}
+.book-title{font-weight:600;font-size:clamp(36px,5vw,64px);line-height:1;letter-spacing:-.04em;margin:0 0 28px}

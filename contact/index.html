@@ -24,8 +24,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400&family=Manrope:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,400&display=swap">
-<link rel="stylesheet" href="../assets/css/styles.css?v=1111f">
-<script src="../assets/js/main.js?v=1111d" defer></script>
+<link rel="stylesheet" href="../assets/css/styles.css?v=1112">
+<script src="../assets/js/main.js?v=1112" defer></script>
 <script type="application/ld+json">{
  "@context": "https://schema.org",
  "@type": "BreadcrumbList",
@@ -65,15 +65,11 @@
 <section class="page-hero">
   <p class="eyebrow line">Contact</p>
   <h1>Start a <em class="accent">project.</em></h1>
-  <p class="lede">Book a quick call below, or send us a message about your brand and what you have in mind.</p>
-</section>
-<section class="block booking" id="book" style="padding-top:20px" aria-labelledby="book-h">
-  <div class="section-head"><h2 class="eyebrow" id="book-h">Book a call</h2></div>
-  <div class="calendly-inline-widget" data-url="https://calendly.com/alicmediaorg/30min?hide_gdpr_banner=1&amp;background_color=faf6ef&amp;text_color=26301f&amp;primary_color=a9572e"></div><script src="https://assets.calendly.com/assets/external/widget.js" async></script><noscript><a class="btn clay" href="https://calendly.com/alicmediaorg/30min">Book a call on Calendly</a></noscript>
+  <p class="lede">Tell us a little about you and your brand. Once you submit, you can book a call with us.</p>
 </section>
 <section class="block paper contact" aria-labelledby="msg-h">
   <div class="contact-main">
-  <h2 class="eyebrow" id="msg-h">Or send us a message</h2>
+  <h2 class="eyebrow" id="msg-h">Tell us about your brand</h2>
   <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" data-ajax>
     <div class="field-row">
       <div class="field"><label for="name">What is your name?</label><input id="name" name="name" type="text" autocomplete="name" required></div>
@@ -110,6 +106,10 @@
       <li><a href="https://www.instagram.com/alic.media/" target="_blank" rel="noopener">Instagram</a></li>
     </ul>
   </aside>
+</section>
+<section class="block booking" id="book" aria-labelledby="book-h" hidden>
+  <h2 class="book-title" id="book-h">Book a Call</h2>
+  <div class="calendly-inline-widget" data-url="https://calendly.com/alicmediaorg/30min?hide_gdpr_banner=1&amp;background_color=faf6ef&amp;text_color=26301f&amp;primary_color=a9572e"></div>
 </section>
 </main>
 <footer class="site-footer" id="contact">
