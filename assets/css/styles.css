@@ -1438,3 +1438,9 @@ section.block.svc-page{padding-bottom:64px}
 .home-page .hero-masonry video.sun-cruiser-hero-ending.is-ready{opacity:1}
 .home-page .hero-masonry video.sun-cruiser-hero-ending::-webkit-media-controls,
 .home-page .hero-masonry video.sun-cruiser-hero-ending::-webkit-media-controls-overlay-play-button{display:none!important}
+
+/* Subtly widen Sun Cruiser's visible framing without changing the tile layout. */
+.home-page .hero-masonry video.sun-cruiser-hero-ending{
+  transform:scale(.94);
+  transform-origin:center center;
+}
