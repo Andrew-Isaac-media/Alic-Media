@@ -148,6 +148,13 @@
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!slides.length || reduceMotion) return;
   var current = 0, timer = null;
+  var projectName = document.querySelector('.hero-project-name');
+  var projectCount = document.querySelector('.hero-showcase-label span:last-child');
+  function updateCaption(index) {
+    if (projectName) projectName.textContent = slides[index].getAttribute('data-project') || '';
+    if (projectCount) projectCount.textContent = String(index + 1).padStart(2, '0') + ' / ' + String(slides.length).padStart(2, '0');
+  }
+  updateCaption(current);
   function activate(next) {
     if (document.hidden) return;
     var previous = slides[current], incoming = slides[next];
@@ -165,6 +172,7 @@
     incoming.classList.add('is-active');
     previous.classList.remove('is-active');
     current = next;
+    updateCaption(current);
     window.setTimeout(function () {
       var oldVideo = previous.querySelector('video');
       if (oldVideo && !previous.classList.contains('is-active')) {
