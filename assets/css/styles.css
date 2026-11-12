@@ -1408,3 +1408,7 @@ section.block.svc-page{padding-bottom:64px}
 .home-page .clients .set{gap:44px;padding-right:44px}
 .home-page .clients .brand{padding:0}
 @media(max-width:860px){.home-page .clients .set{gap:32px;padding-right:32px}}
+
+/* Smaller, cleaner Trusted by heading. */
+.home-page .clients h2{font-size:clamp(23px,2.2vw,30px)}
+@media(max-width:860px){.home-page .clients h2{font-size:25px}}
