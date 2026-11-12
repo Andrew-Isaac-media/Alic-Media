@@ -1200,7 +1200,6 @@ section.block.svc-page{padding-bottom:64px}
 .home-page .hero.hero-photo .hero-cta.hero-cta-outline:hover{background:rgba(255,255,255,.14);color:#fff}
 
 /* Home: logo carousel waits until it is on screen, so the first logos aren't missed */
-.home-page .clients.marquee-wait .track{animation-play-state:paused}
 
 /* Home: founders */
 .home-page section.block.home-founders{padding-top:64px;padding-bottom:56px;text-align:center}
@@ -1364,3 +1363,36 @@ section.block.svc-page{padding-bottom:64px}
   .home-films .film-frame,.home-films .film-frame video{transition:none!important}
   .home-films .film-card:hover .film-frame{transform:none}
 }
+
+
+/* Home hero: vertical masonry of autoplaying films behind the headline */
+.home-page .hero.hero-photo .hero-masonry{position:absolute;inset:-4px;z-index:-1;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;align-items:start;overflow:hidden;background:#0c141b}
+.hero-masonry .hm-col{display:flex;flex-direction:column;gap:6px}
+.hero-masonry .hm-col:nth-child(2){margin-top:-9vw}
+.hero-masonry .hm-col:nth-child(3){margin-top:-3vw}
+.hero-masonry .hm-col:nth-child(4){margin-top:-13vw}
+.hero-masonry .hm-col:nth-child(5){margin-top:-6vw}
+.hero-masonry .hm-tile{position:relative;aspect-ratio:9/16;overflow:hidden;border-radius:4px;background:#1a232a}
+.hero-masonry .hm-tile:nth-child(3){display:none}
+.hero-masonry video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1}
+.home-page .hero.hero-photo .hero-photo-overlay{z-index:0;background:radial-gradient(ellipse 60% 55% at 50% 50%,rgba(3,9,16,.62) 0%,rgba(3,9,16,.42) 60%,rgba(3,9,16,.28) 100%),linear-gradient(180deg,rgba(3,9,16,.45) 0%,rgba(3,9,16,.2) 45%,rgba(3,9,16,.55) 100%)}
+.home-page .hero.hero-photo h1,.home-page .hero.hero-photo .sub-hook,.home-page .hero.hero-photo .hero-photo-kicker{text-shadow:0 2px 24px rgba(0,0,0,.45)}
+@media(max-width:1100px){
+ .home-page .hero.hero-photo .hero-masonry{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .hero-masonry .hm-col:nth-child(n+4){display:none}
+ .hero-masonry .hm-tile:nth-child(3){display:block}
+ .hero-masonry .hm-col:nth-child(2){margin-top:-18vw}
+ .hero-masonry .hm-col:nth-child(3){margin-top:-8vw}
+}
+@media(max-width:640px){
+ .home-page .hero.hero-photo .hero-masonry{grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}
+ .hero-masonry .hm-col:nth-child(n+3){display:none}
+ .hero-masonry .hm-col{gap:5px}
+ .hero-masonry .hm-col:nth-child(2){margin-top:-30vw}
+}
+
+/* Home logo strip: every logo the same visual size */
+.home-page .clients .brand{flex:0 0 auto;width:auto;height:64px;padding:0 6px}
+.home-page .clients .brand img{max-width:none;max-height:none}
+@media(max-width:860px){.home-page .clients .brand{height:54px}}
+.home-page .clients .brand .logo-text{font-size:22px}

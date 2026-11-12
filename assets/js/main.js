@@ -236,16 +236,7 @@
 })();
 
 
-// Home: start the logo carousel when it scrolls into view
-(function () {
-  var sec = document.querySelector('.clients.marquee-wait');
-  if (!sec) return;
-  if (!('IntersectionObserver' in window)) { sec.classList.remove('marquee-wait'); return; }
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) { if (e.isIntersecting) { sec.classList.remove('marquee-wait'); io.disconnect(); } });
-  }, { threshold: 0.35 });
-  io.observe(sec);
-})();
+
 
 
 // Homepage film gallery: only play the uploaded vertical films while onscreen.
