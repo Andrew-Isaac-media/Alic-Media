@@ -428,7 +428,7 @@
   });
 })();
 
-// Likes stat: hearts flutter up once when the box first scrolls into view, then settle and stay in the background.
+// Likes stat: hearts flutter up once when the box first scrolls into view, slow down, then keep gently floating in the background.
 (function () {
   var box = document.querySelector('.home-page .founder-highlight');
   if (!box || !('IntersectionObserver' in window)) return;
@@ -448,8 +448,11 @@
       el.style.cssText = '--x:' + (2 + Math.random() * 90) + '%;--s:' + s + 'px;--c:' + colors[i % colors.length] +
         ';--d:' + d + 's;--delay:' + (Math.random() * 1.3) + 's;--h:' + (30 + Math.random() * (bh - 40)) + 'px' +
         ';--o:' + (0.5 + Math.random() * 0.4) + ';--rest:' + (0.22 + Math.random() * 0.3) +
-        ';--r0:' + (Math.random() * 30 - 15) + 'deg;--r1:' + (Math.random() * 50 - 25) + 'deg;--sw:' + (3 + Math.random() * 7) + 'px';
-      el.innerHTML = heart;
+        ';--r0:' + (Math.random() * 30 - 15) + 'deg;--r1:' + (Math.random() * 50 - 25) + 'deg;--sw:' + (3 + Math.random() * 7) + 'px' +
+        // after the burst, each heart keeps drifting slowly around where it settled
+        ';--fd:' + (5 + Math.random() * 4) + 's;--fdel:' + 'calc(var(--delay) + var(--d) * .75)' +
+        ';--dx:' + ((Math.random() < .5 ? -1 : 1) * (10 + Math.random() * 12)) + 'px;--dy:' + (-(8 + Math.random() * 14)) + 'px;--dr:' + (Math.random() * 16 - 8) + 'deg';
+      el.innerHTML = '<i class="fh-drift">' + heart + '</i>';
       layer.appendChild(el);
     }
   }

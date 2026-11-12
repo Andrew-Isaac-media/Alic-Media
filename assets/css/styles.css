@@ -1593,3 +1593,8 @@ section.block.svc-page{padding-bottom:64px}
 .home-page .home-photo-frame-three .home-photo-image-link img{
   filter:brightness(1.045) contrast(1.10) saturate(1.13) sepia(.025);
 }
+
+/* Likes stat: after the burst, settled hearts keep floating slowly */
+.home-page .fh-drift{display:block;width:100%;height:100%;font-style:normal;animation:fhHeartDrift var(--fd) ease-in-out var(--fdel) infinite alternate}
+@keyframes fhHeartDrift{from{transform:translate3d(0,0,0) rotate(0deg)}to{transform:translate3d(var(--dx),var(--dy),0) rotate(var(--dr))}}
+@media (prefers-reduced-motion:reduce){.home-page .fh-drift{animation:none}}
