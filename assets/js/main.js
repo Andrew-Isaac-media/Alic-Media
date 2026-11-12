@@ -340,3 +340,40 @@
   window.addEventListener('pageshow', resume);
   resume();
 })();
+
+// Homepage top-center tile: loop only the final two seconds of the Sun Cruiser campaign.
+(function () {
+  var video = document.querySelector('.hero-masonry video.sun-cruiser-hero-ending');
+  if (!video) return;
+  video.controls = false;
+  video.muted = true;
+  video.defaultMuted = true;
+  video.setAttribute('muted', '');
+  video.setAttribute('playsinline', '');
+  var start = 0;
+  var initialized = false;
+  function play() {
+    if (document.hidden) return;
+    var result = video.play();
+    if (result && result.catch) result.catch(function () {});
+  }
+  function begin() {
+    if (!Number.isFinite(video.duration) || video.duration <= 0) return;
+    start = Math.max(0, video.duration - 2);
+    initialized = true;
+    // Seek before starting, so the tile never shows the beginning of the film.
+    video.currentTime = start;
+  }
+  video.addEventListener('loadedmetadata', begin);
+  video.addEventListener('seeked', function () {
+    video.classList.add('is-ready');
+    play();
+  });
+  video.addEventListener('timeupdate', function () {
+    if (initialized && video.currentTime >= video.duration - 0.055) video.currentTime = start;
+  });
+  video.addEventListener('ended', function () { if (initialized) video.currentTime = start; });
+  document.addEventListener('visibilitychange', function () { if (!document.hidden && initialized) play(); });
+  window.addEventListener('pageshow', function () { if (initialized) play(); });
+  if (video.readyState >= 1) begin();
+})();
