@@ -1412,3 +1412,17 @@ section.block.svc-page{padding-bottom:64px}
 /* Smaller, cleaner Trusted by heading. */
 .home-page .clients h2{font-size:clamp(23px,2.2vw,30px)}
 @media(max-width:860px){.home-page .clients h2{font-size:25px}}
+
+/* Subtle type contrast boost over the moving homepage film collage. */
+.home-page .hero.hero-photo h1{
+  color:#fff;
+  text-shadow:0 3px 7px rgba(0,0,0,.58),0 10px 35px rgba(0,0,0,.60);
+}
+.home-page .hero.hero-photo .sub-hook{
+  color:#fff;
+  text-shadow:0 2px 5px rgba(0,0,0,.68),0 7px 22px rgba(0,0,0,.52);
+}
+.home-page .hero.hero-photo .hero-photo-kicker{
+  color:rgba(255,255,255,.96);
+  text-shadow:0 2px 8px rgba(0,0,0,.7);
+}
