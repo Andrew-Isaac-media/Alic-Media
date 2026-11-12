@@ -638,3 +638,24 @@ section.block.svc-page{padding-bottom:64px}
 .hero-video .bg-anim{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
 .home-page .hero .hero-video.hv-home .bg-anim{filter:invert(1);mix-blend-mode:multiply}
 .home-page .hero .hero-video.hv-home::before{display:none}
+
+
+/* ALIC homepage project showreel — real founder portfolio footage */
+.home-page .hero{isolation:isolate;background:#0c1513;min-height:100svh}
+.home-page .hero-video.hero-showreel{z-index:-2;background:#101917}
+.home-page .hero-showreel .hero-reel-slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity 1.4s ease,visibility 1.4s step-end;overflow:hidden;background-size:cover;background-position:center}
+.home-page .hero-showreel .hero-reel-slide:nth-child(1){background-image:url('../video/work/sun-cruiser.webp')}
+.home-page .hero-showreel .hero-reel-slide:nth-child(2){background-image:url('../video/work/the-north-face.webp')}
+.home-page .hero-showreel .hero-reel-slide:nth-child(3){background-image:url('../video/work/versace.webp')}
+.home-page .hero-showreel .hero-reel-slide.is-active{opacity:1;visibility:visible;transition:opacity 1.4s ease,visibility 0s}
+.home-page .hero-showreel .hero-reel-slide video{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;opacity:0;transition:opacity .6s ease;filter:saturate(.83)}
+.home-page .hero-showreel .hero-reel-slide.is-playing video{opacity:1}
+.home-page .hero .scrim{z-index:-1;background:linear-gradient(90deg,rgba(5,13,12,.64),rgba(5,13,12,.30) 55%,rgba(5,13,12,.56)),linear-gradient(180deg,rgba(6,16,15,.36),transparent 26%,transparent 65%,rgba(6,16,15,.40))}
+.home-page .hero-drop-title{position:relative;display:block;max-width:14ch;text-wrap:balance;filter:drop-shadow(0 7px 24px rgba(0,0,0,.2))}
+.home-page .hero-drop-word{display:inline-block;opacity:0;transform:translate3d(0,-.72em,0) rotate(-3deg);animation:alic-word-drop .86s cubic-bezier(.20,1.22,.35,1) both;animation-delay:calc(.24s + var(--word-index)*.13s);will-change:transform,opacity}
+@keyframes alic-word-drop{0%{opacity:0;transform:translate3d(0,-.72em,0) rotate(-3deg)}70%{opacity:1;transform:translate3d(0,.055em,0) rotate(.6deg)}100%{opacity:1;transform:translate3d(0,0,0) rotate(0)}}
+.home-page .hero .sub-hook{animation:alic-hero-fade .9s ease 1.1s both}
+.home-page .hero .hero-cta{animation:alic-hero-fade .9s ease 1.3s both}
+@keyframes alic-hero-fade{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@media (max-width:700px){.home-page .hero-showreel .hero-reel-slide{background-position:center}.home-page .hero-showreel .hero-reel-slide video{object-position:center}.home-page .hero .scrim{background:linear-gradient(180deg,rgba(3,10,9,.57),rgba(3,10,9,.45) 48%,rgba(3,10,9,.66))}.home-page .hero-drop-title{font-size:clamp(50px,11.4vw,80px);max-width:11ch}}
+@media (prefers-reduced-motion:reduce){.home-page .hero-drop-word,.home-page .hero .sub-hook,.home-page .hero .hero-cta{animation:none!important;opacity:1!important;transform:none!important}.home-page .hero-showreel .hero-reel-slide{transition:none!important}.home-page .hero-showreel .hero-reel-slide video{display:none}}
