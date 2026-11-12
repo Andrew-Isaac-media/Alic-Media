@@ -1191,3 +1191,25 @@ section.block.svc-page{padding-bottom:64px}
 .booking[hidden],.page-hero[hidden],section.contact[hidden]{display:none!important}
 .booking.revealed{padding-top:clamp(120px,14vw,170px);padding-bottom:72px;min-height:80vh}
 .book-title{font-weight:600;font-size:clamp(36px,5vw,64px);line-height:1;letter-spacing:-.04em;margin:0 0 28px}
+
+
+/* Home hero: second button */
+.home-page .hero.hero-photo .hero-ctas{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:30px}
+.home-page .hero.hero-photo .hero-ctas .hero-cta{margin:0}
+.home-page .hero.hero-photo .hero-cta.hero-cta-outline{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.85)}
+.home-page .hero.hero-photo .hero-cta.hero-cta-outline:hover{background:rgba(255,255,255,.14);color:#fff}
+
+/* Home: logo carousel waits until it is on screen, so the first logos aren't missed */
+.home-page .clients.marquee-wait .track{animation-play-state:paused}
+
+/* Home: founders */
+.home-page section.block.home-founders{padding-top:64px;padding-bottom:56px;text-align:center}
+.home-founders .eyebrow{justify-content:center;margin-bottom:26px}
+.home-founders-grid{display:grid;grid-template-columns:repeat(2,minmax(0,240px));justify-content:center;gap:clamp(20px,4vw,48px)}
+.home-founder{margin:0}
+.home-founder img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:16px;background:#e9ece7}
+.home-founder figcaption{margin-top:14px;font-size:clamp(18px,1.6vw,22px);font-weight:600;letter-spacing:-.02em;color:var(--home-green,#183B32)}
+.home-founder figcaption span{display:block;margin-top:2px;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#64766b}
+.home-founders-story{max-width:620px;margin:28px auto 0;font-size:16px;line-height:1.65;color:#3d4a43}
+.home-founders-story .text-link{white-space:nowrap}
+@media(max-width:600px){.home-founders-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}}
