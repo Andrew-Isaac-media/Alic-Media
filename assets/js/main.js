@@ -137,3 +137,70 @@
     sync();
   });
 })();
+
+
+// Homepage showreel: rotate only between footage from our published projects.
+// Keep a still-image fallback for autoplay-restricted browsers and reduced motion.
+(function () {
+  var reel = document.querySelector('.hero-showreel');
+  if (!reel) return;
+  var slides = Array.prototype.slice.call(reel.querySelectorAll('.hero-reel-slide'));
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!slides.length || reduceMotion) return;
+  var current = 0, timer = null;
+  function activate(next) {
+    if (document.hidden) return;
+    var previous = slides[current], incoming = slides[next];
+    if (previous === incoming) return;
+    var video = incoming.querySelector('video');
+    if (video) {
+      video.muted = true;
+      video.defaultMuted = true;
+      video.setAttribute('muted', '');
+      video.preload = 'auto';
+      video.load();
+      var result = video.play();
+      if (result && result.catch) result.catch(function () {});
+    }
+    incoming.classList.add('is-active');
+    previous.classList.remove('is-active');
+    current = next;
+    window.setTimeout(function () {
+      var oldVideo = previous.querySelector('video');
+      if (oldVideo && !previous.classList.contains('is-active')) {
+        oldVideo.pause();
+        oldVideo.currentTime = 0;
+      }
+    }, 1450);
+  }
+  slides.forEach(function (slide) {
+    var v = slide.querySelector('video');
+    if (!v) return;
+    v.addEventListener('playing', function () { slide.classList.add('is-playing'); });
+    v.addEventListener('error', function () { slide.classList.remove('is-playing'); });
+  });
+  var first = slides[0].querySelector('video');
+  if (first) {
+    first.muted = true;
+    first.defaultMuted = true;
+    var firstPlay = first.play();
+    if (firstPlay && firstPlay.catch) firstPlay.catch(function () {});
+  }
+  function start() {
+    if (!timer) timer = window.setInterval(function () {
+      if (!document.hidden) activate((current + 1) % slides.length);
+    }, 6800);
+  }
+  function stop() { if (timer) window.clearInterval(timer); timer = null; }
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) {
+      stop();
+      slides.forEach(function (slide) { var v = slide.querySelector('video'); if (v) v.pause(); });
+    } else {
+      var v = slides[current].querySelector('video');
+      if (v) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+      start();
+    }
+  });
+  start();
+})();
