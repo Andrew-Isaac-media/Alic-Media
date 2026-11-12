@@ -1213,3 +1213,154 @@ section.block.svc-page{padding-bottom:64px}
 .home-founders-story{max-width:620px;margin:28px auto 0;font-size:16px;line-height:1.65;color:#3d4a43}
 .home-founders-story .text-link{white-space:nowrap}
 @media(max-width:600px){.home-founders-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}}
+
+
+/* HOMEPAGE — ALIC FILM STUDIES */
+.home-films{
+  background:#14231e;
+  color:#f3f2ea;
+  overflow:hidden;
+  padding:clamp(72px,9vw,138px) 0 clamp(64px,7vw,105px);
+}
+.home-films .home-films-heading{
+  max-width:1550px;
+  margin:0 auto 36px;
+  padding:0 clamp(23px,5.5vw,90px);
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:28px;
+}
+.home-films .home-films-kicker{
+  margin:0 0 15px;
+  color:#a9b9ab;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.22em;
+}
+.home-films h2{
+  margin:0;
+  font-family:"Instrument Serif",Georgia,serif;
+  font-weight:400;
+  letter-spacing:-.042em;
+  line-height:.96;
+  font-size:clamp(63px,7.4vw,117px);
+  color:#fff;
+}
+.home-films h2 em{font-weight:400;color:#c5cfba}
+.home-films .home-films-summary{
+  max-width:39ch;
+  margin:22px 0 0;
+  color:#b8c5b7;
+  font-size:clamp(14px,1.3vw,17px);
+  line-height:1.65;
+}
+.home-films .home-films-actions{display:flex;align-items:center;gap:9px;padding-bottom:7px}
+.home-films .film-arrow{
+  width:47px;height:47px;
+  border:1px solid rgba(255,255,255,.35);
+  color:#fff;background:transparent;
+  border-radius:50%;
+  font-size:23px;
+  cursor:pointer;
+  display:grid;place-items:center;
+  transition:background .25s ease,color .25s ease,border-color .25s ease;
+}
+.home-films .film-arrow:hover,
+.home-films .film-arrow:focus-visible{background:#f3f2ea;color:#14231e;border-color:#f3f2ea}
+.home-films .film-rail{
+  display:flex;
+  align-items:flex-start;
+  gap:clamp(12px,1.7vw,23px);
+  overflow-x:auto;
+  overflow-y:hidden;
+  overscroll-behavior-inline:contain;
+  scroll-snap-type:x mandatory;
+  scroll-padding-left:clamp(23px,5.5vw,90px);
+  padding:22px clamp(23px,5.5vw,90px) 30px;
+  scrollbar-width:none;
+  -webkit-overflow-scrolling:touch;
+}
+.home-films .film-rail::-webkit-scrollbar{display:none}
+.home-films .film-card{
+  flex:0 0 clamp(235px,24vw,365px);
+  min-width:0;
+  scroll-snap-align:start;
+  position:relative;
+}
+.home-films .film-card:nth-child(2n){margin-top:37px}
+.home-films .film-card:nth-child(3n){margin-top:12px}
+.home-films .film-frame{
+  position:relative;
+  width:100%;
+  aspect-ratio:9/16;
+  overflow:hidden;
+  background:#253a32;
+  isolation:isolate;
+  box-shadow:0 15px 35px rgba(0,0,0,.13);
+  transition:transform .45s ease,box-shadow .45s ease;
+}
+.home-films .film-card:hover .film-frame{transform:translateY(-5px);box-shadow:0 22px 38px rgba(0,0,0,.23)}
+.home-films .film-frame::before{
+  content:"";position:absolute;inset:0;
+  background-position:center;background-size:cover;
+  transform:scale(1.02);
+  opacity:.65;
+}
+/* Portfolio-image fallbacks while video assets are being uploaded. */
+.home-films .film-card:nth-child(1) .film-frame::before{background-image:url('../img/process/discover.webp')}
+.home-films .film-card:nth-child(2) .film-frame::before{background-image:url('../img/process/strategy.webp')}
+.home-films .film-card:nth-child(3) .film-frame::before{background-image:url('../img/process/create.webp')}
+.home-films .film-card:nth-child(4) .film-frame::before{background-image:url('../img/work/suncruiser-sc-3.webp')}
+.home-films .film-card:nth-child(5) .film-frame::before{background-image:url('../img/process/grow.webp')}
+.home-films .film-card:nth-child(6) .film-frame::before{background-image:url('../img/process/deliver.webp')}
+.home-films .film-card:nth-child(7) .film-frame::before{background-image:url('../img/work/versace-thumb-v2.webp')}
+.home-films .film-frame video{
+  position:absolute;inset:0;z-index:1;
+  display:block;width:100%;height:100%;
+  object-fit:contain;
+  background:transparent;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .5s ease;
+}
+.home-films .film-frame.is-playing video{opacity:1;background:#0d1513}
+.home-films .film-frame-shade{
+  position:absolute;inset:0;z-index:2;
+  background:linear-gradient(180deg,rgba(0,0,0,.2),transparent 25%,transparent 67%,rgba(0,0,0,.27));
+  pointer-events:none;
+}
+.home-films .film-frame-label{
+  position:absolute;z-index:3;
+  top:16px;left:16px;right:16px;
+  display:flex;justify-content:space-between;
+  font-size:9px;font-weight:700;letter-spacing:.18em;
+  color:rgba(255,255,255,.9);
+  text-shadow:0 1px 12px rgba(0,0,0,.4);
+}
+.home-films .home-films-footer{
+  max-width:1550px;
+  padding:24px clamp(23px,5.5vw,90px) 0;
+  margin:0 auto;
+  display:flex;justify-content:space-between;gap:16px;align-items:center;
+  border-top:1px solid rgba(255,255,255,.16);
+  color:#a6b6aa;
+  font-size:10px;font-weight:700;letter-spacing:.16em;
+}
+.home-films .home-films-footer a{color:#e7eee2;letter-spacing:.05em;font-size:12px}
+.home-films .home-films-footer a:hover{text-decoration:underline}
+@media(max-width:700px){
+  .home-films{padding:70px 0 54px}
+  .home-films .home-films-heading{align-items:flex-end;margin-bottom:22px}
+  .home-films h2{font-size:clamp(58px,12vw,82px)}
+  .home-films .home-films-summary{font-size:14px;margin-top:15px}
+  .home-films .film-arrow{width:39px;height:39px;font-size:19px}
+  .home-films .film-card{flex-basis:min(69vw,305px)}
+  .home-films .film-card:nth-child(2n){margin-top:21px}
+  .home-films .film-rail{padding-top:13px}
+  .home-films .home-films-footer{align-items:flex-start;flex-direction:column;line-height:1.5}
+}
+@media(prefers-reduced-motion:reduce){
+  .home-films .film-frame,.home-films .film-frame video{transition:none!important}
+  .home-films .film-card:hover .film-frame{transform:none}
+}
