@@ -1081,8 +1081,7 @@ section.block.svc-page{padding-bottom:64px}
   letter-spacing:.16em;
   opacity:.82;
 }
-.home-page .clients .marquee:hover .track,
-.home-page .clients .marquee:focus-within .track{animation-play-state:paused}
+
 @media(max-width:860px){
   .home-page .clients{
     grid-template-columns:1fr;
@@ -1104,4 +1103,35 @@ section.block.svc-page{padding-bottom:64px}
     -webkit-mask-image:none;
     mask-image:none;
   }
+}
+
+
+/* Brand strip: headings above logos; uninterrupted scroll on hover. */
+.home-page .clients{
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+  gap:30px;
+  padding:clamp(48px,5vw,76px) 0 clamp(48px,5vw,76px);
+}
+.home-page .clients .clients-intro{
+  width:100%;
+  max-width:none;
+  padding:0 clamp(24px,5vw,92px);
+  text-align:center;
+}
+.home-page .clients .clients-eyebrow{margin-bottom:12px}
+.home-page .clients h2{font-size:clamp(42px,4.8vw,66px)}
+.home-page .clients .marquee{width:100%;flex:none}
+.home-page .clients .track,
+.home-page .clients .marquee:hover .track,
+.home-page .clients .marquee:focus-within .track{animation-play-state:running}
+@media(max-width:860px){
+  .home-page .clients{gap:24px;padding:40px 0 45px}
+  .home-page .clients .clients-intro{padding:0 24px}
+}
+@media(prefers-reduced-motion:reduce){
+  .home-page .clients .track,
+  .home-page .clients .marquee:hover .track,
+  .home-page .clients .marquee:focus-within .track{animation:none}
 }
