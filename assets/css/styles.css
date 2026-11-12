@@ -1135,3 +1135,53 @@ section.block.svc-page{padding-bottom:64px}
   .home-page .clients .marquee:hover .track,
   .home-page .clients .marquee:focus-within .track{animation:none}
 }
+
+
+/* Compact trusted-by ribbon: refined typography and substantially less height. */
+.home-page .clients{
+  gap:14px;
+  padding:24px 0 22px;
+}
+.home-page .clients .clients-eyebrow{
+  margin-bottom:5px;
+  font-size:9px;
+  letter-spacing:.19em;
+}
+.home-page .clients h2{
+  font-size:clamp(28px,2.8vw,40px);
+  line-height:1;
+}
+.home-page .clients .brand{
+  flex-basis:128px;
+  width:128px;
+  height:46px;
+}
+.home-page .clients .brand img{
+  max-width:123px;
+  max-height:35px;
+}
+.home-page .clients .brand .logo-text{font-size:17px}
+.home-page .clients .set{
+  gap:36px;
+  padding-right:36px;
+}
+@media(max-width:860px){
+  .home-page .clients{
+    gap:12px;
+    padding:21px 0 20px;
+  }
+  .home-page .clients h2{font-size:31px}
+  .home-page .clients .brand{
+    flex-basis:108px;
+    width:108px;
+    height:42px;
+  }
+  .home-page .clients .brand img{
+    max-width:104px;
+    max-height:31px;
+  }
+  .home-page .clients .set{
+    gap:28px;
+    padding-right:28px;
+  }
+}
