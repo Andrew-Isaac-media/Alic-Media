@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://alicmedia.com/sitemap.xml
+Sitemap: https://alicagency.com/sitemap.xml

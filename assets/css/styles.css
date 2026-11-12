@@ -1510,3 +1510,6 @@ section.block.svc-page{padding-bottom:64px}
 .home-page .fh-plane::before{content:"";position:absolute;right:92%;top:52%;width:calc(var(--s) * 1.8);height:2px;border-radius:2px;background:linear-gradient(90deg,transparent,currentColor);opacity:.35}
 @keyframes fhFly{from{transform:translate3d(0,0,0)}to{transform:translate3d(calc(100% + var(--s) + 140px),0,0)}}
 @media (prefers-reduced-motion:reduce){.home-page .fh-lane{animation:none;transform:translateX(55%)}}
+
+/* Service pages: short location line above the bullets */
+.svc-area{max-width:640px;font-size:clamp(17px,1.8vw,21px);line-height:1.6;color:var(--sage,#47665c);margin:0 0 22px}

@@ -1,4 +1,0 @@
-# Redirect the Netlify subdomain and www to the main domain once the custom domain is connected.
-# TODO: update the subdomain name to match your Netlify site.
-# https://alic-media.netlify.app/*  https://alicmedia.com/:splat  301!
-# https://www.alicmedia.com/*        https://alicmedia.com/:splat  301!
