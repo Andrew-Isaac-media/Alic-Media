@@ -292,3 +292,28 @@
     });
   });
 })();
+
+
+// Hero film wall: if the browser blocks video autoplay (e.g. iPhone Low Power Mode),
+// swap each clip for its animated-image version so it still moves with no play button.
+(function () {
+  var vids = document.querySelectorAll('.hero-masonry video[data-fallback]');
+  if (!vids.length) return;
+  function swap(v) {
+    if (v.dataset.swapped) return;
+    v.dataset.swapped = '1';
+    var img = document.createElement('img');
+    img.className = 'hm-anim'; img.alt = ''; img.decoding = 'async';
+    img.src = v.dataset.fallback;
+    v.replaceWith(img);
+  }
+  vids.forEach(function (v) {
+    v.muted = true;
+    var p = v.play();
+    if (p && p.catch) p.catch(function (e) { if (e && e.name === 'NotAllowedError') swap(v); });
+    v.addEventListener('playing', function () { v.dataset.ok = '1'; }, { once: true });
+  });
+  setTimeout(function () {
+    vids.forEach(function (v) { if (!v.dataset.ok && v.paused && v.readyState >= 2) swap(v); });
+  }, 2500);
+})();
