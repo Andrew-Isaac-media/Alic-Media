@@ -415,3 +415,37 @@
     }
   });
 })();
+
+// Likes stat: little hearts flutter up inside the "Likes on brand videos" box each time it scrolls into view.
+(function () {
+  var box = document.querySelector('.home-page .founder-highlight');
+  if (!box || !('IntersectionObserver' in window)) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  box.classList.add('has-hearts');
+  var layer = document.createElement('div');
+  layer.className = 'fh-hearts';
+  layer.setAttribute('aria-hidden', 'true');
+  box.appendChild(layer);
+  var colors = ['#183B32', '#47665c', '#7f9b90', '#b9cbc3'];
+  var heart = '<svg viewBox="0 0 24 22" fill="currentColor"><path d="M12 21.3 10.3 19.8C4.2 14.3 0 10.6 0 6.1 0 2.6 2.7 0 6.1 0c1.9 0 3.8.9 5 2.3C13.1.9 15 0 16.9 0 20.3 0 23 2.6 23 6.1c0 4.5-4.2 8.2-10.3 13.7L12 21.3z"/></svg>';
+  var busy = false;
+  function burst() {
+    if (busy) return;
+    busy = true;
+    var h = box.offsetHeight + 40, n = window.innerWidth < 760 ? 16 : 24;
+    for (var i = 0; i < n; i++) {
+      var el = document.createElement('span');
+      el.className = 'fh-heart';
+      var s = 12 + Math.random() * 18, d = 2.2 + Math.random() * 1.6;
+      el.style.cssText = '--x:' + (Math.random() * 92) + '%;--s:' + s + 'px;--c:' + colors[i % colors.length] +
+        ';--d:' + d + 's;--delay:' + (Math.random() * 1.4) + 's;--h:' + (h * (0.7 + Math.random() * 0.3)) + 'px' +
+        ';--o:' + (0.45 + Math.random() * 0.45) + ';--r0:' + (Math.random() * 30 - 15) + 'deg;--r1:' + (Math.random() * 50 - 25) + 'deg;--sw:' + (4 + Math.random() * 10) + 'px';
+      el.innerHTML = heart;
+      layer.appendChild(el);
+    }
+    setTimeout(function () { layer.innerHTML = ''; busy = false; }, 4400);
+  }
+  new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) burst(); });
+  }, { threshold: 0.5 }).observe(box);
+})();
