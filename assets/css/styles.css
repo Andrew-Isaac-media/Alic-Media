@@ -1426,3 +1426,9 @@ section.block.svc-page{padding-bottom:64px}
   color:rgba(255,255,255,.96);
   text-shadow:0 2px 8px rgba(0,0,0,.7);
 }
+
+/* North Face hero film: passive moving footage, never native playback UI. */
+.home-page .hero-masonry video.north-face-hero-film{pointer-events:none!important;-webkit-appearance:none;appearance:none}
+.home-page .hero-masonry video.north-face-hero-film::-webkit-media-controls-enclosure,
+.home-page .hero-masonry video.north-face-hero-film::-webkit-media-controls-overlay-enclosure,
+.home-page .hero-masonry video.north-face-hero-film::-webkit-media-controls-play-button{display:none!important;opacity:0!important}
