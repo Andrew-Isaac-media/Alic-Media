@@ -981,3 +981,127 @@ section.block.svc-page{padding-bottom:64px}
   .home-page .hero.hero-photo .sub-hook,
   .home-page .hero.hero-photo .hero-cta{animation:none!important;opacity:1!important;transform:none!important}
 }
+
+
+/* Polished founder-brand ribbon — consistent logo rhythm, restrained editorial framing. */
+.home-page .clients{
+  display:grid;
+  grid-template-columns:minmax(205px,265px) minmax(0,1fr);
+  align-items:center;
+  gap:clamp(24px,4vw,78px);
+  padding:clamp(48px,5vw,78px) 0 clamp(48px,5vw,78px) clamp(24px,5vw,92px);
+  background:#f8f9f6;
+  border-top:1px solid rgba(24,59,50,.1);
+  border-bottom:1px solid rgba(24,59,50,.1);
+  overflow:hidden;
+}
+.home-page .clients .clients-intro{
+  min-width:0;
+  padding-right:clamp(8px,1.5vw,24px);
+}
+.home-page .clients .clients-eyebrow{
+  display:block;
+  margin-bottom:13px;
+  color:#718176;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.21em;
+  line-height:1.5;
+}
+.home-page .clients h2{
+  margin:0;
+  font-family:"Instrument Serif",Georgia,serif;
+  font-size:clamp(39px,4.2vw,62px);
+  font-weight:400;
+  letter-spacing:-.035em;
+  line-height:.96;
+  text-transform:none;
+  color:#183b32;
+}
+.home-page .clients .clients-period{color:#8d9c86}
+.home-page .clients-intro p{
+  margin:13px 0 0;
+  color:#64766b;
+  font-size:12px;
+  line-height:1.55;
+  max-width:25ch;
+}
+.home-page .clients .marquee{
+  position:relative;
+  min-width:0;
+  width:100%;
+  overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 7%,#000 93%,transparent 100%);
+  mask-image:linear-gradient(90deg,transparent 0%,#000 7%,#000 93%,transparent 100%);
+}
+.home-page .clients .track{
+  display:flex;
+  width:max-content;
+  align-items:center;
+  animation:marquee 62s linear infinite;
+}
+.home-page .clients .set{
+  display:flex;
+  align-items:center;
+  gap:clamp(35px,4vw,68px);
+  padding:0 clamp(35px,4vw,68px) 0 0;
+  margin:0;
+  list-style:none;
+}
+.home-page .clients .brand{
+  display:flex;
+  flex:0 0 158px;
+  width:158px;
+  height:78px;
+  align-items:center;
+  justify-content:center;
+  white-space:nowrap;
+}
+.home-page .clients .brand img{
+  display:block;
+  width:auto;
+  max-width:154px;
+  height:auto;
+  max-height:53px;
+  object-fit:contain;
+  opacity:.73;
+  filter:grayscale(1);
+  transition:opacity .3s ease,filter .3s ease,transform .3s ease;
+}
+.home-page .clients .brand:hover img,
+.home-page .clients .brand:focus-within img{
+  opacity:1;
+  filter:grayscale(0);
+  transform:translateY(-2px);
+}
+.home-page .clients .brand .logo-text{
+  color:#314d43;
+  font-size:21px;
+  font-weight:800;
+  letter-spacing:.16em;
+  opacity:.82;
+}
+.home-page .clients .marquee:hover .track,
+.home-page .clients .marquee:focus-within .track{animation-play-state:paused}
+@media(max-width:860px){
+  .home-page .clients{
+    grid-template-columns:1fr;
+    gap:30px;
+    padding:44px 0 46px;
+  }
+  .home-page .clients .clients-intro{padding:0 26px}
+  .home-page .clients h2{font-size:clamp(42px,8vw,58px)}
+  .home-page .clients-intro p{max-width:none}
+  .home-page .clients .brand{flex-basis:136px;width:136px;height:65px}
+  .home-page .clients .brand img{max-width:132px;max-height:46px}
+  .home-page .clients .track{animation-duration:54s}
+  .home-page .clients .set{gap:40px;padding-right:40px}
+}
+@media(prefers-reduced-motion:reduce){
+  .home-page .clients .track{animation:none}
+  .home-page .clients .marquee{
+    overflow-x:auto;
+    -webkit-mask-image:none;
+    mask-image:none;
+  }
+}
