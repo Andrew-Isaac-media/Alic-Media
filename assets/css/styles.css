@@ -1560,3 +1560,31 @@ section.block.svc-page{padding-bottom:64px}
 .home-page .home-photo-frame figcaption span:last-child{display:none}
 }
 @media(prefers-reduced-motion:reduce){.home-page .home-photo-frame img{transition:none}}
+
+/* Photography cards: equal-sized photographs and individual project links. */
+.home-page .home-photo-editorial-grid{grid-template-columns:repeat(3,minmax(0,1fr));align-items:start}
+.home-page .home-photo-frame-one,.home-page .home-photo-frame-two,.home-page .home-photo-frame-three{padding-top:0}
+.home-page .home-photo-frame .home-photo-image-link{display:block;overflow:hidden;aspect-ratio:4/5}
+.home-page .home-photo-frame .home-photo-image-link img,
+.home-page .home-photo-frame-one img,.home-page .home-photo-frame-two img,.home-page .home-photo-frame-three img{
+  width:100%;height:100%;aspect-ratio:4/5;object-fit:cover;object-position:center
+}
+.home-page .home-photo-frame .home-photo-image-link:hover img{transform:scale(1.025)}
+.home-page .home-photo-project-link{
+  margin-top:16px;display:inline-flex;align-items:center;justify-content:space-between;gap:24px;
+  color:#183b32;border:1px solid rgba(24,59,50,.34);padding:11px 15px;
+  font-size:12px;font-weight:700;letter-spacing:.02em;transition:background .25s ease,color .25s ease,border-color .25s ease
+}
+.home-page .home-photo-project-link:hover,.home-page .home-photo-project-link:focus-visible{
+  background:#183b32;color:#fff;border-color:#183b32
+}
+@media(max-width:780px){
+  .home-page .home-photo-editorial-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .home-page .home-photo-frame-one{grid-row:auto}
+  .home-page .home-photo-frame-two,.home-page .home-photo-frame-three{padding-top:0}
+}
+@media(max-width:540px){
+  .home-page .home-photo-editorial-grid{grid-template-columns:1fr;gap:32px}
+  .home-page .home-photo-frame figcaption{display:flex}
+  .home-page .home-photo-frame figcaption span:last-child{display:block}
+}
