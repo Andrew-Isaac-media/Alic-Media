@@ -874,3 +874,110 @@ section.block.svc-page{padding-bottom:64px}
   .home-page .hero.hero-editorial .hero-showcase{animation:none}
   .home-page .hero.hero-editorial .hero-drop-word{opacity:1;transform:none;animation:none}
 }
+
+
+/* Photo hero reset: one still from our existing North Face portfolio, no video/cropping artifacts. */
+.home-page .hero.hero-photo{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+  min-height:100svh;
+  padding:140px clamp(22px,5vw,90px) 100px;
+  text-align:center;
+  isolation:isolate;
+  overflow:hidden;
+  background:#0c141b url('../../a_cinematic_moody_cold_blue_winter_landscape_sce.png') center 48% / cover no-repeat;
+  color:#fff;
+}
+.home-page .hero.hero-photo .hero-photo-overlay{
+  position:absolute;
+  z-index:0;
+  inset:0;
+  background:linear-gradient(180deg,rgba(3,9,16,.53) 0%,rgba(3,9,16,.3) 48%,rgba(3,9,16,.6) 100%);
+  pointer-events:none;
+}
+.home-page .hero.hero-photo .hero-photo-content{
+  position:relative;
+  z-index:2;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  width:100%;
+  max-width:1120px;
+}
+.home-page .hero.hero-photo .hero-photo-kicker{
+  color:rgba(255,255,255,.84);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.25em;
+  text-transform:uppercase;
+  margin:0 0 28px;
+}
+.home-page .hero.hero-photo h1{
+  margin:0;
+  max-width:12ch;
+  font-family:"Instrument Serif",Georgia,serif;
+  font-size:clamp(67px,10vw,160px);
+  font-weight:400;
+  letter-spacing:-.035em;
+  line-height:.9;
+  color:#fff;
+  text-shadow:0 5px 30px rgba(0,0,0,.2);
+  animation:alic-unison-drop .95s cubic-bezier(.18,1.12,.26,1) both;
+}
+@keyframes alic-unison-drop{
+  0%{opacity:0;transform:translate3d(0,-75px,0)}
+  70%{opacity:1;transform:translate3d(0,6px,0)}
+  100%{opacity:1;transform:translate3d(0,0,0)}
+}
+.home-page .hero.hero-photo .sub-hook{
+  position:relative;
+  margin:32px auto 0;
+  max-width:32ch;
+  text-align:center;
+  font-size:clamp(17px,1.8vw,23px);
+  line-height:1.5;
+  color:rgba(255,255,255,.91);
+  opacity:1;
+  animation:alic-hero-fade .8s ease .5s both;
+}
+.home-page .hero.hero-photo .hero-cta{
+  position:relative;
+  margin:30px auto 0;
+  padding:14px 28px;
+  background:#fff;
+  border:1px solid #fff;
+  border-radius:0;
+  color:#183B32;
+  font-weight:600;
+  gap:20px;
+  animation:alic-hero-fade .8s ease .7s both;
+}
+.home-page .hero.hero-photo .hero-cta:hover{background:#e9efec;color:#183B32}
+.home-page .hero.hero-photo .scroll-cue{
+  position:absolute;
+  z-index:2;
+  bottom:24px;
+  left:50%;
+  transform:translateX(-50%);
+  color:rgba(255,255,255,.8);
+}
+.home-page .hero.hero-photo .scroll-cue span{background:linear-gradient(#fff,transparent)}
+.home-page .site-header.overlay:not(.solid) .logo,
+.home-page .site-header.overlay:not(.solid) .nav-links a{color:#fff}
+.home-page .site-header.overlay:not(.solid) .menu-toggle{color:#fff}
+.home-page .site-header.overlay:not(.solid) .nav-cta{background:#fff;color:#183B32}
+@media(max-width:700px){
+  .home-page .hero.hero-photo{padding:136px 24px 100px;background-position:54% center}
+  .home-page .hero.hero-photo h1{font-size:clamp(67px,13vw,98px);max-width:10ch}
+  .home-page .hero.hero-photo .hero-photo-kicker{margin-bottom:20px}
+  .home-page .hero.hero-photo .sub-hook{margin-top:24px;font-size:17px}
+}
+@media(prefers-reduced-motion:reduce){
+  .home-page .hero.hero-photo h1,
+  .home-page .hero.hero-photo .sub-hook,
+  .home-page .hero.hero-photo .hero-cta{animation:none!important;opacity:1!important;transform:none!important}
+}
