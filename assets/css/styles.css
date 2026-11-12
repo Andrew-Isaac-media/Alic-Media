@@ -1517,3 +1517,46 @@ section.block.svc-page{padding-bottom:64px}
 /* FAQ: big "FAQ" title above the eyebrow; questions and answers read left-aligned */
 .home-page .faq .faq-title{margin:0 0 10px;text-align:center;font:500 clamp(44px,5.6vw,76px)/1 "DM Sans",sans-serif;letter-spacing:-.06em;color:var(--home-green,#183B32)}
 .faq-item summary,.faq-a,.faq-a p{text-align:left}
+
+/* Homepage selected photography, below services and separate from hero. */
+.home-page .home-photo-editorial{background:#f8f9f6;padding:clamp(76px,10vw,145px) clamp(20px,5vw,92px) clamp(78px,10vw,140px);overflow:hidden}
+.home-page .home-photo-editorial-head{max-width:1440px;margin:0 auto clamp(38px,5vw,76px);display:grid;grid-template-columns:minmax(0,1.2fr) minmax(260px,.65fr);align-items:end;gap:clamp(30px,5vw,110px)}
+.home-page .home-photo-eyebrow{margin:0 0 18px;font-size:11px;font-weight:700;letter-spacing:.2em;color:#668176}
+.home-page .home-photo-editorial h2{margin:0;color:#183b32;font:400 clamp(49px,7.5vw,112px)/.99 "Instrument Serif",Georgia,serif;letter-spacing:-.035em;max-width:12ch}
+.home-page .home-photo-editorial h2 em{font-weight:400}
+.home-page .home-photo-editorial-intro{max-width:370px;padding-bottom:8px}
+.home-page .home-photo-editorial-intro p{margin:0 0 24px;color:#4e645b;font-size:clamp(15px,1.35vw,18px);line-height:1.7}
+.home-page .home-photo-view-link{display:inline-flex;align-items:center;gap:22px;color:#183b32;border-bottom:1px solid currentColor;padding-bottom:8px;font-size:12px;font-weight:700;letter-spacing:.025em}
+.home-page .home-photo-view-link span{transition:transform .25s ease}
+.home-page .home-photo-view-link:hover span{transform:translate(3px,-3px)}
+.home-page .home-photo-editorial-grid{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1.18fr .95fr .9fr;align-items:start;gap:clamp(14px,2vw,32px)}
+.home-page .home-photo-frame{min-width:0;margin:0}
+.home-page .home-photo-frame-two{padding-top:clamp(28px,5vw,80px)}
+.home-page .home-photo-frame-three{padding-top:clamp(75px,10vw,162px)}
+.home-page .home-photo-frame img{display:block;width:100%;object-fit:cover;object-position:center;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.home-page .home-photo-frame-one img{aspect-ratio:4/5}
+.home-page .home-photo-frame-two img{aspect-ratio:4/4.6}
+.home-page .home-photo-frame-three img{aspect-ratio:4/4.5}
+.home-page .home-photo-frame:hover img{transform:scale(1.018)}
+.home-page .home-photo-frame figcaption{padding-top:13px;display:flex;justify-content:space-between;gap:15px;font-size:10px;letter-spacing:.06em;color:#557167;line-height:1.6}
+.home-page .home-photo-frame figcaption span:last-child{text-align:right;opacity:.77}
+@media(max-width:780px){
+.home-page .home-photo-editorial-head{grid-template-columns:1fr;gap:22px}
+.home-page .home-photo-editorial h2{max-width:16ch}
+.home-page .home-photo-editorial-intro{max-width:540px}
+.home-page .home-photo-editorial-grid{grid-template-columns:1fr 1fr;gap:16px}
+.home-page .home-photo-frame-one{grid-row:span 2}
+.home-page .home-photo-frame-two{padding-top:20px}
+.home-page .home-photo-frame-three{padding-top:0}
+.home-page .home-photo-frame-one img{aspect-ratio:3/5}
+.home-page .home-photo-frame-two img,.home-page .home-photo-frame-three img{aspect-ratio:1/1}
+.home-page .home-photo-frame figcaption{display:block;font-size:9px}
+.home-page .home-photo-frame figcaption span{display:block;text-align:left!important}
+}
+@media(max-width:460px){
+.home-page .home-photo-editorial{padding-left:16px;padding-right:16px}
+.home-page .home-photo-editorial-grid{gap:12px}
+.home-page .home-photo-frame-two{padding-top:12px}
+.home-page .home-photo-frame figcaption span:last-child{display:none}
+}
+@media(prefers-reduced-motion:reduce){.home-page .home-photo-frame img{transition:none}}
