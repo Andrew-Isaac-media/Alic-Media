@@ -1600,20 +1600,51 @@ section.block.svc-page{padding-bottom:64px}
 @media (prefers-reduced-motion:reduce){.home-page .fh-drift{animation:none}}
 
 
-/* ALIC service card visual backgrounds — 2026-11-14 */
-.home-page .svc-list-horizontal li{position:relative;isolation:isolate;overflow:hidden;background:#17352b}
-.home-page .svc-list-horizontal li:nth-child(1){background-image:url("https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=900&q=82");background-position:center;background-size:cover}
-.home-page .svc-list-horizontal li:nth-child(2){background-image:url("../img/work/the-north-face-winter-landscape.webp");background-position:center;background-size:cover}
-.home-page .svc-list-horizontal li:nth-child(3){background-image:url("../img/work/versace-thumb-v2.webp");background-position:center;background-size:cover}
-.home-page .svc-list-horizontal li:nth-child(4){background-image:url("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=82");background-position:center;background-size:cover}
-.home-page .svc-list-horizontal li::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,22,17,.47) 0%,rgba(7,22,17,.58) 43%,rgba(7,22,17,.83) 100%);pointer-events:none;z-index:0;transition:background .3s}
-.home-page .svc-list-horizontal li:hover::after{background:linear-gradient(180deg,rgba(7,22,17,.58),rgba(7,22,17,.88))}
-.home-page .svc-list-horizontal a,.home-page .svc-list-horizontal li:first-child a{position:relative;z-index:1;color:#fff;padding:30px clamp(16px,2.4vw,34px);background:transparent;min-height:370px;transition:transform .3s,color .25s}
-.home-page .svc-list-horizontal a:hover,.home-page .svc-list-horizontal li:first-child a:hover{padding-left:clamp(16px,2.4vw,34px);background:transparent;color:#fff}
-.home-page .svc-list-horizontal .num,.home-page .svc-list-horizontal h3,.home-page .svc-list-horizontal .svc-description,.home-page .svc-list-horizontal .arrow{color:#fff}
-.home-page .svc-list-horizontal .svc-description{color:rgba(255,255,255,.88)}
-.home-page .svc-list-horizontal li+li{border-left-color:rgba(255,255,255,.20)}
-.home-page .svc-list-horizontal .svc-card-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;z-index:0}
-@media(max-width:950px){.home-page .svc-list-horizontal a,.home-page .svc-list-horizontal li:first-child a{min-height:345px}.home-page .svc-list-horizontal li:nth-child(3),.home-page .svc-list-horizontal li:nth-child(4){border-top-color:rgba(255,255,255,.2)}}
-@media(max-width:520px){.home-page .svc-list-horizontal a,.home-page .svc-list-horizontal li:first-child a{min-height:225px;padding:24px 20px;grid-template-columns:34px minmax(0,1fr) 24px;grid-template-rows:auto auto}.home-page .svc-list-horizontal a:hover,.home-page .svc-list-horizontal li:first-child a:hover{padding-left:20px}.home-page .svc-list-horizontal .svc-description{max-width:36ch}}
-@media(prefers-reduced-motion:reduce){.home-page .svc-list-horizontal .svc-card-video{display:none}}
+/* ALIC: full-bleed media sits BEHIND every service card's text. */
+.home-page .svc-list-horizontal .svc-tile{
+  position:relative;isolation:isolate;overflow:hidden;background:#17352b;min-width:0;
+}
+.home-page .svc-list-horizontal .svc-card-media{
+  position:absolute;inset:0;display:block;width:100%;height:100%;
+  object-fit:cover;object-position:center;z-index:0;pointer-events:none;
+}
+.home-page .svc-list-horizontal .svc-video{background:#17352b url("../img/work/the-north-face-winter-landscape.webp") center/cover no-repeat}
+.home-page .svc-list-horizontal .svc-tile::after{
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(180deg,rgba(5,17,13,.40) 0%,rgba(5,17,13,.63) 55%,rgba(5,17,13,.84) 100%);
+  transition:background .25s ease;
+}
+.home-page .svc-list-horizontal .svc-tile:hover::after{
+  background:linear-gradient(180deg,rgba(5,17,13,.52),rgba(5,17,13,.90));
+}
+.home-page .svc-list-horizontal .svc-tile a,
+.home-page .svc-list-horizontal .svc-tile:first-child a{
+  position:relative;z-index:2;box-sizing:border-box;display:flex;flex-direction:column;
+  align-items:flex-start;gap:18px;height:100%;min-height:370px;
+  padding:30px clamp(16px,2.4vw,34px);background:transparent;color:white;
+}
+.home-page .svc-list-horizontal .svc-tile a:hover,
+.home-page .svc-list-horizontal .svc-tile:first-child a:hover{
+  background:transparent;color:white;padding-left:clamp(16px,2.4vw,34px);
+}
+.home-page .svc-list-horizontal .svc-tile .num,
+.home-page .svc-list-horizontal .svc-tile h3,
+.home-page .svc-list-horizontal .svc-tile .arrow{color:#fff}
+.home-page .svc-list-horizontal .svc-tile .svc-description{color:rgba(255,255,255,.92)}
+.home-page .svc-list-horizontal .svc-tile .arrow{margin-top:auto}
+.home-page .svc-list-horizontal .svc-tile+li{border-left-color:rgba(255,255,255,.2)}
+@media(max-width:950px){
+ .home-page .svc-list-horizontal .svc-tile a,.home-page .svc-list-horizontal .svc-tile:first-child a{min-height:345px}
+}
+@media(max-width:520px){
+ .home-page .svc-list-horizontal .svc-tile a,.home-page .svc-list-horizontal .svc-tile:first-child a{
+   display:grid;grid-template-columns:34px minmax(0,1fr) 24px;grid-template-rows:auto auto;
+   column-gap:8px;row-gap:8px;min-height:230px;padding:24px 20px;align-items:start
+ }
+ .home-page .svc-list-horizontal .svc-tile a:hover,.home-page .svc-list-horizontal .svc-tile:first-child a:hover{padding-left:20px}
+ .home-page .svc-list-horizontal .svc-tile .num{grid-column:1;grid-row:1}
+ .home-page .svc-list-horizontal .svc-tile h3{grid-column:2;grid-row:1}
+ .home-page .svc-list-horizontal .svc-tile .svc-description{grid-column:2;grid-row:2}
+ .home-page .svc-list-horizontal .svc-tile .arrow{grid-column:3;grid-row:1;margin-top:0}
+}
+@media(prefers-reduced-motion:reduce){.home-page .svc-list-horizontal .svc-video .svc-card-media{display:none}}
