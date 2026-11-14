@@ -1917,3 +1917,11 @@ section.block.svc-page{padding-bottom:64px}
 @media(prefers-reduced-motion:reduce){
  .home-page .hero .hero-ctas > a.hero-cta{transition:none;transform:none!important}
 }
+
+/* Contact page: editorial portfolio photograph beside the form */
+.contact .contact-feature-photo{margin:0 0 42px;width:100%}
+.contact .contact-feature-photo img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;background:#e4e4df;filter:saturate(.85) contrast(1.03)}
+.contact .contact-feature-photo figcaption{font-size:13px;line-height:1.5;color:#4a5340;margin-top:12px;letter-spacing:.01em}
+.contact .contact-info{padding-top:0}
+.contact .contact-form #project-timeframe{width:100%}
+@media(max-width:760px){.contact .contact-feature-photo img{aspect-ratio:16/10;object-position:center 40%}.contact .contact-feature-photo{margin-bottom:28px}}
