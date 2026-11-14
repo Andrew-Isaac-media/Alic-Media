@@ -5,7 +5,7 @@
 :root{
   --cream:#fff; --paper:#fff; --forest:#183B32; --sage:#47665c; --clay:#183B32;
   --muted:#587065; --line:#dce8e2; --pad:clamp(16px,4vw,48px);
-  --sans:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --sans:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   --serif:"Instrument Serif",Georgia,serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -363,7 +363,7 @@ video[autoplay]::-webkit-media-controls,video[autoplay]::-webkit-media-controls-
 
 
 /* Home typography: refined, cohesive studio identity (homepage only) */
-.home-page{font-family:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+.home-page{font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
 .home-page .logo{font-family:inherit;font-size:14px;font-weight:700;letter-spacing:.16em}
 .home-page .nav-links{font-family:inherit;font-size:13px;font-weight:500;letter-spacing:.015em}
 .home-page .btn{font-family:inherit;font-size:13px;font-weight:600;letter-spacing:.015em}
@@ -1992,7 +1992,7 @@ section.block.svc-page{padding-bottom:64px}
   --line:#dce7e1;
   --alic-green:#183B32;
   --alic-white:#fff;
-  --sans:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --sans:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   --serif:"Instrument Serif",Georgia,serif;
 }
 html{background:#fff}
@@ -2149,3 +2149,15 @@ body:not(.home-page) .paper,
  .logo{letter-spacing:.09em}
  .home-page .home-services-intro h2{line-height:1.03}
 }
+
+/* Refined premium agency typography — Plus Jakarta Sans */
+:root{--sans:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+body{font-weight:400;letter-spacing:-.014em}
+.logo{font-weight:700;letter-spacing:.115em}
+.nav-links{font-weight:550;letter-spacing:-.015em}
+.page-hero h1,.hero h1{font-weight:600;letter-spacing:-.068em;line-height:.99}
+.page-hero .lede,.hero .sub-hook{letter-spacing:-.025em}
+.home-page .svc-list.svc-list-horizontal > li.svc-tile > a > h3{font-weight:600;letter-spacing:-.05em}
+.btn,.nav-cta,.text-link,.home-cta{font-weight:600}
+.field label,.field legend{font-weight:600}
+@media(max-width:640px){.page-hero h1,.hero h1{letter-spacing:-.055em}}
