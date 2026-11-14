@@ -1880,3 +1880,22 @@ section.block.svc-page{padding-bottom:64px}
   .home-page .svc-list.svc-list-horizontal > li.svc-tile:hover > .svc-card-media,
   .home-page .svc-list.svc-list-horizontal > li.svc-tile:focus-within > .svc-card-media{transform:none}
 }
+
+/* Subtle whole-card scale on hover; keep typography and media together. */
+@media(hover:hover) and (pointer:fine){
+  .home-page .svc-list.svc-list-horizontal > li.svc-tile{
+    transform:scale(1);
+    transform-origin:center;
+    transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s ease;
+    will-change:transform;
+  }
+  .home-page .svc-list.svc-list-horizontal > li.svc-tile:hover,
+  .home-page .svc-list.svc-list-horizontal > li.svc-tile:focus-within{
+    transform:scale(1.018);
+    z-index:3;
+    box-shadow:0 12px 30px rgba(0,0,0,.12);
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .home-page .svc-list.svc-list-horizontal > li.svc-tile{transition:none;transform:none!important}
+}
