@@ -5,7 +5,7 @@
 :root{
   --cream:#fff; --paper:#fff; --forest:#183B32; --sage:#47665c; --clay:#183B32;
   --muted:#587065; --line:#dce8e2; --pad:clamp(16px,4vw,48px);
-  --sans:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --sans:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
   --serif:"Instrument Serif",Georgia,serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -363,7 +363,7 @@ video[autoplay]::-webkit-media-controls,video[autoplay]::-webkit-media-controls-
 
 
 /* Home typography: refined, cohesive studio identity (homepage only) */
-.home-page{font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+.home-page{font-family:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif}
 .home-page .logo{font-family:inherit;font-size:14px;font-weight:700;letter-spacing:.16em}
 .home-page .nav-links{font-family:inherit;font-size:13px;font-weight:500;letter-spacing:.015em}
 .home-page .btn{font-family:inherit;font-size:13px;font-weight:600;letter-spacing:.015em}
@@ -461,17 +461,17 @@ section.block.svc-page{padding-bottom:64px}
 /* Founder campaign results — verified from supplied cross-platform screenshots */
 .home-page .founder-results{background:#fff;color:var(--home-green,#183B32);padding:clamp(72px,9vw,130px) var(--pad);border-top:1px solid rgba(24,59,50,.12);border-bottom:1px solid rgba(24,59,50,.12)}
 .home-page .founder-results-inner{max-width:1180px;margin:0 auto}
-.home-page .founder-results .results-kicker{font:700 11px/1.4 "DM Sans",sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#4a6b60;margin-bottom:22px}
+.home-page .founder-results .results-kicker{font:700 11px/1.4 "Archivo",sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#4a6b60;margin-bottom:22px}
 .home-page .founder-results h2{font:400 clamp(56px,7vw,104px)/.98 "Instrument Serif",Georgia,serif;letter-spacing:-.028em;margin:0 0 18px;max-width:900px}
 .home-page .founder-results .results-lede{max-width:700px;font-size:clamp(16px,1.5vw,20px);line-height:1.65;color:#426056}
 .home-page .founder-results .results-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:clamp(50px,7vw,82px);border-top:1px solid rgba(24,59,50,.24);border-bottom:1px solid rgba(24,59,50,.24)}
 .home-page .founder-results .result-stat{padding:28px 20px 30px 0;min-width:0}
 .home-page .founder-results .result-stat + .result-stat{border-left:1px solid rgba(24,59,50,.15);padding-left:22px}
-.home-page .founder-results .result-value{font:500 clamp(32px,4.2vw,66px)/1 "DM Sans",sans-serif;letter-spacing:-.075em;white-space:nowrap}
-.home-page .founder-results .result-label{font:500 12px/1.5 "DM Sans",sans-serif;letter-spacing:.045em;margin-top:12px;color:#47665c}
+.home-page .founder-results .result-value{font:500 clamp(32px,4.2vw,66px)/1 "Archivo",sans-serif;letter-spacing:-.075em;white-space:nowrap}
+.home-page .founder-results .result-label{font:500 12px/1.5 "Archivo",sans-serif;letter-spacing:.045em;margin-top:12px;color:#47665c}
 .home-page .founder-results .results-details{display:flex;gap:24px;justify-content:space-between;align-items:flex-start;margin-top:24px}
-.home-page .founder-results .results-detail-line{font:500 13px/1.7 "DM Sans",sans-serif;color:#284d41}
-.home-page .founder-results .results-note{font:400 12px/1.6 "DM Sans",sans-serif;color:#61786e;max-width:550px}
+.home-page .founder-results .results-detail-line{font:500 13px/1.7 "Archivo",sans-serif;color:#284d41}
+.home-page .founder-results .results-note{font:400 12px/1.6 "Archivo",sans-serif;color:#61786e;max-width:550px}
 @media(max-width:760px){
  .home-page .founder-results .results-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
  .home-page .founder-results .result-stat{padding:23px 12px 23px 0}
@@ -485,13 +485,13 @@ section.block.svc-page{padding-bottom:64px}
 /* Three founder milestones */
 .home-page .founder-highlights{background:#fff;color:var(--home-green,#183B32);padding:clamp(54px,8vw,100px) var(--pad)}
 .home-page .founder-highlights-inner{max-width:1080px;margin:0 auto}
-.home-page .founder-highlights-caption{font:600 11px/1.5 "DM Sans",sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#49665c;margin:0 0 26px}
+.home-page .founder-highlights-caption{font:600 11px/1.5 "Archivo",sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#49665c;margin:0 0 26px}
 .home-page .founder-highlights-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid rgba(24,59,50,.26);border-bottom:1px solid rgba(24,59,50,.26)}
 .home-page .founder-highlight{padding:clamp(28px,4vw,48px) 20px}
 .home-page .founder-highlight:first-child{padding-left:0}
 .home-page .founder-highlight+ .founder-highlight{border-left:1px solid rgba(24,59,50,.2);padding-left:clamp(24px,5vw,64px)}
-.home-page .founder-highlight-number{display:block;font:500 clamp(48px,5.8vw,86px)/1 "DM Sans",sans-serif;letter-spacing:-.075em}
-.home-page .founder-highlight-label{display:block;margin-top:14px;font:500 clamp(15px,1.8vw,21px)/1.35 "DM Sans",sans-serif}
+.home-page .founder-highlight-number{display:block;font:500 clamp(48px,5.8vw,86px)/1 "Archivo",sans-serif;letter-spacing:-.075em}
+.home-page .founder-highlight-label{display:block;margin-top:14px;font:500 clamp(15px,1.8vw,21px)/1.35 "Archivo",sans-serif}
 @media(max-width:760px){.home-page .founder-highlights-grid{grid-template-columns:1fr}.home-page .founder-highlight{padding:26px 0}.home-page .founder-highlight+ .founder-highlight{border-left:0;border-top:1px solid rgba(24,59,50,.2);padding-left:0}.home-page .founder-highlight-number{font-size:clamp(64px,16vw,94px)}}
 
 
@@ -585,13 +585,13 @@ section.block.svc-page{padding-bottom:64px}
 
 
 /* Small subtitle below About page hero headline */
-.about-hero-subtitle{position:relative;z-index:2;margin:clamp(18px,3vw,32px) auto 0;max-width:42ch;color:#fff;font-family:"DM Sans","Manrope",system-ui,sans-serif;font-size:clamp(14px,1.45vw,18px);font-weight:400;letter-spacing:.005em;line-height:1.5;text-align:center}
+.about-hero-subtitle{position:relative;z-index:2;margin:clamp(18px,3vw,32px) auto 0;max-width:42ch;color:#fff;font-family:"Archivo","Manrope",system-ui,sans-serif;font-size:clamp(14px,1.45vw,18px);font-weight:400;letter-spacing:.005em;line-height:1.5;text-align:center}
 @media(max-width:760px){.about-hero-subtitle{font-size:14px;padding:0 12px}}
 
 
 /* Homepage brand-statement refinement */
 .home-page .brand-statement h2{font-size:clamp(62px,8.5vw,120px)}
-.home-page .brand-statement .brand-contact-cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;margin-top:clamp(36px,5vw,60px);padding:13px 24px;border:1px solid #183B32;border-radius:999px;background:#183B32;color:#fff;font-family:"DM Sans",var(--sans);font-size:14px;font-weight:600;letter-spacing:.01em;text-decoration:none;transition:background .2s ease,color .2s ease,transform .2s ease}
+.home-page .brand-statement .brand-contact-cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;margin-top:clamp(36px,5vw,60px);padding:13px 24px;border:1px solid #183B32;border-radius:999px;background:#183B32;color:#fff;font-family:"Archivo",var(--sans);font-size:14px;font-weight:600;letter-spacing:.01em;text-decoration:none;transition:background .2s ease,color .2s ease,transform .2s ease}
 .home-page .brand-statement .brand-contact-cta:hover,.home-page .brand-statement .brand-contact-cta:focus-visible{background:#fff;color:#183B32;transform:translateY(-2px)}
 @media(max-width:600px){.home-page .brand-statement h2{font-size:clamp(54px,13vw,78px)}.home-page .brand-statement .brand-contact-cta{margin-top:34px}}
 
@@ -1515,7 +1515,7 @@ section.block.svc-page{padding-bottom:64px}
 .svc-area{max-width:640px;font-size:clamp(17px,1.8vw,21px);line-height:1.6;color:var(--sage,#47665c);margin:0 0 22px}
 
 /* FAQ: big "FAQ" title above the eyebrow; questions and answers read left-aligned */
-.home-page .faq .faq-title{margin:0 0 10px;text-align:center;font:500 clamp(44px,5.6vw,76px)/1 "DM Sans",sans-serif;letter-spacing:-.06em;color:var(--home-green,#183B32)}
+.home-page .faq .faq-title{margin:0 0 10px;text-align:center;font:500 clamp(44px,5.6vw,76px)/1 "Archivo",sans-serif;letter-spacing:-.06em;color:var(--home-green,#183B32)}
 .faq-item summary,.faq-a,.faq-a p{text-align:left}
 
 /* Homepage selected photography, below services and separate from hero. */
@@ -1992,7 +1992,7 @@ section.block.svc-page{padding-bottom:64px}
   --line:#dce7e1;
   --alic-green:#183B32;
   --alic-white:#fff;
-  --sans:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --sans:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
   --serif:"Instrument Serif",Georgia,serif;
 }
 html{background:#fff}
@@ -2151,7 +2151,7 @@ body:not(.home-page) .paper,
 }
 
 /* Refined premium agency typography — Plus Jakarta Sans */
-:root{--sans:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+:root{--sans:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif}
 body{font-weight:400;letter-spacing:-.014em}
 .logo{font-weight:700;letter-spacing:.115em}
 .nav-links{font-weight:550;letter-spacing:-.015em}
@@ -2161,3 +2161,61 @@ body{font-weight:400;letter-spacing:-.014em}
 .btn,.nav-cta,.text-link,.home-cta{font-weight:600}
 .field label,.field legend{font-weight:600}
 @media(max-width:640px){.page-hero h1,.hero h1{letter-spacing:-.055em}}
+
+/* ALIC TYPOGRAPHY V3 — visible full-site upgrade, not merely a body-font swap. */
+:root{--sans:"Archivo",Arial,Helvetica,sans-serif;--serif:"Instrument Serif",Georgia,serif}
+body,button,input,textarea,select{font-family:var(--sans)}
+.home-page .hero.hero-photo h1,
+.home-page .hero h1,
+.home-page .hero.hero-editorial .hero-drop-title,
+#about-title,
+.page-hero h1,
+.work-intro h1,
+.home-page .brand-statement h2,
+.home-page .home-services-intro h2,
+.home-page .home-photo-editorial h2,
+.home-films h2,
+.home-page .founder-results h2,
+.home-page .clients h2,
+.home-page .faq .faq-title,
+.work-cta h2,
+.contact .contact-trusted-content h2,
+.contact .contact-trusted-brands li,
+.pillars .values .pillar-card h3,
+.site-footer .big,
+.home-page .hero.hero-editorial .hero-showcase-caption .hero-project-name{
+  font-family:var(--sans);
+  font-style:normal;
+  font-weight:600;
+  letter-spacing:-.06em;
+}
+.home-page .hero.hero-photo h1,
+.home-page .hero h1{font-size:clamp(58px,8.5vw,132px);line-height:.96;max-width:13.5ch}
+#about-title{font-size:clamp(52px,8vw,118px);line-height:.98}
+.home-page .brand-statement h2{font-size:clamp(56px,8.4vw,120px);line-height:.99}
+.home-page .home-services-intro h2{font-size:clamp(44px,5.2vw,76px);line-height:1.06}
+.home-page .home-photo-editorial h2{font-size:clamp(48px,6.7vw,98px);line-height:1.02}
+.home-page .founder-results h2{font-size:clamp(50px,6.3vw,92px);line-height:1.04}
+.home-page .clients h2{font-size:clamp(27px,3.2vw,46px);letter-spacing:-.05em}
+.home-films h2{font-size:clamp(54px,6vw,90px);line-height:1.02}
+.site-footer .big{letter-spacing:-.055em}
+.home-page .svc-list.svc-list-horizontal > li.svc-tile > a > h3{font-family:var(--sans);font-weight:650}
+.home-page .founder-results .result-value,
+.home-page .founder-highlight-number{font-family:var(--sans);letter-spacing:-.065em}
+.home-page .hero.hero-photo h1 em,
+.page-hero h1 em,
+.home-page .home-services-intro h2 em,
+.home-page .home-photo-editorial h2 em,
+.work-intro h1 em,
+.work-cta h2 em,
+.site-footer .big em,
+.contact .contact-trusted-content h2 em{
+  font-family:var(--serif);
+  font-weight:400;
+  font-style:italic;
+  letter-spacing:-.02em;
+}
+@media(max-width:640px){
+ .home-page .hero.hero-photo h1,.home-page .hero h1{font-size:clamp(52px,12vw,78px);letter-spacing:-.06em}
+ .home-page .home-photo-editorial h2{font-size:clamp(44px,10vw,70px)}
+}
