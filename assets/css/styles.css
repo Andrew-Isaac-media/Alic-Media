@@ -1613,7 +1613,7 @@ section.block.svc-page{padding-bottom:64px}
 .home-page .svc-list-horizontal .num,.home-page .svc-list-horizontal h3,.home-page .svc-list-horizontal .svc-description,.home-page .svc-list-horizontal .arrow{color:#fff}
 .home-page .svc-list-horizontal .svc-description{color:rgba(255,255,255,.88)}
 .home-page .svc-list-horizontal li+li{border-left-color:rgba(255,255,255,.20)}
-.home-page .svc-list-horizontal .svc-card-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;z-index:-1}
+.home-page .svc-list-horizontal .svc-card-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;z-index:0}
 @media(max-width:950px){.home-page .svc-list-horizontal a,.home-page .svc-list-horizontal li:first-child a{min-height:345px}.home-page .svc-list-horizontal li:nth-child(3),.home-page .svc-list-horizontal li:nth-child(4){border-top-color:rgba(255,255,255,.2)}}
 @media(max-width:520px){.home-page .svc-list-horizontal a,.home-page .svc-list-horizontal li:first-child a{min-height:225px;padding:24px 20px;grid-template-columns:34px minmax(0,1fr) 24px;grid-template-rows:auto auto}.home-page .svc-list-horizontal a:hover,.home-page .svc-list-horizontal li:first-child a:hover{padding-left:20px}.home-page .svc-list-horizontal .svc-description{max-width:36ch}}
 @media(prefers-reduced-motion:reduce){.home-page .svc-list-horizontal .svc-card-video{display:none}}
