@@ -1925,3 +1925,19 @@ section.block.svc-page{padding-bottom:64px}
 .contact .contact-info{padding-top:0}
 .contact .contact-form #project-timeframe{width:100%}
 @media(max-width:760px){.contact .contact-feature-photo img{aspect-ratio:16/10;object-position:center 40%}.contact .contact-feature-photo{margin-bottom:28px}}
+
+/* Contact: actual founder campaign photo behind editorial brand-collaboration list. */
+.contact-response-promise{margin:22px 0 0;font-size:clamp(16px,1.5vw,20px);font-weight:600;line-height:1.5;color:#183b32}
+.page-hero .contact-response-promise + .lede{margin-top:12px}
+.contact .contact-trusted-panel{position:relative;isolation:isolate;overflow:hidden;min-height:675px;background:#111c18;color:#fff;margin:0 0 38px}
+.contact .contact-trusted-background{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:grayscale(1) contrast(1.10);opacity:.46;z-index:0}
+.contact .contact-trusted-panel::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,16,14,.64),rgba(8,16,14,.76));z-index:1;pointer-events:none}
+.contact .contact-trusted-content{position:relative;z-index:2;box-sizing:border-box;min-height:675px;padding:clamp(27px,3.8vw,46px);display:flex;flex-direction:column}
+.contact .contact-trusted-kicker{margin:0 0 23px;color:rgba(255,255,255,.78);font-size:10px;font-weight:700;letter-spacing:.19em;line-height:1.6}
+.contact .contact-trusted-content h2{font-family:"Fraunces",Georgia,serif;font-weight:400;font-size:clamp(35px,3.6vw,53px);line-height:1.06;letter-spacing:-.045em;color:#fff;margin:0 0 18px}
+.contact .contact-trusted-content h2 em{font-weight:300}
+.contact .contact-trusted-intro{font-size:13px;color:rgba(255,255,255,.82);line-height:1.65;margin:0 0 36px;max-width:34ch}
+.contact .contact-trusted-brands{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:20px;row-gap:0}
+.contact .contact-trusted-brands li{font-family:"Fraunces",Georgia,serif;font-weight:400;letter-spacing:-.03em;color:#fff;font-size:clamp(16px,1.65vw,24px);line-height:1.25;border-top:1px solid rgba(255,255,255,.31);padding:13px 0}
+.contact .contact-trusted-footnote{font-size:11px;line-height:1.5;color:rgba(255,255,255,.76);margin:auto 0 0;padding-top:26px}
+@media(max-width:760px){.contact .contact-trusted-panel,.contact .contact-trusted-content{min-height:600px}.contact .contact-trusted-content{padding:30px}.contact .contact-trusted-brands li{font-size:clamp(16px,4vw,22px)}}
