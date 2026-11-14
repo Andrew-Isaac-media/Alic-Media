@@ -1899,3 +1899,21 @@ section.block.svc-page{padding-bottom:64px}
 @media(prefers-reduced-motion:reduce){
   .home-page .svc-list.svc-list-horizontal > li.svc-tile{transition:none;transform:none!important}
 }
+
+/* Opening hero CTAs: same subtle 1.8% hover scale as service cards. */
+@media(hover:hover) and (pointer:fine){
+ .home-page .hero .hero-ctas > a.hero-cta{
+  display:inline-flex;
+  transform:scale(1);
+  transform-origin:center;
+  transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s ease,background-color .25s ease,color .25s ease,border-color .25s ease;
+ }
+ .home-page .hero .hero-ctas > a.hero-cta:hover,
+ .home-page .hero .hero-ctas > a.hero-cta:focus-visible{
+  transform:scale(1.018);
+  box-shadow:0 12px 30px rgba(0,0,0,.14);
+ }
+}
+@media(prefers-reduced-motion:reduce){
+ .home-page .hero .hero-ctas > a.hero-cta{transition:none;transform:none!important}
+}
