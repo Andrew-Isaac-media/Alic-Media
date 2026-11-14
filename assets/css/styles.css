@@ -2376,3 +2376,12 @@ body,button,input,textarea,select{font-family:var(--sans)}
 @media(prefers-reduced-motion:reduce){
  .case-story-more summary span{transition:none}
 }
+
+/* Final responsive specificity and white/green consistency */
+.home-page .home-photo-editorial{background:#fff}
+.home-page .home-services{background:#fff}
+@media(max-width:700px){
+  .case-study .case-editorial-intro{grid-template-columns:minmax(0,1fr)}
+  .case-study .case-editorial-meta{border-left:0;border-top:1px solid var(--line);padding:16px 0 0}
+  .case-study .case-story-editorial{grid-template-columns:minmax(0,1fr)}
+}
