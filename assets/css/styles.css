@@ -2219,3 +2219,23 @@ body,button,input,textarea,select{font-family:var(--sans)}
  .home-page .hero.hero-photo h1,.home-page .hero h1{font-size:clamp(52px,12vw,78px);letter-spacing:-.06em}
  .home-page .home-photo-editorial h2{font-size:clamp(44px,10vw,70px)}
 }
+
+/* Homepage opening statement only: elegant editorial serif */
+.home-page .hero.hero-photo h1#slogan{
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:clamp(76px,10.5vw,164px);
+  font-weight:500;
+  font-style:normal;
+  line-height:.85;
+  letter-spacing:-.048em;
+  max-width:13ch;
+  text-wrap:balance;
+}
+@media(max-width:640px){
+ .home-page .hero.hero-photo h1#slogan{
+   font-size:clamp(61px,14.2vw,100px);
+   line-height:.89;
+   letter-spacing:-.044em;
+   max-width:11ch;
+ }
+}
