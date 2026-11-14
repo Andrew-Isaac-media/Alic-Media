@@ -2239,3 +2239,30 @@ body,button,input,textarea,select{font-family:var(--sans)}
    max-width:11ch;
  }
 }
+
+/* Homepage-only editorial dividers: art-directed rules without changing content or sections. */
+.home-page .home-editorial-divider{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  margin:0 var(--pad);
+  padding:15px 0 13px;
+  border-top:1px solid rgba(24,59,50,.42);
+  color:#183b32;
+  background:#fff;
+  font-family:var(--sans);
+  font-size:10px;
+  font-weight:650;
+  letter-spacing:.16em;
+  line-height:1.5;
+}
+.home-page .home-editorial-divider > span:first-child{white-space:nowrap}
+.home-page .home-editorial-divider .hed-sep{color:#8ba89b;padding:0 5px}
+.home-page .home-editorial-divider .hed-right{font-size:9px;color:#658073;font-weight:600;white-space:nowrap}
+.home-page .home-editorial-divider .hed-mark{margin-left:9px;font-size:13px;vertical-align:-1px}
+@media(max-width:640px){
+ .home-page .home-editorial-divider{padding:12px 0 11px;font-size:9px;letter-spacing:.105em}
+ .home-page .home-editorial-divider .hed-right{font-size:8px;letter-spacing:.08em}
+ .home-page .home-editorial-divider .hed-mark{display:none}
+}
