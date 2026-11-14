@@ -1690,3 +1690,25 @@ section.block.svc-page{padding-bottom:64px}
  }
  .home-page .svc-list.svc-list-horizontal > li.svc-tile > a > .arrow{align-self:flex-end}
 }
+
+
+/* ALIC services: subdued backgrounds for readable white type */
+.home-page .svc-list.svc-list-horizontal > li.svc-tile{background-color:#101f1a}
+.home-page .svc-list.svc-list-horizontal > li.svc-tile > img.svc-card-media,
+.home-page .svc-list.svc-list-horizontal > li.svc-tile > video.svc-card-media{
+  opacity:.40;
+  filter:brightness(.72) saturate(.82);
+}
+.home-page .svc-list.svc-list-horizontal > li.svc-tile::after{
+  background:linear-gradient(180deg,rgba(4,14,11,.28),rgba(4,14,11,.48) 48%,rgba(4,14,11,.76) 100%);
+}
+.home-page .svc-list.svc-list-horizontal > li.svc-tile:hover::after{
+  background:linear-gradient(180deg,rgba(4,14,11,.38),rgba(4,14,11,.58) 48%,rgba(4,14,11,.82) 100%);
+}
+.home-page .svc-list.svc-list-horizontal > li.svc-tile > a > h3,
+.home-page .svc-list.svc-list-horizontal > li.svc-tile > a > .svc-description,
+.home-page .svc-list.svc-list-horizontal > li.svc-tile > a > .num{
+ color:#fff;
+ text-shadow:0 2px 16px rgba(0,0,0,.30);
+}
+.home-page .svc-list.svc-list-horizontal > li.svc-video{background-image:none}
