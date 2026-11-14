@@ -5,8 +5,8 @@
 :root{
   --cream:#fff; --paper:#fff; --forest:#183B32; --sage:#47665c; --clay:#183B32;
   --muted:#587065; --line:#dce8e2; --pad:clamp(16px,4vw,48px);
-  --sans:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --serif:"Fraunces",Georgia,serif;
+  --sans:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"Instrument Serif",Georgia,serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -1975,4 +1975,177 @@ section.block.svc-page{padding-bottom:64px}
 @media(max-width:760px){
   .contact-page .page-hero{padding-top:115px;padding-bottom:20px}
   .contact-page section.block.paper.contact{padding-top:24px}
+}
+
+
+/* =========================================================
+   ALIC — unified site-wide editorial design system
+   Forest green / white, DM Sans / Instrument Serif
+   ========================================================= */
+:root{
+  --cream:#fff;
+  --paper:#fff;
+  --forest:#183B32;
+  --sage:#587368;
+  --clay:#183B32;
+  --muted:#52695f;
+  --line:#dce7e1;
+  --alic-green:#183B32;
+  --alic-white:#fff;
+  --sans:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"Instrument Serif",Georgia,serif;
+}
+html{background:#fff}
+body{
+  font-family:var(--sans);
+  color:var(--alic-green);
+  background:#fff;
+  font-size:16px;
+  line-height:1.62;
+  letter-spacing:-.012em;
+  font-optical-sizing:auto;
+  text-rendering:optimizeLegibility;
+}
+button,input,select,textarea{font-family:var(--sans)}
+a,button{ -webkit-tap-highlight-color:transparent }
+::selection{background:#b6cec3;color:#12332a}
+:focus-visible{outline-color:var(--alic-green)}
+
+/* Navigation, section markers and interface typography */
+.site-header:not(.overlay){background:rgba(255,255,255,.96)}
+.logo{
+  font-family:var(--sans);
+  font-size:clamp(12px,1.1vw,15px);
+  font-weight:700;
+  letter-spacing:.16em;
+}
+.nav-links{font-family:var(--sans);font-weight:600;font-size:13px;letter-spacing:.005em;color:var(--alic-green)}
+.nav-links a{transition:color .2s ease,border-color .2s ease}
+.eyebrow,.clients h2{
+  font-family:var(--sans);
+  font-size:11px;
+  line-height:1.45;
+  font-weight:700;
+  letter-spacing:.17em;
+  color:var(--muted);
+}
+.btn,.nav-cta,.text-link,.home-cta{
+  font-family:var(--sans);
+  font-weight:650;
+  letter-spacing:-.012em;
+}
+.btn.dark,.btn.clay{background:var(--alic-green);color:#fff}
+.btn.ghost{border-color:var(--alic-green);color:var(--alic-green)}
+.section-cta .btn:hover,.text-link:hover{opacity:.88}
+
+/* Editorial headlines: balance serif accents with confident sans */
+.page-hero h1,
+.hero h1{
+  font-family:var(--sans);
+  font-weight:600;
+  letter-spacing:-.056em;
+  text-wrap:balance;
+}
+.page-hero h1{color:var(--alic-green)}
+.page-hero h1 em,
+.page-hero h1 .accent,
+em.accent{
+  font-family:var(--serif);
+  font-weight:400;
+  font-style:italic;
+  letter-spacing:-.025em;
+  color:inherit;
+}
+.hero h1{color:#fff}
+.hero h1 .accent{color:#fff}
+.page-hero .lede{color:var(--muted);line-height:1.6;letter-spacing:-.018em}
+h1,h2,h3,h4{font-optical-sizing:auto}
+h2,h3{letter-spacing:-.038em}
+p{overflow-wrap:break-word}
+.home-page .home-services-intro h2,
+.home-page .home-photo-editorial h2,
+.home-page .brand-statement h2,
+.home-page .founders-section h2{
+  color:var(--alic-green);
+}
+.home-page .home-services-intro h2,
+.home-page .home-photo-editorial h2{
+  font-family:var(--serif);font-weight:400;letter-spacing:-.025em;line-height:1.04;
+}
+.home-page .home-services-intro h2 em,
+.home-page .home-photo-editorial h2 em{
+  font-family:var(--serif);font-weight:400;
+}
+.home-page .svc-list.svc-list-horizontal > li.svc-tile > a > h3{
+  font-family:var(--sans);font-weight:650;letter-spacing:-.045em;
+}
+.home-page .svc-list.svc-list-horizontal > li.svc-tile > a > .svc-description{
+  font-family:var(--sans);font-weight:400;
+}
+.home-page .home-services-cta a,.home-page .home-photo-project-link{
+  color:var(--alic-green);
+}
+
+/* Page-specific headline families */
+.work-intro h1,.page-hero.process-hero h1,
+.page-hero.svc-hero h1,.case-study-heading .proj-title{
+  font-family:var(--sans);
+  letter-spacing:-.055em;
+  font-weight:600;
+}
+.work-intro h1 em,
+.work-cta h2 em,.case-study-heading em{
+  font-family:var(--serif);
+  font-weight:400;
+}
+.work-intro .intro-bottom p,.feature-info p,.story p,
+.founders-story p:not(.eyebrow){line-height:1.65}
+.case h2,.feature-info h2,.feature-name{
+  font-family:var(--sans);font-weight:600;letter-spacing:-.045em;
+}
+.founders-story h2,.story h2,.owner h2{
+  font-family:var(--sans);font-weight:500;letter-spacing:-.04em;
+}
+.pillars .values .pillar-card h3{
+  font-family:var(--serif);font-weight:400;letter-spacing:-.025em;
+}
+.slide h2{font-family:var(--sans);font-weight:600;letter-spacing:-.045em}
+.slide .sub,.contact-trusted-intro{letter-spacing:-.008em}
+
+/* Consistent surfaces and brand green on light backgrounds */
+body:not(.home-page) .paper,
+.slide:not(.dark),.hero-sketch,.step-art,
+.pillars .values .pillar-card:not(.pillar-card-dark):not(.has-photo){
+  background-color:#fff;
+}
+.slide:not(.dark),.hero-sketch,.step-art{
+  border-color:var(--line);
+}
+.slide.dark,.work-cta{background:var(--alic-green);color:#fff}
+.slide.dark .step-art{background:#25483e}
+.slide.dark .art-accent{stroke:#e4f0ea}
+.slide.dark .art-dot{fill:#e4f0ea}
+.slide.dark .slide-count{color:#e4f0ea}
+.step-art .art-stroke,.step-art .art-fill{stroke:var(--alic-green)}
+.step-art .art-label{fill:var(--alic-green)}
+.work-cta a{background:#fff;color:var(--alic-green)}
+.work-cta h2,.work-cta .eyebrow{color:#fff}
+.tags li{background:#fff;color:var(--alic-green);border-color:var(--line)}
+.field label,.field legend{color:var(--alic-green);font-weight:600;letter-spacing:.005em}
+.field input,.field textarea{border-color:#cbdcd4;background:#fff;color:var(--alic-green);border-radius:8px}
+.field input:focus,.field textarea:focus{border-color:var(--alic-green);box-shadow:0 0 0 3px rgba(24,59,50,.1)}
+.contact-trusted-content h2,.contact .contact-trusted-brands li{
+  font-family:var(--serif);font-weight:400;
+}
+.contact .contact-trusted-panel{background:#112b22}
+.site-footer{background:var(--alic-green);color:#fff}
+.site-footer .big{font-family:var(--serif);font-weight:400;letter-spacing:-.03em}
+.site-footer .big em{font-family:var(--serif);font-weight:400}
+.site-footer a:focus-visible{outline-color:#fff}
+
+/* Keep photography and video photography-led; don't recolor assets. */
+@media(max-width:640px){
+ .page-hero h1{letter-spacing:-.055em}
+ .logo{letter-spacing:.09em}
+ .home-page .home-services-intro h2{line-height:1.03}
 }
